@@ -120,7 +120,7 @@ public class VariableEx5 {
 		
 		
 		
-		// 데이터 오버플로우
+		// 	
 		
 		byte bNum = 126;
 		
