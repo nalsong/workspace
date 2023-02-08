@@ -35,8 +35,7 @@ public class operatorpraitice4 {
 		
 		System.out.printf(result3);
 		
-		
-		
+			
 		
 		
 	}
