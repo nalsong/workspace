@@ -33,7 +33,7 @@ public class operatorpraitice2 {
 		float inputScore = sc.nextFloat();		
 		
 			
-		System.out.printf("%d %d학년 %d반 %d번 %s의 성적은 %.2f점입니다.", inputName, input2, inputClass, inputNumber, inputGender, inputScore );
+		System.out.printf("%s %d학년 %d반 %d번 %s의 성적은 %.2f점입니다.", inputName, input2, inputClass, inputNumber, inputGender, inputScore );
 		
 		
 	}
