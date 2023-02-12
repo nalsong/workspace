@@ -60,6 +60,7 @@ public class VariableEx3 {
 		int apple;
 		//int apple; // Duplicate local variable apple (변수명 중복)
 		int applE;
+
 		
 		//길이 제한X
 		int freeTradeAgreement;

@@ -45,11 +45,7 @@ public class ForEx {
 		for( int num = 1 ; num <= 10  ; num++ ) {
 			// num은 1~10 까지 1씩 증가는 변수
 			System.out.println(num);
-			
-			
 		}
-		
-		
 	}
 	
 
@@ -59,7 +55,6 @@ public class ForEx {
 		
 		
 		// 5부터 12까지 1씩 증가하며 출력
-		
 		for ( int num = 5 ; num <= 12 ; num++ ) {
 			System.out.println(num + " ");
 		}
@@ -89,7 +84,6 @@ public class ForEx {
 					
 					//sum = sum + i;
 					sum += i;
-
 				}
 				System.out.println("합계 : " + sum );
 			}
@@ -107,7 +101,6 @@ public class ForEx {
 				
 				Scanner sc = new Scanner(System.in);
 				
-				
 				System.out.println("정수1 입력 :");
 				int num1 = sc.nextInt();
 				
@@ -117,9 +110,7 @@ public class ForEx {
 				int sum =0;
 				
 				for ( int i = num1 ; i <=5 ; i++ ) {
-					sum += i; 
-					
-					
+					sum += i; 	
 				}
 				System.out.printf("%d부터 %d까지 모든 정수의 합 : %d", num1, num2, sum);
 			}
@@ -401,8 +392,6 @@ public class ForEx {
 				
 				//구구단을 2단부터 9단까지 모두 출력하기
 				
-				
-				
 				//2~9단(앞자리수)
 				for( int dan = 1; dan <= 9 ; dan++ ) {
 					// 곱해지는 수(뒷자리 수)
@@ -448,17 +437,16 @@ public class ForEx {
 				//432
 				//4321
 				
-				
 				for( int x = 4 ; x >=1  ; x-- ) {  // 4번반복 x=1,2,3,4
 					
 					for( int i= 4; i<=x ; i-- ) {
 						System.out.println(i);
 					}
 					System.out.println(); //개행
-					
 				}
 				
 			}
+			
 			
 			// 중첩반복문 기본 사용법 6
 			public void ex20() {

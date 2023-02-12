@@ -38,8 +38,8 @@ public class Practice {
 		double dNum = 2.5;
 		char ch = 'A';
 		
-		
-//		이클립스에서 println()자동완성: Syso -> ctrl + spacebar -> enter
+//		이클립스에서 println()자동완성: Syso -> ctrl + spacebar -> enter				
+
 		
 		System.out.println( iNum1 / iNum2);  //2
 		System.out.println( (int)dNum ); //2
@@ -59,7 +59,7 @@ public class Practice {
 		
 		
 		
-		
+
 		
 		
 		

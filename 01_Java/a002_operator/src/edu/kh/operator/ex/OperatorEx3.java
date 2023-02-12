@@ -8,7 +8,7 @@ public class OperatorEx3 {
 		
 		
 		// &&(AND) 연산자 : 둘 다 true이면 true, 나머진 false
-		// ~와, 그리고(이고), 이면서(~면서), 부터, 까지, 사이
+		// ~와, 그리고(이고), 이면서(~면서), 부터, 까지,  사이
 		
 		
 		//  정수가 100이상이면서 짝수인가?
@@ -43,9 +43,7 @@ public class OperatorEx3 {
 		int num4 = 20;
 		boolean result4 = num4 > 10 || num4 % 2 == 1;
 		System.out.println( "10을 초과하거나 홀수? : " + result4 );
-		
-		
-		
+
 		
 		//정수는 0부터 50 사이 숫자 또는 음수인가?
 		// == 50 이하인가?
@@ -53,6 +51,8 @@ public class OperatorEx3 {
 		boolean result5 = num5 >= 0 && num5 <= 50 || num5 < 0 ;
 //		boolean result5 = num5 <= 50;
 		System.out.println( "0부터 50 사이 숫자 또는 음수인가? : " + result5 );
+		
+		
 		
 		
 		

@@ -30,8 +30,7 @@ public class VariableEx5 {
 	
 		// 자동 형변환 확인 2
 		int num3 = 300;
-		double num4 = 12.3;
-		
+		double num4 = 12.3;		
 		
 		//연산 결과를 예상해서 저장할 변수의 자료형을 선택
 		double result1 = num3 + num4;
@@ -39,10 +38,8 @@ public class VariableEx5 {
 		// -> 300.0(double) + 12.3(double)
 		// -> 312.3(double);
 		
-		System.out.println(num3 + " + " + num4 + " = " + result1);
-		
-		
-		
+		System.out.println(num3 + " + " + num4 + " = " + result1);	
+
 		
 		//자동 형변환 확인 3
 		//char -> int 자동 형변환
@@ -69,6 +66,10 @@ public class VariableEx5 {
 		 * */
 		
 		
+		//ctrl + alt + 방향키 위/아래 : 라인 복사
+				// 화면뒤집힐 경우!
+				// -> 인텔 H그래픽 -> 그래픽옵션 -> 바로가기키 -> 사용 안함.
+		
 		// 강재 형변환 확인 1 : 데이터 손실 확인
 		int test1 = 290;
 		byte test2 = (byte)test1; //Type mismatch: cannot convert from int to byte
@@ -91,7 +92,6 @@ public class VariableEx5 {
 		System.out.println("test4 : " + test4);
 		
 		
-		
 		// 강제 형변환 확인 3 : 값의 볌위 관계없이 변환
 		int test5 = 1;
 		int test6 = 2;
@@ -111,6 +111,8 @@ public class VariableEx5 {
 		
 		
 		System.out.println("-------------------------");
+		
+		
 		// 강제 형변환 기타 등등 ...
 		
 		// - 변수에만 강제 형변환이 가능한 것은 아니다!

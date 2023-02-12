@@ -19,6 +19,9 @@ public class SwitchEx {
  
 	 * */
 	
+
+	
+
 	public void ex1() {
 		//키보드로 정수를 입력받아서
 		// 1이면 "RED"
@@ -27,6 +30,7 @@ public class SwitchEx {
 		// 4이면 "GREEN"
 		// 1~4 아니면 "BLUE"를 출력
 		
+		
 		//sc -> ctrl + spacebar  ->Scanner선택
 		// =>자동완성(문구 완성, import추가)
 		Scanner sc = new Scanner(System.in);
@@ -34,7 +38,6 @@ public class SwitchEx {
 		int input = sc.nextInt();
 		
 		String res; //결과 저장할 변수
-		
 		
 		//1) if -else if - else 버전
 		
@@ -49,23 +52,21 @@ public class SwitchEx {
 //		}else {
 //			res = "BLUE";
 //		}
-		
+
+
 //		ctrl + / ->한꺼번에 주석처리
+		
+		
 		
 		
 		// 2) switch버전
 		switch(input) {
 		
 		case 1 : res = "RED" ; break; //input이 1인 경우
-		
 		case 2 : res ="ORNANGE"; break;
-		
 		case 3 : res ="YELLOW"; break;
-		
 		case 4 : res ="GREEN"; break;
-		
 		default : res = "BLUE";
-		
 		}
 			
 		System.out.println(res);
@@ -134,7 +135,7 @@ public class SwitchEx {
 	
 	//switch예제 4번
 	public void ex4() {
-		Scanner sc = new Scanner(System.in);
+		
 		
 	    // 산술 연산 계산기 만들기
 	    // 두 정수(int)와 1개의 연산자( + - * / % (String) )를 입력 받아서 
@@ -175,7 +176,7 @@ public class SwitchEx {
 		 */
 		
 			
-		
+		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("정수1 입력 : ");
 		int a = sc.nextInt();
@@ -185,8 +186,6 @@ public class SwitchEx {
 		
 		System.out.print("정수2 입력 : ");
 		int b = sc.nextInt();
-		
-
 		
 		
 		switch(op) {
@@ -220,14 +219,14 @@ public class SwitchEx {
 	//계절 판별(switch version)
 		public void ex5() {
 			
+			//계절 판별(switch version)	
+			
 			Scanner sc = new Scanner(System.in);
 			
 			System.out.println("달(월) 입력 : ");
 			int month = sc.nextInt();
 			
-			
 			String result;
-			
 			
 			// break :멈추다
 			// -> 해당 case를 수행한 후 멈춰라!
@@ -239,7 +238,6 @@ public class SwitchEx {
 			case 3 : 			case 4 :  		case 5 : result = "봄" ;  break;
 			case 6 : 			case 7 :		case 8 : result = "여름" ; break;
 			case 9 : 			case 10 : 		case 11 : result = "가을" ; break;
-			
 			
 			default : result = "잘못 입력하셨습니다.";
 			}

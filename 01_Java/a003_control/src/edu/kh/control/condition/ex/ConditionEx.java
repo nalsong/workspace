@@ -51,9 +51,11 @@ public class ConditionEx {
 	
 	
 	//if 예시2번(if -else)
+
 	public void ex2() {
 		//조건식이 true이면 if문 수행
 		//false이면 else문 수행
+		
 		
 		
 		Scanner sc = new Scanner(System.in);
@@ -74,7 +76,6 @@ public class ConditionEx {
 			}else {
 				System.out.println("음수입니다.");
 			}
-		
 		}
 
 	}
@@ -94,7 +95,7 @@ public class ConditionEx {
 		// 홀수, 짝수 , 0
 		if ( input == 0) {
 			System.out.println("0은 홀/짝수를 구분할 수 없습니다.");
-		} else if( Math.abs(input) % 2 == 1 ) { //홀수
+		}else if( Math.abs(input) % 2 == 1 ) { //홀수
 			System.out.println("홀수입니다.");
 		}else {
 			System.out.println("짝수입니다.");
@@ -105,7 +106,6 @@ public class ConditionEx {
 	
 	
 	//if예시 4번 
-	
 	public void ex4() {
 		
 		Scanner sc = new Scanner(System.in);
@@ -217,8 +217,6 @@ public class ConditionEx {
 			}else  {
 				result = "잘못 입력하셨습니다.";				
 			}
-			
-			
 			*/
 			
 			
@@ -232,7 +230,6 @@ public class ConditionEx {
 			}else {
 				result = "탑승가능";		
 			}
-			
 			
 			System.out.println(result);
 		}
@@ -270,7 +267,6 @@ public class ConditionEx {
 				
 				}// age else 끝
 				
-					
 				System.out.println(result);
 			}
 			

@@ -11,7 +11,7 @@ public class ForPracticeRun {
 //		fp.practice1();
 //		fp.practice2();
 //		fp.practice3();
-		fp.practice4();
+//		fp.practice4();
 //		fp.practice5();
 //		fp.practice6();
 //		fp.practice7();

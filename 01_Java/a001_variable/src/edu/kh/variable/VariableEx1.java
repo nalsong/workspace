@@ -3,9 +3,7 @@ package edu.kh.variable;
 public class VariableEx1 {
 
 	public static void main(String[] args) {
-		
-		// ; (세미클론)
-		// 하나의 코드(명령어)의 끝을 의미
+
 		
 		System.out.println("[변수 사용 X인 경우]");
 		
@@ -16,7 +14,7 @@ public class VariableEx1 {
 		
 		System.out.println("---------------");
 				
-		//ctrl + shift + f : 코드 정렬(이클립스 기준)
+	
 		
 		// 변수 사용
 		double pi = 3.141592653589793;
@@ -32,6 +30,13 @@ public class VariableEx1 {
 		System.out.println(pi * r * r); // 원의 넓이
 		System.out.println(pi * r * r* h); // 원기둥의 부피
 		System.out.println(4 * pi * r * r); // 구의 겉넓이
+		
+		
+		
+		// ; (세미클론)
+		// 하나의 코드(명령어)의 끝을 의미
+		
+		//ctrl + shift + f : 코드 정렬(이클립스 기준)
 		
 		
 		// 변수란?

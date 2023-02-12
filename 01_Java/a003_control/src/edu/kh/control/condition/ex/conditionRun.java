@@ -1,14 +1,9 @@
 package edu.kh.control.condition.ex;
 
 
-
-
-// 실행용 클래스
+//실행용 클래스
 //-> 실행하고자 하는 코드를 작성한 후 Run
-public class conditionRun {
-	
-	
-	
+public class conditionRun {	
 	
 	public static void main(String[] args) {
 		
@@ -31,8 +26,11 @@ public class conditionRun {
 		condition.ex7();
 
 	}
-
 }
+
+
+
+
 
 
 

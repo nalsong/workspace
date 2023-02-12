@@ -2,7 +2,7 @@ package edu.kh.operator.ex;
 
 public class OperatorEx2 {
 	
-	// main method wkehd 자동완성 -> ctrl + spacebar + enter
+	// main method 자동완성 -> ctrl + spacebar + enter
 	public static void main(String[] args) {
 		
 				
@@ -38,7 +38,6 @@ public class OperatorEx2 {
 		
 		// num2--는
 		// num2 = num2 - 1 과 같음
-		
 		
 		
 		System.out.printf( "[연산 후] num1 : %d / num2 : %d \n", num1, num2 );
@@ -98,13 +97,10 @@ public class OperatorEx2 {
 		System.out.println( num5 > num6 );  // false
 		
 		System.out.println( num5 < num6 );  // true
-		
-		
+			
 		System.out.println( num5 >= num6 - num5 ); //true
 		
 		System.out.println( (num6 <= num5 + num5) == false ); //false
-		
-		
 		
 		
 		// 짝수 검사
@@ -115,8 +111,8 @@ public class OperatorEx2 {
 		
 		System.out.println( 8 % 2 != 1 );  // false
 		
-		// 홀수 검사
 		
+		// 홀수 검사
 		
 		//1. 결과값을 홀수로 변경
 		System.out.println( 4 % 2 == 1 );  // false

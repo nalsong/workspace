@@ -12,11 +12,12 @@ public class OperatorEx4 {
 		System.out.println("[홀짝 검사기]");
 		
 		System.out.print("정수 하나를 입력해주세요 : ");
-		
 		int input = sc.nextInt(); //정수입력받기
 		
+		
 		//삼항 연산자
-		//조건식 ? true인 경우 : false인 경우
+				//조건식 ? true인 경우 : false인 경우
+		
 		
 		// Math.abs(숫자) -> 절대값
 		String result = Math.abs(input) % 2 == 1 ? "홀수입니다." 
@@ -24,16 +25,9 @@ public class OperatorEx4 {
 				
 		System.out.println(result);
 		
-	
-		
-		
-		
-		
-		
-		
-		
-		
-
 	}
 
 }
+			
+
+

@@ -5,9 +5,11 @@ public class OperatorEx5 {
 	public static void main(String[] args) {
 		
 		
+		
 		//복합대입 연산자 : +=	 -=		 *=		/=	%=
 		//- 기존 변수에 저장된 값과 새로 대입되는 값의 산술 연산 결과를 대입
 		// - +=(누적) -=(차감)
+
 		
 		int a = 10;
 		
@@ -29,10 +31,10 @@ public class OperatorEx5 {
 		a %= 1; // a= a % 2;
 		System.out.println("a를 2로 나눴을 때의 나머지 : " + a); //0
 		
-		
-		
-		
-
 	}
-
 }
+
+
+
+
+
