@@ -18,7 +18,8 @@ public class ArrayEx1 {
 	public void ex1() {
 		
 		//배열 선언
-		int[] arr; 
+//		int[] arr; 
+		int arr[];
 		// - int[] 을 참조(저장)할 공간 할당하고 이를 arr이라고 부르겠다.
 		// * 기본 자료형 8개를 제외한 나머지는 "참조형"이라고 한다!
 		
@@ -92,7 +93,7 @@ public class ArrayEx1 {
 		
 		
 		// 1. 정말 numbers에 주소가 저장 되었을까?
-		System.out.println(numbers);// [I@6f2b958e] (주소로 만든 숫자)
+		System.out.println(numbers);// [I@7c30a502 (주소로 만든 숫자)
 									// -> 지금은 주소로 봐도 무관
 		
 		
@@ -123,7 +124,7 @@ public class ArrayEx1 {
 		
 		
 		// for문을 이용한 초기화
-		
+	
 		// ** 배열명. length : 배열의 길이 (칸 수)를 반환
 		for( int i = 0; i<numbers.length ; i++) {
 			 
@@ -226,7 +227,7 @@ public class ArrayEx1 {
 			// 문제점 : for문의 조건식에서 i의 범위가 arr배열의 인덱스 범위를 초과하는 값까지 증가하도록 작성되어     (원인)
 			//           실행시 for문 내 출력 구문에서 ArrayIndexOutOfBoundsException이 발생함.                       (결과)
 			
-			// 해결방법 : 조건식을 i < arr.length로 수정하여 i 가 배열릐 인덱스 범위를 초과하지 않도록 함.
+			// 해결방법 : 조건식을 i < arr.length로 수정하여 i 가 배열의 인덱스 범위를 초과하지 않도록 함.
 			
 			
 		}
