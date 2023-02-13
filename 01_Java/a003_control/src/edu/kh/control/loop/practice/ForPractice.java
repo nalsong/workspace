@@ -326,12 +326,24 @@ public class ForPractice {
 		System.out.print("정수 입력 : ");
 		int num = sc.nextInt();
 		
+		
+		//내가 푼 것
 		for( int x= 1 ; x <= num ; x++) {
 			for( int i = num ; i >= x ; i--) {
 				System.out.printf("*");
 			}
 			System.out.println();
 		}
+		
+		//문제 풀이
+//		for( int x= num ; x >= 1 ; x--) {
+//			for( int i = x ; i >= x ; i--) {
+//				System.out.printf("*");
+//			}
+//			System.out.println();
+//		}
+		
+		
 		
 	}
 	
@@ -425,26 +437,54 @@ public class ForPractice {
 
 	
 	
-	public void practice11() {  //????????
+	public void practice11() {  
 		
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("정수 입력 : ");
 		int num = sc.nextInt();
 		
-		
-		for(int x = 1 ; x<=num ; x++ ) {  //4회 반복
+		//내가 푼 것
+		for(int x = 1 ; x<=num ; x++ ) {  
 			for( int y =num-1; y>=x ; y-- ) {
 				System.out.print(" ");
-			}
-					
+			}		
 			for( int i = 1; i<=x*2-1; i++ ) {
 				System.out.print("*");
-
-				
 			}	
 			System.out.println();
 		}
+		
+		
+		//풀이 1(for문 2개로)
+//		for(int x = 1 ; x<=num ; x++ ) {  
+//			//빈칸 출력
+//			for( int y =num-x; y>=1 ; y-- ) {
+//				System.out.print(" ");
+//			}		
+//			for( int i = 1; i<=x*2-1; i++ ) {
+//				System.out.print("*");
+//			}	
+//			System.out.println();
+//		}
+		
+		
+		
+		//풀이2(for문 1개, if-else문 1개)
+//		for(int x = 1 ; x<=num ; x++ ) {  
+//		
+//			for( int i = 1; i <= num+x-1; i++) {
+//				if(num-x>= i ) {
+//					System.out.print(" ");
+//				}else {
+//					System.out.print("*");
+//				}
+//			
+//			}
+//		
+//		}
+//		
+		
 		
 	}
 	
@@ -470,6 +510,8 @@ public class ForPractice {
 		System.out.print( "정수 입력 : ");
 		int num = sc.nextInt();
 		
+		
+		//내가 푼 것.
 		for( int x = 1; x <= num  ; x++ ) {
 			
 				
@@ -485,6 +527,24 @@ public class ForPractice {
 			System.out.println();
 		}
 	
+
+		
+		//문제 풀이
+//		for( int x = 1; x <= num  ; x++ ) {
+//				for( int i = 1 ; i <=num ; i++ ) {
+//					if( i==1 || x==num || x== 1 || i ==num) {
+//						System.out.print("*");
+//					}else {
+//						System.out.print(" ");
+//					}
+//				}
+//			System.out.println();
+//		}
+		
+		
+		
+		
+		
 	}
 	
 	
