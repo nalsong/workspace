@@ -4,14 +4,14 @@ public class BasicRun {
 
 	public static void main(String[] args) {
 		
-		//Java에서의 Object == 클래스의 정의 된 내용을 토대로 new 연산자를 통해 메모리에 생성되는 것
+	//Java에서의 Object == 클래스의 정의 된 내용을 토대로 new 연산자를 통해 메모리에 생성되는 것
 		
 		// 국민 객체 생성
 		Nation n1 = new Nation();
 		Nation n2 = new Nation();
 		Nation n3 = new Nation();
 		
-//		n1.pNo ="990123-1234567";
+		//n1.pNo ="990123-1234567";
 		n1.setpNo("990123-1234567(간접접근 이용)");
 		
 		n1.name="홍길동";
@@ -44,3 +44,5 @@ public class BasicRun {
 	}
 	
 }
+
+

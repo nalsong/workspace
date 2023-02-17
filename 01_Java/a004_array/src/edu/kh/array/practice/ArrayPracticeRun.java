@@ -9,9 +9,9 @@ public class ArrayPracticeRun {
 //		ae1.practice1();
 //		ae1.practice2();
 //		ae1.practice3();
-		ae1.practice4();
+//		ae1.practice4();
 //		ae1.practice5();
-//		ae1.practice6();
+		ae1.practice6();
 //		ae1.practice7();
 //		ae1.practice8();
 //		ae1.practice9();

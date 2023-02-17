@@ -169,15 +169,6 @@ public class ArrayEx2 {
 		}
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 	
 }

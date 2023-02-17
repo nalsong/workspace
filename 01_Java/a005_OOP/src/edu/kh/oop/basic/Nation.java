@@ -22,13 +22,15 @@ public class Nation {
 	
 	//[캡슐화] 두번째 특징(원칙) 2-1
 	// 멤버 변수는 private으로 지정
-	private String pNo; //주민등록번호
+	String pNo; //주민등록번호
 	
 	String name; // 이름
 	char gender; //성별(남/여)
 	String address; // 주소
 	String phone; // 전화번호
 	int age; //나이
+	
+	
 	
 	
 	/* 기능(== method)*/
@@ -41,9 +43,7 @@ public class Nation {
 	}
 	
 	
-	
-	
-	// [캡슐화] 두번째 특징(원칙) 2-2
+	//[캡슐화] 두번째 특징(원칙) 2-2
 	// private으로 지정한 멤버변수에 대한
 	// 간접 접근 방법(기능)을 작성
 	public String getpNo() { //외부에서 내부 데이터를 얻어가는 방법

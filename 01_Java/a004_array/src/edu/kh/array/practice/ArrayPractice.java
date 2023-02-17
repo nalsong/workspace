@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class ArrayPractice {
 
 	
+	
+	
 //	실습문제1
 //	길이가 9인 배열을 선언 및 할당하고, 1부터 9까지의 값을 반복문을 이용하여
 //	순서대로 배열의 각 인덱스 요소에 대입하고 출력한 후
@@ -38,6 +40,8 @@ public class ArrayPractice {
 	}
 	
 	
+		
+		
 	
 //	실습 문제2
 //	길이가 9인 배열을 선언 및 할당하고, 9부터 1까지의 값을 반복문을 이용하여
@@ -65,7 +69,10 @@ public class ArrayPractice {
 		
 	}
 	
+	
+	
 
+	// 실습문제3
 //	사용자에게 입력 받은 양의 정수만큼 배열 크기를 할당하고
 //	1부터 입력 받은 값까지 배열에 초기화한 후 출력하세요
 //	
@@ -77,7 +84,7 @@ public class ArrayPractice {
 //	양의 정수 : 8
 //	1 2 3 4 5 6 7 8
 
-	public void practice3(){	//????
+	public void practice3(){	
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -86,17 +93,17 @@ public class ArrayPractice {
 		
 		int arr[] = new int[num];
 		
-		for( int i = 1 ; i < arr.length ; i++ ) {
-		
+		for( int i = 0 ; i < arr.length ; i++ ) {
+			arr[i] = i+1;
 
 			
 			System.out.print(arr[i] + " ");
 		}
-		
-		
-		
-		
+	
 	}
+	
+	
+	
 	
 	
 //	실습문제 4
@@ -122,7 +129,6 @@ public class ArrayPractice {
 //	검색할 값 : 1
 //	일치하는 값이 존재하지 않습니다.
 
-	
 	public void practice4(){	
 		
 		Scanner sc = new Scanner(System.in);
@@ -131,21 +137,28 @@ public class ArrayPractice {
 		
 		for(int i = 0 ; i <arr.length ; i++ ) {
 		
-		System.out.printf("입력 %d : ", i );
-		arr[i] = sc.nextInt();
+			System.out.printf("입력 %d : ", i );
+			arr[i] = sc.nextInt();
 		
 		}
 		
 		System.out.print("검색할 값 : ");
 		int search = sc.nextInt();
 		
-//		if(arr[i] ==  search) {
-//			System.out.printf("인덱스 : %d", ??);
-//		}else {
-//			System.out.print("일치하는 값이 존재하지 않습니다.");
-//		}
+		int index = -1;
 		
+		for(int x = 0; x<arr.length;x++) {
+			if(search == arr[x]) {
+				index = x;
+			}
+		}
 		
+		if(index <0 ) {
+			System.out.print("일치하는 값이 존재하지 않습니다.");	
+		}else {
+			System.out.println(index);
+		}
+
 	}
 	
 	
@@ -161,12 +174,41 @@ public class ArrayPractice {
 //	application에 i가 존재하는 위치(인덱스) : 4 8 
 //	i 개수 : 2
 	public void practice5(){	
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("문자열 : ");
+		String x = sc.next();
+		
+		char arr[] = x.toCharArray();
+		
+		
+		System.out.print("문자 : ");
+		char inputStr = sc.next().charAt(0);
+
+		int sum = 0;
+		
+		System.out.printf("%s 에 %c가 존재하는 위치(인덱스) : ", x, inputStr);
+		
+		for(int y= 0; y < arr.length ; y++ ) {  // 1 2 3 4 5 6 7 8 9 10
+			
+			if( inputStr == arr[y] ) {     
+					sum += 1;
+					System.out.print(y + " ");
+			}
+			
+				
+		}
+		System.out.printf("\n%c 개수 : %d", inputStr, sum );
 	}
 	
 	
 	
 	
-	
+
+
+
+
+
 //	실습문제 6
 //	사용자가 배열의 길이를 직접 입력하여 그 값만큼 정수형 배열을 선언 및 할당하고
 //	배열의 크기만큼 사용자가 직접 값을 입력하여 각각의 인덱스에 값을 초기화 하세요.
@@ -183,6 +225,25 @@ public class ArrayPractice {
 //	총 합 : 2
 
 	public void practice6(){	
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("정수 : ");
+		int num = sc.nextInt();
+		
+		int[] arr = new int[num];
+		
+		int sum=0;
+		
+		for(int i = 0 ; i < arr.length ; i++ ) {
+			System.out.printf("배열 %d번째 인덱스에 넣을 값 : ", i);
+			arr[i] = sc.nextInt();
+			
+		}
+		for(int i = 0 ; i < arr.length ; i++ ) {
+			sum += arr[i];
+			System.out.print(arr[i] + " ");	
+		}
+		System.out.printf("총합 : %d", sum);
 	}
 	
 	
@@ -196,7 +257,11 @@ public class ArrayPractice {
 //	주민등록번호(-포함) : 123456-1234567
 //	123456-1******
 	
-	public void practice7(){	
+	public void practice7(){
+		
+		
+		
+		
 	}
 	
 	
@@ -217,6 +282,8 @@ public class ArrayPractice {
 //	1, 2, 3, 2, 1
 	
 	public void practice8(){	
+		
+		
 	}
 	
 	
@@ -230,6 +297,19 @@ public class ArrayPractice {
 //	발생한 난수 : 9 7 6 2 5 10 7 2 9 6
 	
 	public void practice9(){	
+		
+		int arr[] = new int[9];
+		
+		int num;
+		
+		for(int i = 1 ; i < arr.length ; i++ ) {
+			arr[i] = i + 1;
+			arr[i] = (int)(Math.random()*10); 
+			
+			
+			System.out.print(arr[i]+" ");  //??????????
+		}
+		
 	}
 	
 	
@@ -246,6 +326,8 @@ public class ArrayPractice {
 //	최소값 : 2
 
 	public void practice10(){	
+		
+		
 	}
 	
 	
@@ -258,6 +340,8 @@ public class ArrayPractice {
 //	[실행 화면]
 //	4 1 3 6 9 5 8 10 7 2
 	public void practice11(){	
+		
+		
 	}
 	
 	
@@ -273,6 +357,8 @@ public class ArrayPractice {
 //	3 4 15 17 28 40
 	
 	public void practice12(){	
+		
+		
 	}
 	
 	
@@ -287,6 +373,8 @@ public class ArrayPractice {
 //	문자 개수 : 8
 
 	public void practice13(){	
+		
+		
 	}
 	
 	

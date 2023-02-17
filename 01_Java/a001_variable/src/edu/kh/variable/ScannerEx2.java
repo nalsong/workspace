@@ -12,7 +12,7 @@ public class ScannerEx2 {
 		Scanner sc =  new Scanner(System.in);
 		
 		//sc.next(): 다음 입력되는 한 단어를 얻어옴.
-		//sc.nertInt(): 다음 입력되는 정수를 얻어옴.
+		//sc.nextInt(): 다음 입력되는 정수를 얻어옴.
 		
 		System.out.print("이름 : ");
 		String inputName = sc.next();
