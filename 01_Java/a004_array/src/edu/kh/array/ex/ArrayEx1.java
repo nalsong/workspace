@@ -62,11 +62,6 @@ public class ArrayEx1 {
 			
 		}
 		System.out.println(sum);
-		
-		
-		
-		
-		
 	}
 	
 	
@@ -229,8 +224,8 @@ public class ArrayEx1 {
 			//			 배열  인덱스  범위초과  예외(에러):  인덱스 5번은 길이 5짜리 배열의 범위를 초과했다.
 			
 			
-			// 문제점 : for문의 조건식에서 i의 범위가 arr배열의 인덱스 범위를 초과하는 값까지 증가하도록 작성되어     (원인)
-			//           실행시 for문 내 출력 구문에서 ArrayIndexOutOfBoundsException이 발생함.                       (결과)
+			// 문제점 : for문의 조건식에서 i의 범위가 arr배열의 인덱스 범위를 초과하는 값까지 증가하도록 작성되어(원인)
+			//           실행시 for문 내 출력 구문에서 ArrayIndexOutOfBoundsException이 발생함.(결과)
 			
 			// 해결방법 : 조건식을 i < arr.length로 수정하여 i 가 배열의 인덱스 범위를 초과하지 않도록 함.
 			

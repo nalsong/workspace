@@ -10,10 +10,8 @@ public class TestRun {
 		// Test1  클래스를 이용해서 객체 생성
 		Test1 t1 =  new Test1();
 		
-		
 		// Test2  클래스를 이용해서 객체 생성
 		Test2 t2 =  new Test2();
-		
 		
 		t1.testMethod1();
 		t2.testMethod2();

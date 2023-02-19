@@ -12,13 +12,13 @@ public class FieldRun extends FieldTest3{
 		
 		//클래스를 이용해서 객체(인스턴스)생성
 		
-		//FieldTest1/2 는 FieldRun과 같은 패키지
+		//FieldTest1, 2 는 FieldRun과 같은 패키지
 		// -> import없이 사용 가능
 		FieldTest1 f1 = new FieldTest1();
 		FieldTest2 f2 = new FieldTest2();
 		
 		// FieldTest3는 다른 패키지에 존재
-		// -> imoort가 필요하다!
+		// -> import가 필요하다!
 		
 		FieldTest3 f3 = new FieldTest3();
 		

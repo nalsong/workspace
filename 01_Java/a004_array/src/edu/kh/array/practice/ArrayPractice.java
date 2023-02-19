@@ -1,5 +1,7 @@
 package edu.kh.array.practice;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArrayPractice {
@@ -18,7 +20,7 @@ public class ArrayPractice {
 	
 		public void practice1(){
 		
-		int arr[] = new int[9];
+		int[] arr = new int[9];
 		
 		int sum = 0;
 		
@@ -53,7 +55,7 @@ public class ArrayPractice {
 //	홀수 번째 인덱스 합 : 20
 	public void practice2(){	
 		
-		int arr[] = new int[9];
+		int[] arr = new int[9];
 		
 		int sum = 0;
 		for( int i = arr.length-1  ; i >= 0 ; i-- ) {
@@ -91,7 +93,7 @@ public class ArrayPractice {
 		System.out.print("양의 정수 : ");
 		int num = sc.nextInt();
 		
-		int arr[] = new int[num];
+		int[] arr = new int[num];
 		
 		for( int i = 0 ; i < arr.length ; i++ ) {
 			arr[i] = i+1;
@@ -133,7 +135,7 @@ public class ArrayPractice {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		int arr[] = new int[5];
+		int[] arr = new int[5];
 		
 		for(int i = 0 ; i <arr.length ; i++ ) {
 		
@@ -179,7 +181,7 @@ public class ArrayPractice {
 		System.out.print("문자열 : ");
 		String x = sc.next();
 		
-		char arr[] = x.toCharArray();
+		char[] arr = x.toCharArray();
 		
 		
 		System.out.print("문자 : ");
@@ -243,7 +245,7 @@ public class ArrayPractice {
 			sum += arr[i];
 			System.out.print(arr[i] + " ");	
 		}
-		System.out.printf("총합 : %d", sum);
+		System.out.printf("\n총합 : %d", sum);
 	}
 	
 	
@@ -259,8 +261,23 @@ public class ArrayPractice {
 	
 	public void practice7(){
 		
+		Scanner sc = new Scanner(System.in);
 		
+		System.out.print("주민등록번호(-포함) : ");
+		String rrn = sc.next();
 		
+		char[] arr = new char[13];
+		
+		for( int i = 0; i<arr.length ; i++ ) {
+			arr[i] = rrn.charAt(i);
+			if(i>7) {
+				arr[i] = '*';
+			}
+							
+		}	
+		for( int i = 0; i<arr.length ; i++ ) {	
+		System.out.print(arr[i]);
+		}
 		
 	}
 	
@@ -281,9 +298,33 @@ public class ArrayPractice {
 //	정수 : 5
 //	1, 2, 3, 2, 1
 	
-	public void practice8(){	
+	public void practice8(){  	
+		Scanner sc = new Scanner(System.in);
 		
 		
+		while(true) {
+		
+			System.out.print("정수 : ");
+			int num = sc.nextInt();
+		
+			if (num >= 3 && num % 2 == 1) {
+				int[] number = new int[num]; 
+				
+				
+				int count = 0;
+				
+				for( int i =0 ; i < (number.length)/2+1; i++ ) {
+					count +=1;
+					System.out.print(count+", ");
+				}
+				for( int i=0; i<(number.length)/2 ; i++ ) {
+					count -= 1;
+					System.out.print(count+", ");  //쉼표처리...?
+				}break;
+			}else {
+				System.out.print("다시 입력하세요.\n");
+			}
+		}
 	}
 	
 	
@@ -298,18 +339,16 @@ public class ArrayPractice {
 	
 	public void practice9(){	
 		
-		int arr[] = new int[9];
+		int[] arr = new int[10];
 		
-		int num;
+		System.out.print("발생한 난수 : ");
 		
-		for(int i = 1 ; i < arr.length ; i++ ) {
-			arr[i] = i + 1;
-			arr[i] = (int)(Math.random()*10); 
+		for(int i = 0; i < arr.length ; i++ ) {
+			 
+			arr[i] = (int)(Math.random()*10)+1; 
 			
-			
-			System.out.print(arr[i]+" ");  //??????????
+			System.out.print(arr[i]+" ");  
 		}
-		
 	}
 	
 	
@@ -327,7 +366,29 @@ public class ArrayPractice {
 
 	public void practice10(){	
 		
+		int[] arr = new int[10];
 		
+		int max = -1;
+		int min = 10;
+		
+		System.out.print("발생한 난수 : ");
+		for( int i =0 ; i<arr.length ; i++ ) {
+			
+			arr[i] = (int)(Math.random()*10)+1;
+			
+			System.out.print(arr[i] + " ");
+
+			if(max < arr[i]) {
+				max = arr[i];
+			}
+				
+			if(min > arr[i]) {
+				min = arr[i]; 
+			}
+			
+		}
+		System.out.printf("\n최대값 : %d", max);
+		System.out.printf("\n최소값 : %d", min);
 	}
 	
 	
@@ -342,9 +403,22 @@ public class ArrayPractice {
 	public void practice11(){	
 		
 		
+		int[] arr = new int[10];
+		
+		for( int i = 0 ; i < arr.length ; i++ ) {
+			arr[i] = (int)(Math.random()*10)+1;
+			
+			for( int j = 0 ; j< i ; j++ ) {
+				if(arr[i] == arr[j]) {
+					i--;
+				}
+			}
+			
+		}
+		for( int i = 0 ; i < arr.length ; i++ ) {
+			System.out.print(arr[i] + " ");
+		}
 	}
-	
-	
 	
 	
 	
@@ -358,12 +432,28 @@ public class ArrayPractice {
 	
 	public void practice12(){	
 		
+		int[] arr = new int[6];
 		
+		for( int i = 0; i < arr.length ; i++ ) {
+			arr[i] = (int)(Math.random()*45)+1;
+			
+			for( int j = 0 ; j < i ; j++) {
+				if(arr[j] == arr[i]) {
+					i--;
+					break;
+				}
+			}
+		}	
+		Arrays.sort(arr);
+		
+		for( int i = 0 ; i < arr.length ; i++) {
+			System.out.print(arr[i] +" ");
+		}
 	}
 	
 	
 	
-//	실습문제 13
+//	실습문제 13 
 //	문자열을 입력 받아 문자열에 어떤 문자가 들어갔는지 배열에 저장하고
 //	문자의 개수와 함께 출력하세요. (중복 제거)
 //	
@@ -374,11 +464,22 @@ public class ArrayPractice {
 
 	public void practice13(){	
 		
+		Scanner sc = new Scanner(System.in);
 		
+		System.out.print("문자열 : ");
+		String inputstr = sc.next();
+		
+		char[] arr = inputstr.toCharArray();
+
+		int sum = 0;
+		
+		System.out.print("\n문자열에 있는 문자 : ");
+		for( int i = 0 ; i<arr.length ; i++) {
+			sum += 1;
+			System.out.print(arr[i] + ", ");
+		}
+		System.out.printf("\n문자 개수 : %d", sum);
 	}
-	
-	
-	
 	
 	
 	
@@ -413,6 +514,19 @@ public class ArrayPractice {
 
 	
 	public void practice14(){	
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("배열의 크기를 입력하세요 : ");
+		String str = sc.next();
+		
+		
+		
+		
+		
+		
+			
+		
+		
 	}
 	
 	
@@ -426,6 +540,19 @@ public class ArrayPractice {
 //	(2, 0)(2, 1)(2, 2)
 
 	public void practice15(){	
+		
+		String[][] arr= new String[3][3];
+		
+		
+		for(int row =0  ;row < arr.length ; row++ ) {
+			
+			for( int col = 0 ; col< arr[row].length ; col++ ) {
+				
+				System.out.print("(" + row + ", "+ col +")");
+				
+			}
+			System.out.println();
+		}
 	}
 	
 	
@@ -443,6 +570,20 @@ public class ArrayPractice {
 //	13 14 15 16
 
 	public void practice16(){	
+		
+		int[][] arr = new int[4][4];
+		
+		int count = 0;
+		
+		for( int i = 0 ; i < arr.length ;i++ ) {
+			for( int j = 0; j <arr[i].length ; j++) {
+				count +=1;
+				arr[i][j] = count; 
+				
+				System.out.print(arr[i][j]+ " ");  
+			}
+			System.out.println();
+		}
 	}
 	
 	
@@ -460,7 +601,24 @@ public class ArrayPractice {
 //	4 3 2 1
 	
 	public void practice17(){	
+		
+		int[][] arr = new int[4][4];
+		
+		int count = 16;
+		
+		for( int i = 0; i < arr.length; i++ ) {
+			for ( int j = 0;j<arr[i].length ;j++ ) {
+				count -= 1;
+				arr[i][j] = count +1;
+				System.out.print(arr[i][j]+" ");
+			}
+			System.out.println();
+		}
+		
 	}
+	
+	
+	
 	
 	
 //	실습문제 18
@@ -472,8 +630,38 @@ public class ArrayPractice {
 //	3 6 9 18 
 //	6 10 10 26 
 //	18 19 26 63
-	public void practice18(){	
+	public void practice18(){	// 합계 어케함????????????
+		
+		int[][] arr = new int[4][4];
+		
+		
+		final int sumrow = arr.length-1;
+		final int sumcol = arr[0].length-1;
+		
+		for( int row =0; row < arr.length ; row++ ) {
+			for ( int col =0; col < arr[row].length ;col++ ) {
+				
+				if( row != sumrow && col != sumcol) {
+				
+					arr[row][col] = (int)(Math.random()*10)+1;
+				
+					arr[row][sumcol] += arr[row][col];
+					arr[sumrow][col] += arr[row][col];
+					arr[sumrow][sumcol] += arr[row][col];
+					
+					
+					
+					System.out.printf("%4d",arr[row][col]);	
+				}
+			}
+			System.out.println();
+			
+		}
+		
 	}
+	
+	
+	
 	
 	
 	
@@ -493,7 +681,41 @@ public class ArrayPractice {
 //	H B I X 
 //	G F X I
 	public void practice19(){	
+		
+		Scanner sc = new Scanner(System.in);
+		
+		while(true) {
+			System.out.print("행크기 : ");
+			int row = sc.nextInt();
+			
+			System.out.print("열크기 : ");
+			int col = sc.nextInt();
+			
+			if((row < 1 || row >10) || (col < 1 || col > 10)){
+				System.out.print("반드시 1~10 사이의 정수를 입력해야 합니다.\n");
+				continue;
+			}
+			
+			char[][] arr = new char[row][col];
+			
+			
+			for(int i =0 ; i < arr.length ; i++ ) {
+				for( int j = 0; j< arr[i].length ; j++ ) {
+					
+					arr[i][j] = (char)((int)(Math.random()*26)+65);
+					
+					System.out.print(arr[i][j] + " ");
+					
+				}
+				System.out.println();
+			}
+			break;
+		}
 	}
+	
+
+	
+	
 	
 	
 //	실습문제 20
@@ -538,6 +760,21 @@ public class ArrayPractice {
 //	피풍표 홍하하
 
 	public void practice21(){	
+		
+		String[] students = {"강건강", "남나나", "도대담", "류라라", "문미미", "박보배", 
+				"송성실", "윤예의", "진재주", "차천축", "피풍표", "홍하하"};
+		
+		String[][] students1 = new String[3][2];
+		
+		String[][] students2 = new String[3][2];
+		
+		for( int i =0; i < students1.length ; i++ ) {
+			for(int j = 0; j<students1[i].length ;j++ ) {
+				students1[i][j] = students;
+			}
+		}
+		
+		
 	}
 	
 	

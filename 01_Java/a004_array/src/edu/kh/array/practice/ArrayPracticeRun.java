@@ -11,7 +11,7 @@ public class ArrayPracticeRun {
 //		ae1.practice3();
 //		ae1.practice4();
 //		ae1.practice5();
-		ae1.practice6();
+//		ae1.practice6();
 //		ae1.practice7();
 //		ae1.practice8();
 //		ae1.practice9();
@@ -23,7 +23,7 @@ public class ArrayPracticeRun {
 //		ae1.practice15();
 //		ae1.practice16();
 //		ae1.practice17();
-//		ae1.practice18();
+		ae1.practice18();
 //		ae1.practice19();
 //		ae1.practice20();
 //		ae1.practice21();
