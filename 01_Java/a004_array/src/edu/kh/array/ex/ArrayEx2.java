@@ -163,14 +163,10 @@ public class ArrayEx2 {
 				ch++; // 다음문자로 증가
 				
 				System.out.print(arr[row][col] + " "); //저장된 알파벳 출력
-				
 			}
 			System.out.println();
 		}
-		
-		
 	}
-	
 }
 
 

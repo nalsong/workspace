@@ -1,7 +1,5 @@
 package edu.kh.array.practice;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArrayPractice {
@@ -197,7 +195,6 @@ public class ArrayPractice {
 					sum += 1;
 					System.out.print(y + " ");
 			}
-			
 				
 		}
 		System.out.printf("\n%c 개수 : %d", inputStr, sum );
@@ -305,31 +302,37 @@ public class ArrayPractice {
 	public void practice8(){  	
 		Scanner sc = new Scanner(System.in);
 		
+		int count = 1;
 		
 		while(true) {
 		
 			System.out.print("정수 : ");
 			int num = sc.nextInt();
 		
-			if (num >= 3 && num % 2 == 1) {
+			if (num < 3 || num % 2 == 0) {
+				System.out.print("다시 입력하세요.\n");
+			}else {	
+				
 				int[] number = new int[num]; 
 				
-				
-				int count = 0;
-				
-				for( int i =0 ; i < (number.length)/2+1; i++ ) {
-					count +=1;
-					System.out.print(count+", ");
+				for(int i = 0 ; i < number.length ; i++ ) {
+					if(i < number.length / 2) {
+						number[i] = count++;
+					}else {
+						number[i] = count--;
+					}
+					
+					if(i < number.length-1){
+						System.out.print(number[i] + ", ");
+					}else {
+						System.out.println(number[i]);
+					}
 				}
-				for( int i=0; i<(number.length)/2 ; i++ ) {
-					count -= 1;
-					System.out.print(count+", ");  //쉼표처리...?
-				}break;
-			}else {
-				System.out.print("다시 입력하세요.\n");
-			}
+				break;
+			}	
 		}
-	}
+	}	
+	
 	
 	
 	
@@ -461,7 +464,7 @@ public class ArrayPractice {
 				}
 			}
 		}	
-		Arrays.sort(arr);
+//		Arrays.sort(arr);
 		
 		for( int i = 0 ; i < arr.length ; i++) {
 			System.out.print(arr[i] +" ");
@@ -538,14 +541,43 @@ public class ArrayPractice {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("배열의 크기를 입력하세요 : ");
-		String str = sc.next();
+		int num = sc.nextInt();
 		
-		
-		
-		
-		
-		
+		String[][] arr = new String[num][];
 			
+		
+		
+		
+		while(true) {
+			
+			for( int row = 0 ; row < arr.length ; row++ ) {
+				
+				for( int col =0 ; col < arr[row].length ;col++ ) {
+//					col +=1;
+ 
+				
+				System.out.printf("%d번째 문자열 : ", row);
+				String str = sc.next();
+				
+//				arr[num][col] = 
+//				
+//				System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
+//				char yesno = sc.next().charAt(0);
+//				
+//				if(yesno == Y || yesno == y) {
+//					
+//				}
+				
+				}
+			}
+			break;
+			
+			
+			
+			
+			
+			
+		}
 		
 		
 	}
@@ -619,6 +651,7 @@ public class ArrayPractice {
 		}
 	}
 	
+
 	
 	
 	
@@ -686,13 +719,10 @@ public class ArrayPractice {
 					arr[sumrow][col] += arr[row][col];
 					arr[sumrow][sumcol] += arr[row][col];
 					
-					
-					
-					System.out.printf("%4d",arr[row][col]);	
 				}
+				System.out.printf("%4d", arr[row][col]);
 			}
 			System.out.println();
-			
 		}
 		
 	}
@@ -776,31 +806,38 @@ public class ArrayPractice {
 		
 		Scanner sc = new Scanner(System.in);
 		
+		char ch = 'a';
+		
 		System.out.print("행의 크기 : ");
 		int num = sc.nextInt();
 		
-		char[] al = new char[num]; 
+		char[][] arr = new char[num][]; 
 		
-		for( int i = 0 ; i < al.length ; i++ ) {
+		for( int row = 0 ; row < arr.length ; row++ ) {
 			
-			while(true) {
-				System.out.printf("%d열의 크기 : \n", i);
-				int num2 = sc.nextInt();
-				
-				char[] arr = new char[num2];
-				
-				for(char j = 0; j< arr.length ; j++ ) {  
-				
-//					arr [j]= (int)(Math.random()*26)+45;  ??????
+			System.out.printf("%d열의 크기 : \n", row );
+			int colnum = sc.nextInt();
 			
-				}
+			arr[row] = new char[colnum];
+					
+			for( int col = 0; col < arr[row].length ; col++ ) {
 				
-				break;
+				arr[row][col] = ch++;
+				
 			}
-			
 		}
 		
+		for( int row = 0 ; row < arr.length ; row++ ) {
+			for( int col = 0; col < arr[row].length ; col++ ) {
+				
+			System.out.print(arr[row][col] + " ");	
+			
+			}
+			System.out.println();
+		}
 	}
+		
+	
 	
 	
 	
@@ -833,16 +870,51 @@ public class ArrayPractice {
 		
 		String[][] students2 = new String[3][2];
 		
-		for( int i =0; i < students1.length ; i++ ) {
-			for(int j = 0; j<students1[i].length ;j++ ) {
-//				students1[i][j] = students;  ???????
+		int row = 0;
+		int col = 0;
+		
+		
+		System.out.println("== 1분단 ==");
+		for( int i =0; i < students.length ; i++ ) {
+			if(i < students.length/2) {	
+				students1[row][col] = students[i];  
+				
+				System.out.print(students1[row][col]+ " ");
+				col++;
+				
+				if(col == students1[row].length) {
+					row++;
+					col = 0;
+					System.out.println();
+				}
+					
+			}else {
+					
+				students2[row][col] = students[i];
+					
+				System.out.print(students2[row][col] +" ");
+				col++;
+					
+				if(col == students2[row].length) {
+					row++;
+					col=0;
+					System.out.println();
+				}
+			}
+			
+			if(i == students.length/2 -1) {
+				row = 0;
+				col=0;
+				System.out.println("== 2분단 ==");
 			}
 		}
-		
-		
-	}
+	}	
 	
 	
+	
+	
+	
+
 	
 	
 	
@@ -869,6 +941,87 @@ public class ArrayPractice {
 	
 	public void practice22(){	
 		
+		Scanner sc = new Scanner(System.in);
+		
+		String[] students = {"강건강", "남나나", "도대담", "류라라", "문미미", "박보배", 
+				"송성실", "윤예의", "진재주", "차천축", "피풍표", "홍하하"};
+		
+		String[][] students1 = new String[3][2];
+		String[][] students2 = new String[3][2];
+		
+		int row = 0;
+		int col = 0;
+
+		System.out.println("== 1분단 ==");
+		
+		for(int i = 0 ; i< students.length ; i++ ) {
+			if(i<students.length /2) {
+				students1[row][col] = students[i];
+				
+				
+				System.out.print(students1[row][col]+" ");
+				col++;
+				
+				if(col == students1[row].length) {
+					row++;
+					col=0;
+					System.out.println();
+					
+				}
+				
+			}else {
+				students2[row][col]= students[i];
+				
+				System.out.print(students2[row][col]+" ");
+				col++;
+				
+				if(col == students2[row].length) {
+					row++;
+					col = 0;
+					System.out.println();
+				}
+					
+			}
+			
+			if(i == students.length/2 -1) {
+				row = 0;
+				col = 0;
+				System.out.println("== 2분단 ==");
+			}
+			
+		}
+		
+		System.out.println("=============================");
+		System.out.print("검색할 학생 이름을 입력하세요 : ");
+		String name = sc.next();
+		
+		
+		int part = 0;
+		int line = 0;
+		String rightLeft = "";
+		
+		
+		for(int i = 0 ; i<students1.length;i++ ) {
+			for(int j = 0; j<students1[i].length; j++) {
+				if(students1[i][j].equals(name)) {
+					part = 1;
+					line = i + 1;
+					rightLeft = j == 0 ? "왼쪽" : "오른쪽";				
+				}else if(students2[i][j].equals(name)) {
+					part = 2;
+					line = i + 1;
+					rightLeft = j == 0? "왼쪽" : "오른쪽";
+				}
+			}
+		}
+		
+		if(part == 0) {
+			System.out.println("검색결과가 없습니다.");
+		}else {
+			System.out.print("검색하신 "+ name + " 학생은 " );
+			System.out.println(part +"분단 " + line + "번째 줄 " + rightLeft + "에 있습니다.");
+		}
+		
 	}
 	
 	
@@ -891,6 +1044,37 @@ public class ArrayPractice {
 
 	
 	public void practice23(){	
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("행 인덱스 입력: ");
+		int row = sc.nextInt();
+		
+		System.out.print("열 인덱스 입력: ");
+		int col =sc.nextInt();
+		
+		String[][] arr = new String[6][6];
+		
+		
+		arr[row][col] = "X"; 
+		
+		System.out.println("0 1 2 3 4");
+		for(int i = 0 ; i < arr.length-1 ; i++ ) {
+			System.out.print(i+ " ");
+			for( int j = 0; j<arr[i].length-1 ;j++ ) {
+				if(arr[i][j] == arr[row][col]) {
+					arr[i][j] = "X";
+				}else {
+					arr[i][j] = " ";
+				}
+				
+				System.out.print(arr[i][j] + " ");
+			}
+			System.out.println();
+		}
+		
+		
+		
 		
 	}
 	
@@ -929,6 +1113,41 @@ public class ArrayPractice {
 
 	
 	public void practice24(){	
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("행 인덱스 입력 : ");
+		int row = sc.nextInt();
+		
+		System.out.print("열 인덱스 입력 : ");
+		int col = sc.nextInt();
+		
+		int[][] num = new int[6][6];
+		
+//		num[row][col] = "X";
+		
+		System.out.println(" 0 1 2 3 4");
+		
+		for(int i =0; i < num.length-1; i++ ) {
+			System.out.println(i);
+			for( int j = 0; j < num[i].length-1 ;j++ ) {
+			
+				while(true) {
+					
+					
+					if() {
+						
+					}
+					
+					
+				}
+				
+				
+			}
+		}
+		
+		
+		
 		
 	}
 	

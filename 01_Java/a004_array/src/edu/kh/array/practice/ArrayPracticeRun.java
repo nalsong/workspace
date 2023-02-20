@@ -17,19 +17,19 @@ public class ArrayPracticeRun {
 //		ae1.practice9();
 //		ae1.practice10();
 //		ae1.practice11();
-//		ae1.practice12();
+//		ae1.practice12(); 오류남!
 //		ae1.practice13();
-//		ae1.practice14();
+//		ae1.practice14(); 못풀음!!! 
 //		ae1.practice15();
 //		ae1.practice16();
 //		ae1.practice17();
-//		ae1.practice18();
+//		ae1.practice18(); 합계안됨
 //		ae1.practice19();
-		ae1.practice20();
+//		ae1.practice20();
 //		ae1.practice21();
 //		ae1.practice22();
 //		ae1.practice23();
-//		ae1.practice24();
+		ae1.practice24();
 		
 		
 	}
