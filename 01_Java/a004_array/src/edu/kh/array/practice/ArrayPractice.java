@@ -251,6 +251,8 @@ public class ArrayPractice {
 	
 	
 	
+	
+	
 //	실습문제 7
 //	주민등록번호를 입력 받아 char 배열에 저장한 후 출력하세요.
 //	단, char 배열 저장 시 성별을 나타내는 숫자 이후부터 *로 저장하세요.
@@ -280,6 +282,8 @@ public class ArrayPractice {
 		}
 		
 	}
+	
+	
 	
 	
 	
@@ -330,6 +334,9 @@ public class ArrayPractice {
 	
 	
 	
+	
+	
+	
 //	실습문제 9
 //	10개의 값을 저장할 수 있는 정수형 배열을 선언 및 할당하고,
 //	1~10 사이의 난수를 발생시켜 배열에 초기화한 후 출력하세요.
@@ -350,6 +357,9 @@ public class ArrayPractice {
 			System.out.print(arr[i]+" ");  
 		}
 	}
+	
+	
+	
 	
 	
 	
@@ -394,6 +404,9 @@ public class ArrayPractice {
 	
 	
 	
+	
+	
+	
 //	실습문제 11
 //	10개의 값을 저장할 수 있는 정수형 배열을 선언 및 할당하고
 //	1~10 사이의 난수를 발생시켜 중복된 값이 없게 배열에 초기화한 후 출력하세요.
@@ -419,6 +432,10 @@ public class ArrayPractice {
 			System.out.print(arr[i] + " ");
 		}
 	}
+	
+	
+	
+	
 	
 	
 	
@@ -450,6 +467,10 @@ public class ArrayPractice {
 			System.out.print(arr[i] +" ");
 		}
 	}
+	
+	
+	
+	
 	
 	
 	
@@ -530,6 +551,13 @@ public class ArrayPractice {
 	}
 	
 	
+	
+	
+	
+	
+	
+	
+	
 //	실습문제 15
 //	3행 3열짜리 문자열 배열을 선언 및 할당하고
 //	인덱스 0행 0열부터 2행 2열까지 차례대로 접근하여 “(0, 0)”과 같은 형식으로 저장 후 출력하세요.
@@ -554,6 +582,11 @@ public class ArrayPractice {
 			System.out.println();
 		}
 	}
+	
+	
+	
+	
+	
 	
 	
 	
@@ -585,6 +618,10 @@ public class ArrayPractice {
 			System.out.println();
 		}
 	}
+	
+	
+	
+	
 	
 	
 	
@@ -735,6 +772,34 @@ public class ArrayPractice {
 //	l m n o p 
 
 	public void practice20(){	
+		
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("행의 크기 : ");
+		int num = sc.nextInt();
+		
+		char[] al = new char[num]; 
+		
+		for( int i = 0 ; i < al.length ; i++ ) {
+			
+			while(true) {
+				System.out.printf("%d열의 크기 : \n", i);
+				int num2 = sc.nextInt();
+				
+				char[] arr = new char[num2];
+				
+				for(char j = 0; j< arr.length ; j++ ) {  
+				
+//					arr [j]= (int)(Math.random()*26)+45;  ??????
+			
+				}
+				
+				break;
+			}
+			
+		}
+		
 	}
 	
 	
@@ -770,12 +835,17 @@ public class ArrayPractice {
 		
 		for( int i =0; i < students1.length ; i++ ) {
 			for(int j = 0; j<students1[i].length ;j++ ) {
-				students1[i][j] = students;
+//				students1[i][j] = students;  ???????
 			}
 		}
 		
 		
 	}
+	
+	
+	
+	
+	
 	
 	
 	
@@ -803,6 +873,9 @@ public class ArrayPractice {
 	
 	
 	
+	
+	
+	
 //	실습문제23
 //	String 2차원 배열 6행 6열을 만들고 행의 맨 위와 제일 앞 열은 각 인덱스를 저장하세요.
 //	그리고 사용자에게 행과 열을 입력 받아 해당 좌표의 값을 “X”로 변환해 2차원 배열을 출력하세요.
@@ -820,6 +893,10 @@ public class ArrayPractice {
 	public void practice23(){	
 		
 	}
+	
+	
+	
+	
 	
 	
 	
@@ -854,6 +931,12 @@ public class ArrayPractice {
 	public void practice24(){	
 		
 	}
+	
+	
+	
+	
+	
+	
 	
 	
 	
