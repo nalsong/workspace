@@ -539,12 +539,14 @@ public class ArrayPractice2 {
 		
 		// 1. 첫 배열 크기 지정
 		System.out.print("배열의 크기를 입력하세요 : ");
-		String size = sc.next(); // 입력 버퍼에 개행 문자 (엔터)가 남음
+		int size = sc.nextInt(); // 입력 버퍼에 개행 문자 (엔터)가 남음
 		
 		sc.nextLine(); //입력 버퍼에 남은 개행문자(엔터) 제거
 		
+		
 		//2. 첫 배열 생성
 		String[] books = new String[size];
+		
 		
 		
 		//3. 첫 배열에 저장할 문자열 입력 받기
@@ -573,6 +575,7 @@ public class ArrayPractice2 {
 			sc.nextLine(); // 입력 버퍼 개행문자 제거
 			
 			
+			
 			//6. 기존 배열보다 늘어난 개수만큼 큰 새 배열 생성
 			
 			String newBooks[] = new String[books.length + addSize];
@@ -580,6 +583,7 @@ public class ArrayPractice2 {
 			
 			//7. 깊은 복사를 통해 기존 배열 내용을 새 배열로 복사
 			System.arraycopy(books, 0, newBooks, 0, books.length);
+			
 			
 			//8. 새 배열의 빈칸 부터 새로운 입력을 받아서 저장
 			for(int i =books.length ; i<newBooks.length ; i++) {
@@ -595,21 +599,11 @@ public class ArrayPractice2 {
 			
 			
 			
-			
-			
 		}//while종료
 		
 		
 		//10. 배열에 저장된 모든 값 출력
 		System.out.println(Arrays.toString(books));
-		
-		
-		
-	
-		
-		
-		
-			
 		
 		
 	}
@@ -619,10 +613,9 @@ public class ArrayPractice2 {
 		//1) next() : 한 단어 (띄어쓰기, 엔터를 만나면 입력 종료)
 		//   nextLine() : 한  문장( 엔터를 만나면 입력 종료)
 		
-		String str = sc.next();
 		
 		System.out.print("입력 : ");  // hello world
-		System.out.println(str);
+
 //      String str = sc.next();
 		String str = sc.nextLine();
 		
