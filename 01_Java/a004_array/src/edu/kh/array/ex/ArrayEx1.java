@@ -43,10 +43,10 @@ public class ArrayEx1 {
 		
 		
 		// 2) 배열 각 요소의 값 얻어오기
-		System.err.println("arr[0] :" + arr[0]);
-		System.err.println("arr[1] :" + arr[1]);
-		System.err.println("arr[2] :" + arr[2]);
-		System.err.println("arr[3] :" + arr[3]);
+		System.out.println("arr[0] :" + arr[0]);
+		System.out.println("arr[1] :" + arr[1]);
+		System.out.println("arr[2] :" + arr[2]);
+		System.out.println("arr[3] :" + arr[3]);
 		
 		
 		System.out.println("=====================================");
