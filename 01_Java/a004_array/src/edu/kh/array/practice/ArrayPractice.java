@@ -1135,9 +1135,9 @@ public class ArrayPractice {
 				while(true) {
 					
 					
-					if() {
-						
-					}
+//					if() {
+//						
+//					}
 					
 					
 				}
