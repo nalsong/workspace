@@ -86,7 +86,7 @@ public class Member {
 	
 	//매개변수 생성자
 	// - 객체 생성 시 (생성자 호출 시)
-	// () 안에 객체의 필드를 포기화 할 값을 전달 받는 생성자
+	// () 안에 객체의 필드를 초기화 할 값을 전달 받는 생성자
 	public Member(String memberId, String memberPw, String memberName, int memberAge){
 		// Member() 생성자 호출 시
 		// () 안에 String, String, String, int를 작성해라.
@@ -137,7 +137,7 @@ public class Member {
 	public Member(String memberId, int memberAge) {}  // 오버로딩 성립 (타입)
 	
 	
-	public Member(int memberAge, String memgerId) {} //  오버로딩 성립(순서)
+	public Member(int memberAge, String memberId) {} //  오버로딩 성립(순서)
 	
 	
 //	public Member(int memberAge, String memgerName) {}  // 오류

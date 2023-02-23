@@ -1,0 +1,22 @@
+package edu.kh.polymorphiam.ex2.run;
+
+import edu.kh.polymorphiam.ex2.service.TestService;
+
+public class TestRun {
+
+	public static void main(String[] args) {
+		
+		TestService service = new TestService();
+		
+		
+//		service.ex1();
+//		service.ex2();
+		service.ex3();
+		
+		
+		
+	}
+	
+	
+	
+}

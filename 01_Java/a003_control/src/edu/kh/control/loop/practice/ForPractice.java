@@ -38,9 +38,9 @@ public class ForPractice {
 				 System.out.print(i + " ");
 			 }
 			 
-			 }
+		}
 	
-		 }
+	}
 	
 
 	
@@ -74,9 +74,9 @@ public class ForPractice {
 				 System.out.print(i + " ");
 			 }
 			 
-			 }
+		}
 	
-		 }
+	}
 		
 
 	
@@ -97,10 +97,6 @@ public class ForPractice {
 		System.out.print("정수를 하나 입력하세요. : ");
 		int input = sc.nextInt();
 
-		
-		
-		
-		
 		int sum= 0; //합계용 변수
 		
 		for( int i = 1 ; i < input ; i++ ) {
@@ -177,17 +173,13 @@ public class ForPractice {
 		System.out.print("두 번째 숫자 : ");
 		int num2 = sc.nextInt();
 		
-		
-		
-		
-		
 		if(num1 < 1 || num2 < 1) {
 			
 			System.out.print("1 이상의 숫자를 입력해주세요.");
 		}else if (num1 < num2) {
 			for( int i = num1  ; i >= num1 && i <= num2  ; i++ ) {
 				System.out.print(i + " ");
-		}
+			}
 			
 		}else {
 			for( int i = num2  ; i >= num2 && i <= num1  ; i++ ) {
@@ -342,8 +334,6 @@ public class ForPractice {
 //			}
 //			System.out.println();
 //		}
-		
-		
 		
 	}
 	
