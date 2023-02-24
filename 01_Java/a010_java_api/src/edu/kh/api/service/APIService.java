@@ -28,11 +28,7 @@ public class APIService {
 	 * @param number
 	 * @param name
 	 * @return 추가성공시 true/ 실패 시 false
-	 * 
-	 * 	 
 	 */
-	
-	
 	public boolean addStudent(int grade, int classRoom, int number, String name) {
 		
 		
@@ -60,8 +56,12 @@ public class APIService {
 		studentList[index] = new Student(grade, classRoom, number, name);
 		return true;
 	
-		
 	}
+	
+	
+	
+	
+	
 	
 	/**학생추가 서비스2(equals/ hashcode 사용)
 	 * @param grade
@@ -95,17 +95,98 @@ public class APIService {
 			index++;
 		}
 		
-		
 		// 3) 학생 배열에 학생이 가득 찬 경우
 			if(index == studentList.length) return false;
 		
 		// 4) 임시 학생 객체를 학생 배열에 추가
 			studentList[index] = temp;
-			
 		
 		return true;
 	}
 	
+	
+	
+	
+	/**학생 배열에서 이름 검색
+	 * @param input
+	 * @return 일치하는 학생이 있으면 Student[],
+	 *			없으면 null
+	 */
+	public Student[] selectName(String input) {
+								//김영희
+								//손흥민,김영희,박민지
+		
+		// String.split([구분자]) : 문자열을 구분자를 기준으로 나누어 String[]형태로 반환
+//		String[] names = input.split("/");
+		String[] names = input.split(",|/"); // , 또는 /를 기준으로 구분
+		
+		//저장된 학생을 저장할 배열
+		Student[] result = new Student[studentList.length];
+		
+		int index = 0; //result 배열에 저장될 위치를 지정할 변수
+
+		for( String n : names) {
+		
+			for(Student s : studentList) {
+				if(s == null) break;
+				
+				// 입력받은 이름이랑 학생의 이름이 같다면
+				if(s.getName().equals(n)) {
+					
+	//				result[index++] = s; // result 배열에 일치하는 학생 저장
+					result[index] = s; // result 배열에 일치하는 학생 저장
+					index++;
+				}
+				
+			}
+		
+		}
+		
+		//검색된 학생이 없으면  null반환
+		if(index == 0) {
+			return null;
+		}
+		// 검색된 학생이 있으면 검색 결과를 저장한 배열 반환
+		return result;
+	}
+	
+	
+	
+	/**모든 학생 이름을 하나의 문자열로 반환
+	 * @return 
+	 *
+	 */
+	public String printName() {
+		// [김영희, 홍길동, 박민지, null, null, null....]
+		
+		int size = 0;
+		
+		
+		// 현재 학생의 수 구하기
+		for(Student s : studentList) {
+			if(s == null) break;
+			
+			size++;
+		}
+			
+		//이름만 저장할 배열 생성
+		String[] names = new String[size];
+		
+		
+		for(int i=0 ; i<size ; i++) {
+			names[i] = studentList[i].getName();
+			
+		}
+		// String.join("구분자", String[])
+		//-> String[]의 요소를 하나의 문자열로 합침
+		//   단, 요소 사이사이에 "구분자"추가
+		
+		// ex) Stirng[] arr = {"aaa", "bbb", "ccc"};
+		//		String.join("@", arr);
+		//		-> "aaa@bbb@ccc"
+		
+		return String.join("*&*", names);
+	}
 	
 	
 	
