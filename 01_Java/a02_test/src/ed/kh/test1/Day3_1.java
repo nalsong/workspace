@@ -4,7 +4,6 @@ public class Day3_1 {
 	
 	public static void main(String[] args) { //실행을 위한 메인메서드
 		
-		
 //		1번
 		String[] fruits = new String[5]; // String형태의 자료를 담을 fruits배열 5칸을 만듬
 		fruits[0] = "사과";  // fruits 0번에는 사과를 대입. [1부터 시작할 시 ArrayIndexOutOfBoundsException 발생!]
@@ -17,7 +16,5 @@ public class Day3_1 {
 		}
 		
 	}
-	
-	
 	
 }
