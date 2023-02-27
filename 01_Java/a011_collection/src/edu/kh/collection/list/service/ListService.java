@@ -86,9 +86,9 @@ public class ListService {
 		// + 자동으로 다운캐스팅 진행
 		// boolean list.add(String e)
 		
-		list.add("그만좀");
-		list.add("졸아라");
-		list.add("누군지 아시죠??");
+		list.add("대장이");
+		list.add("귀여워");
+		list.add("둥이도 귀엽지!");
 		
 		for(int i =0; i<list.size(); i++) {
 			String str = list.get(i); //다운캐스팅 필요가 없음
@@ -104,16 +104,9 @@ public class ListService {
 		}
 		
 	}
+
 	
 	
-	
-	
-	
-	
-	
-	
-	
-		
 	
 }
 

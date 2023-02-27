@@ -125,7 +125,7 @@ public class StudentView {
 		int index = sc.nextInt();
 		
 		Student s = service.updateStudent(index, std);
-		//  s==  수정되기 전 학생 정보가 반환됨
+		//  s ==  수정되기 전 학생 정보가 반환됨
 		
 		System.out.println(s.getName() + "의 정보가 수정되었습니다.");
 		

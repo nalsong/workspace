@@ -175,7 +175,7 @@ public class APIView {
 		System.out.println("\n ===StringBuffer/Bulider ===\n");
 		
 		
-		// StringBuffer, StringBuilder 두클래스는 제공하는 메서드가 동일하다.
+		// StringBuffer, StringBuilder 두 클래스는 제공하는 메서드가 동일하다.
 //		StringBuffer sb = new StringBuffer();
 		StringBuilder sb = new StringBuilder();
 		
