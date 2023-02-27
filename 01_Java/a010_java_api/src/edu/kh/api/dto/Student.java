@@ -103,7 +103,6 @@ public class Student {
 	
 	
 	
-	
 	// Object.hashcode();
 	// - 두 객체의 필드값이 같다면 hashcode()도 똑같은 정수 값을 반환해야 한다. 
 	
@@ -133,9 +132,6 @@ public class Student {
 		return result;
 		
 	}
-	
-	
-	
 
 }
 

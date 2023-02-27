@@ -188,9 +188,6 @@ public class APIService {
 		return String.join("*&*", names);
 	}
 	
-	
-	
-	
 }
 
 
