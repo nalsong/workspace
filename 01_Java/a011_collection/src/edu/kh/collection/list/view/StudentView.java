@@ -7,14 +7,6 @@ import java.util.Scanner;
 import edu.kh.collection.list.dto.Student;
 import edu.kh.collection.list.service.StudentService;
 
-/**
- * @author user1
- *
- */
-/**
- * @author user1
- *
- */
 public class StudentView {
 	
 	private Scanner sc = new Scanner(System.in);
@@ -50,11 +42,11 @@ public class StudentView {
 				case 2 : selectAll(); break;
 				case 3 : updateStudent(); break;
 				case 4 : removeStudent(); break;
-				case 5 : break;
-				case 6 : break;
-				case 7 : break;
-				case 8 : break;
-				case 9 : break;
+				case 5 : selectName();break;
+				case 6 : selectAddress(); break;
+				case 7 : selectGrade(); break;
+				case 8 : selectGender(); break;
+				case 9 : sortScore(); break;
 				case 0 : System.out.println("[프로그램 종료]");break;
 				default: System.out.println("[잘못 입력하셨습니다.]"); break;
 				}
@@ -190,10 +182,190 @@ public class StudentView {
 	}
 	
 	
+	/**
+	 * 학생 이름 검색
+	 */
+	private void selectName() {
+		System.out.println("\n=== 학생이름 검색 ===\n");
+		
+		System.out.println("검색할 학생 이름: ");
+		String name = sc.nextLine();
+		
+		List<Student> list =  service.selectName(name);
+		
+		// 만약 검색결과가 없을 경우
+		//list.size() : 리스트에 저장된 객체의 수
+		// list.isEmpty() : 리스트에 저장된 객체가 없다면 true
+		
+//		if( list.size() = 0 ) { //저장된 객체의 수가 0개인 경우
+		if( list.isEmpty() ) { // 리스트에 저장된 객체가 없을 경우
+			System.out.println("[검색결과가 없습니다.]");
+		}else {
+			for(Student s : list)  System.out.println(s);		
+		}
+		
+	}
 	
 	
+	
+	/**
+	 * 학생 주소 검색
+	 */
+	private void selectAddress() {
+		System.out.println("\n=== 학생 주소 검색 ===\n");
+		
+		System.out.print("주소에 포함된 단어 입력 : ");
+		String input = sc.nextLine();
+		
+		List<Student> list = service.selectAdreess(input);
+		
+		if(list.isEmpty()) {
+			System.out.println("[검색결과가 없습니다.]");
+		}else {
+		
+			// 3학년 5반 2번 홍길동 / 주소 : 서울시 중구
+			
+			for(Student s : list) {
+				System.out.printf("%d학년 %d반 %d번 %s / 주소 : %s \n", s.getGrade(), s.getClassRoom(), s.getNumber(), s.getName(), s.getAddress());
+			}
+		}
+	}
+	
+	
+	/**
+	 * 학년별 조회
+	 */
+	private void selectGrade() {
+		System.out.println("\n === 학년별 조회 === \n");
+		
+		/* 조회할 학년을 검색하세요 : 3
+		 *  
+		 *  ****조회한 학년이 있을 경우****
+		 * [3학년 조회 결과]
+		 * 3학년 5반 2번 홍길동
+		 * 3학년 5반 7번 박흥민
+		 * 
+		 * **** 조회한 학년이 없을 경우****
+		 * [3학년 학생이 존재하지 않습니다.]
+		 * 
+		 * */
+		
+		System.out.println("조회할 학년을 검색하세요 : ");
+		int input = sc.nextInt();
+		sc.nextLine();
+		
+		List<Student> list = service.selectGrade(input);
+		
+		
+		if (list.isEmpty()) {
+			System.out.printf("[%d학생이 존재하지 않습니다.]", input);
+			
+		}else {
+			System.out.printf("[%d학년 조회 결과]\n", input);
+			for(Student s : list ) {
+				System.out.printf("%d학년 %d반 %d번호 %s", s.getGrade(), s.getClassRoom(), s.getNumber(), s.getName());
+			}
+		}
+	}
+	
+	
+	
+	/**
+	 * 성별 조회
+	 */
+	private void selectGender() {
+		
+		/* 조회할 성별을 입력하세요(M/F) : m / M / f / F (대소문자 구분X)
+		 * 
+		 * ***** 잘못입력하는 경우 ******
+		 * 조회할 성별을 입력하세요(M/F) : a
+		 * 
+		 * [M 또는 F만 입력해주세요.]
+		 * 
+		 * 조회할 성별을 입력하세요(M/F) : (정상 입력이 될 때까지 무한 반복)
+		 * 
+		 * 
+		 * 
+		 * ***** 정상 입력인 경우 *****
+		 * 조회할 성별을 입력하세요(M/F) : F
+		 * 
+		 * [여학생 목록] (M 입력 시 [남학생목록])
+		 * 4학년 4반 13번 김갑순(F)
+		 * 1학년 7반 6번 김길이(F)
+		 * 
+		 * (무한 반복 종료)
+		 * 
+		 * */
+		
+		
+		System.out.println("\n=== 성별 조회 ===\n");
+		
+		
+		while(true) { 
+			System.out.print("조회할 성별을 입력하세요(M/F) : ");
+	//		char inputGender = sc.next();/ sc.nextInt(); / sc.nextDouble();
+	//		sc.nextLine(); <- 꼭 넣어야 함.( 무한루프에 빠짐)
+		
+
+		
+		
+			char inputGender = sc.next().toUpperCase().charAt(0); // 대문자로된 char데이터
+			// 					"f"			"F"				'F'
+		
+			
+	
+		
+			if (inputGender == 'M' || inputGender == 'F') { //정상입력
+				
+				List<Student> list = service.selectGender(inputGender);
+				
+				if(list.isEmpty()) {
+					System.out.println("[조회 결과가 없습니다.]");
+				}else {
+//					char gender = inputGender == 'M' ? '남' :'여';
+					
+//					char gender = '남';
+//					if(inputGender == 'F') gender = '여';
+					
+					char gender;
+					if(inputGender == 'M') gender = '남';
+					else				   gender = '여';
+					
+					System.out.printf("[%c학생목록]\n", gender);
+					
+					for( Student s : list ) {
+						System.out.printf("%d학년 %d반 %d번 %s(%c) \n", s.getGrade(), s.getClassRoom(), s.getNumber(), s.getName(), s.getGender());
+					}
+				}
+				break;
+				
+			} else {
+				System.out.println("[M 또는 F만 입력해주세요.]");
+			}
+		}
+	}
 	
 
+	
+	/**
+	 * 성적 순서 조회
+	 */
+	private void sortScore() { 
+		System.out.println("\n=== 성적 순서 조회 ====\n");
+		
+		// student
+		List<Student> studentList = service.sortScore();
+		
+		for(Student s: studentList) {
+			System.out.println(s);
+		}
+		
+		
+	}
+	
+	
+	
+	
 }
 
 
