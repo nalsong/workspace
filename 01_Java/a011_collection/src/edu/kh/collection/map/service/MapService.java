@@ -9,19 +9,7 @@ import java.util.Set;
 public class MapService {
 	
 	public void ex1() {
-		
-		/* Map : 특정 키워드(key)를 입력하며 상세한 값(value)이 나온다
-		 * 
-		 * - Key : Value 형태의 데이터를 모아둔 컬렉션 객체
-		 * 
-		 * - Key만 모아서 봤을 때 Set의 특징을 지님
-		 *  --> 중복 X, 순서유지 X
-		 *  
-		 * - Value만 모아서 봤을 때 List의 특징을 지님
-		 * --> Key로 인해서 값이 구분되기 때문에
-		 * 		중복 허용
-		 * 
-		 * */
+
 		
 		Map<Integer, String> map = new HashMap<>();
 		// Key는 Integer로 제한
@@ -59,17 +47,14 @@ public class MapService {
 	
 	
 	public void ex2() {
-		// Map은 언제 사용하면 좋을까?
 		
-		// 1) 한 번에 다량의 데이터를 전달해야 하는 경우
-		// 	  + 데이터의 명확한 구분이 필요한 경우
-		
-		// 2) DTO(Data Transfer Object) : 값 전달용 객체
-		//	  - 재사용성이 적은 DTO를 대체하는 경우
-		
-		
-		// 3) 별도의 DTO가 없을 경우
-		
+//		- Map은 언제 사용하면 좋을까?
+//	    1) 한 번에 다량의 데이터를 전달해야 하는 경우
+//	        + 데이터의 명확한 구분이 필요한 경우
+//	    2) DTO(Data Transfer Object) : 값 전달용 객체
+//	        - 재사용성이 적은 DTO를 대체하는 경우
+//	    3) 별도의 DTO가 없을 경우
+			
 //		Map<String, Object> member = new HashMap<>();
 		Map<String, Object> member = new LinkedHashMap<>(); 
 										// 순서가 유지되는 HashMap
@@ -118,7 +103,6 @@ public class MapService {
 			System.out.println("아이디가 일치하지 않습니다.");
 		}
 	}
-	
 
 }
 

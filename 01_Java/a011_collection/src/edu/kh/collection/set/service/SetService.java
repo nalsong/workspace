@@ -73,12 +73,8 @@ public class SetService {
 		// Set에 저장된 요소 하나씩 얻어오기
 		
 		// 1. Iterator (반복자)  [속도가 빠름]
-		
-		
 		//* 코드 설명에 Iterator, iterable 단어가 포함되어 있다면 반복 접근(순차 접근)이 가능하다라고 판단 *
-		
 		// - 컬렉션에서 제공하는 컬렉션 객체의 요소를 반복 접근하는 객체
-		
 		
 		Iterator<String> it = set.iterator();
 		// Set 객체에는 반복자 Iterator 객체가 붙어있다고 생각!
@@ -91,15 +87,11 @@ public class SetService {
 			// it.next() : 다음 객체를 꺼내옴
 			
 			System.out.println(temp);
-			
-			
 		}
 		System.out.println("====================================================");
-		
 	}
 		
 		// 2. 향상된 foe문 이용
-		
 //		for( String s : set ) {
 //			System.out.println(s);
 //		}
@@ -133,6 +125,16 @@ public class SetService {
 	}
 	
 		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public void createLotto() {
 		
 		// 로또 번호 5세트 만들어서 출력하기
