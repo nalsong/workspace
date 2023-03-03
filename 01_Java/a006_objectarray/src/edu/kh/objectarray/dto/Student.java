@@ -48,7 +48,6 @@ public class Student {
 		this.classRoom = classRoom;
 	}
 	
-	
 	public int getNumber() {
 		return number;
 	}
@@ -56,7 +55,6 @@ public class Student {
 	public void setNumber(int number) {
 		this.number = number;
 	}
-	
 	
 	public String getName() {
 		return name;
@@ -66,8 +64,6 @@ public class Student {
 		this.name = name;
 	}
 	
-	
-	
 	public int getKor() {
 		return kor;
 	}
@@ -76,7 +72,6 @@ public class Student {
 		this.kor = kor;
 	}
 	
-	
 	public int getEng() {
 		return eng;
 	}
@@ -84,7 +79,6 @@ public class Student {
 	public void setEng(int eng) {
 		this.eng = eng;
 	}
-	
 	
 	public int getMath() {
 		return math;

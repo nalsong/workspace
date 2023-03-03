@@ -24,7 +24,7 @@ public class Building {
 	      }
 	      
 	      // 4층: 신한라이프 회장실, 회의실1, 회의실2, 탕비실
-	      list.get(3).add("신한라이프 회장실");
+	      list.get(3).add("회장실");
 	      list.get(3).add("대회의실");
 	      list.get(3).add("강당");
 	      list.get(3).add("탕비실");
@@ -42,6 +42,11 @@ public class Building {
 	      list.get(6).add("옥상정원");
 	   }
 
+	   
+	   	
+	   
+	   
+	   
 	
 	
 

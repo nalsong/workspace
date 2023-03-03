@@ -11,7 +11,7 @@ public class Player {
    private int power;
    private int stamina;
    private int floor;
-   private String[] item = new String[5];
+   private String[] item = new String[6];
    
    
    public Player() {
