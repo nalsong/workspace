@@ -52,7 +52,7 @@ public class StudentService {
 	 * @param name : String
 	 * 
 	 * 
-	 * @return result : boorean(학생 추가 성공 시 ture)
+	 * @return result : boolean(학생 추가 성공 시 ture)
 	 * 
 	 * 
 	 * */
@@ -76,7 +76,6 @@ public class StudentService {
 				studentArr[i] = new Student(grade, classRoom, number, name);
 				return true;		
 			}
-			
 		}
 		
 		// 만약 비어있는 인덱스가 없을 경우 

@@ -46,7 +46,6 @@ public class UserView {
 			System.out.println("3. 로그아웃");
 			System.out.println("4. 회원 정보 출력");
 			System.out.println("5. 회원 정보 수정");
-			
 			System.out.println("0. 프로그램 종료");
 			System.out.println("==============================");
 			
@@ -55,26 +54,21 @@ public class UserView {
 			
 			System.out.println(); //개행
 			
-			
 			switch(input) {
 			case 1 : this.signUp(); break; //this는 써도 되고 안써도 됨.
 			case 2 : login(); break;
-			
 			case 3 : logout(); break;
 			case 4 : userprint(); break;
 			case 5 : userUpdate(); break;
 			case 0 : System.out.println("<프로그램 종료>"); break;
 			default : System.out.println("잘못 입력 하셨습니다.");
-				
-		
 			}
 			System.out.println();  //개행
 			
-			
-			
 		}while(input != 0);
-		
 	}
+	
+	
 	
 	// 1. 회원 가입
 	private void signUp() {
@@ -115,6 +109,9 @@ public class UserView {
 		}		
 	}
 	
+	
+	
+	
 	// 2.로그인
 	private void login() {
 			//void :반환 값이 없다(return은 존재)
@@ -148,6 +145,8 @@ public class UserView {
 		
 	}
 	
+	
+	
 	// 3.로그아웃
 	private void logout() {
 		
@@ -159,8 +158,8 @@ public class UserView {
 		}else {
 			System.out.println("[로그인 후 이용해주세요.]");
 		}
-		
 	}
+	
 	
 	
 	// 4. 회원 정보 출력
@@ -174,8 +173,9 @@ public class UserView {
 		}else { // 로그인 X
 			System.out.println("[로그인 후 이용해주세요.]");
 		}
-		
 	}
+	
+	
 	
 	// 5. 회원 정보 수정
 	public void userUpdate() {

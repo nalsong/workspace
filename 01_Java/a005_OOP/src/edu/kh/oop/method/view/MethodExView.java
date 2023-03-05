@@ -47,7 +47,6 @@ public class MethodExView {
 			 case 0 : System.out.println("<프로그램 종료>"); break;
 			 default : System.out.println("잘못 입력 하셨습니다.");
 				 
-				 
 			 }
 			 
 		}while(input != 0);
@@ -107,19 +106,14 @@ public class MethodExView {
 		// 		int 배열의 주소값
 		// 3)반환된 int[] 배열을 numbers 참조변수에 저장
 		
-		
-		
 		for (int i =0 ; i<numbers.length ; i++) {
 			System.out.print(numbers[i] + " ");
-			
 		}
 		System.out.println(); //개행
 		
 		// 메서드 재사용
 		service.threeNumbersSumAndAverage(numbers[0], numbers[1], numbers[2]);
-		
 	}
-	
 	
 	
 	// 4. 매개 변수 O, 반환 값 O
@@ -146,7 +140,6 @@ public class MethodExView {
 		String result = service.calculate(num1, num2, op);
 		
 		System.out.println(result);
-		
 	}
 	
 	
