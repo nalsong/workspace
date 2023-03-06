@@ -16,7 +16,6 @@ public class Truck extends Car{
 		this.weight = weight;
 		
 	}
-
 	
 	
 	// getter / setter
@@ -24,12 +23,9 @@ public class Truck extends Car{
 		return weight;
 	}
 
-
 	public void setWeight(double weight) {
 		this.weight = weight;
 	}
-	
-	
 	
 	// Car.toString() 오버라이딩
 	@Override
@@ -41,10 +37,6 @@ public class Truck extends Car{
 	public void loading() {
 		System.out.println("물건을 많이 실을 수 있다.");
 	}
-	
-	
-	
-	
 	
 	
 }

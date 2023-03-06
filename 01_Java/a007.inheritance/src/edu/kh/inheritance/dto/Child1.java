@@ -5,7 +5,6 @@ public class Child1 extends Parent{
 	
 	private String car;
 	
-	
 	//기본생성자
 	public Child1() {
 		super(); // super() 생성자
@@ -14,7 +13,6 @@ public class Child1 extends Parent{
 		
 		System.out.println("Child1() 기본 생성자");
 	}
-
 	
 	//매개변수 생성자
 	public Child1(String car) {
@@ -30,24 +28,18 @@ public class Child1 extends Parent{
 		// -> 이를 호출해서 사용(코드길이 감소, 재사용성 증가)
 		super(200_000_000, "백");
 		
-		
 		this.car = car;
 		System.out.println("Child1(String) 매개변수 생성자");
 	}
-	
-	
 	
 	// getter / setter
 	public String getCar() {
 		return car;
 	}
 	
-	
 	public void setCar(String car) {
 		this.car = car;
 	}
-	
-	
 	
 	public String toString() {
 
@@ -63,26 +55,17 @@ public class Child1 extends Parent{
 		//부모의 필드 값을 간접 접근 방법으로 얻어와 하나의 문자열로 만들어 반환
 //		return car + "/" + getMoney() + "/" + getLastName();
 		
-		
-		
 		//문제점: StackOverflowError 발생
 		//원인 : Child1의 toString() 호출 시
 		//		같은 toString()을 계속 반복해서 호출(==재귀호출)
 		
 //		return car + "/" + toString();
-		
 		//해결방법: 부모의 toString() 호출을 명시 -> super. 참조변수 이용
 		
 		// ctrl + toString클릭하면 부모클래스로 이동하는 것을 볼 수 있음.
 		return car + "/" + super.toString();
 							//money + " / " + lastName
-		
-		
 	}
-	
-	
-	
-	
 }
 
 

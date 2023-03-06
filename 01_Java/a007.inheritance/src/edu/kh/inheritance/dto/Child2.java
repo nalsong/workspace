@@ -55,10 +55,7 @@ public class Child2 extends Parent{
 			return super.getMoney() +500;
 			//부모의 getMoney() 반환값에 500원 추가
 		
-		
-		
 	}
-	
 	
 }
 

@@ -18,10 +18,6 @@ public class CarService {
 		Car c1 = new Car(); 
 		
 		
-		
-		
-		
-		
 		/* 업캐스팅 : 자식 객체 -> 부모 객체로 변함 */
 		// -> 자식 객체 내부에 있는 부모 객체를 참조하도록 변함
 		
@@ -31,7 +27,6 @@ public class CarService {
 		
 		// 부모 참조 변수 = 자식 객체
 		Car c3 = new LightCar();
-		
 		
 		
 		// Truck객체가 Car로 부터 상속 받은 메서드 사용
@@ -47,11 +42,10 @@ public class CarService {
 		
 		
 		// 부모 타입 참조 변수로 참조 시 자식 객체의 부모 부분만 참조 가능
-		
-		
-		
-		
 	}
+	
+	
+	
 	
 	
 	public void ex2() {
@@ -63,8 +57,6 @@ public class CarService {
 		
 		//부모 참조 변수 = 자식 객체(업캐스팅)
 		Car c1 = new LightCar();
-		
-		
 		
 		
 //		c1.print();
@@ -88,6 +80,10 @@ public class CarService {
 	}
 	
 	
+	
+	
+	
+	
 	public void ex3() {
 		// 다형성(업캐스팅, 다운캐스팅) + 객체 배열
 		
@@ -104,11 +100,9 @@ public class CarService {
 		
 		//향상된 for문 (배열 요소 순차 접근)
 		for( Car c : carList ) {
-			
 			System.out.println("바퀴 수 : " + c.getWheel());
 			System.out.println("좌석 수 : " + c.getSeat());
 			System.out.println("연료 형식 : " + c.getFuel());
-			
 			
 			
 			// Truck일 경우 -> 최대 적재 하중 : 2.5 t
@@ -122,7 +116,6 @@ public class CarService {
 			//ex) 참조변수명 instanceof 클래스명
 			// -> 참조변수가 참조하는 객체 타입과 클래스의 타입이 일치하면 true, 아니면 false
 			
-			
 			if( c instanceof Truck ) {
 				// c가 참조하는 객체가 Truck객체인경우
 				
@@ -131,8 +124,6 @@ public class CarService {
 				// 만약 다운 캐스팅이 잘못될 경우
 				// ClassCastException이 발생한다!
 				// ex) LightCar 객체를 Truck 참조변수 참조하려고 할 때
-				
-				
 				//해결방법 : instanceof를 통해 참조하는 객체의 자료형을 판단하여 적절한 형식으로 다운 캐스팅 진행
 				
 			}else if(c instanceof LightCar) {
@@ -142,22 +133,19 @@ public class CarService {
 				// c가 참조하는 객체가 Truck, LightCar가 아닐 때
 				System.out.println("차종이 등록되어있지 않습니다.");
 			}
-			
 			System.out.println("=============================================");
-			
 		}
-		
-		
-	
 		
 	}
 
+	
+	
+	
+	
+	
 	public void ex4() {
-		
 		// 객체배열 + 다형성(업캐스팅 + 다운캐스팅) + instanceof
 		// + 매개변수 다형성 + 바인딩(정적 / 동적)
-		
-		
 		
 		// Car 1차원 배열 == Car 참조변수의 묶음
 		Car[] carList = new Car[3];
@@ -168,14 +156,11 @@ public class CarService {
 		carList[1] = new LightCar (4, 4, "휘발유", 0.3);
 				
 		carList[2] = new Car(4, 2, "전기");
-				
 		
 		for( Car c : carList) {
 //			printCar(Car객체 주소 또는 Car를 상속 받은 객체 주소);
 			printCar(c);
 		}
-		
-		
 	}
 	
 	
@@ -184,16 +169,11 @@ public class CarService {
 		
 		String type = null;
 		
-		
 		//매개 변수로 전달 받은 c가 참조하는 객체에 따라서
 		// type값을 지정.
 		if(c instanceof Truck) type = "[Truck]";
 		else if (c instanceof LightCar ) type = "[LightCar]";
 		else type = "[Car]";
-				
-		
-		
-		
 		
 		System.out.println(type + "에 대한 정보 입니다.");
 		System.out.println(c.toString());
@@ -205,13 +185,9 @@ public class CarService {
 		// - "프로그램 실행 전" 컴파일 단계에서 메서드 호출부와 수행될 메서드를 묶는 것
 		// - 참조변수의 자료형을 기준으로 연결함
 		
-		
 		// 동적 바인딩
 		// - "프로그램 실행 중" 실행할 당시의 객체의 자료형을 기준으로 메서드 호출부와 수행될 메서드를 묶는 것
 		// - 참조하는 객체의 자료형을 기준으로 연결함.
-		
-		
-		
 	}
 	
 	// 출력화면 예상
@@ -225,6 +201,9 @@ public class CarService {
 	
 	
 	//
+	
+	
+	
 	public void ex5() {
 		//반환형의 다형성
 		

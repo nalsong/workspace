@@ -10,7 +10,6 @@ public /*final*/ class Parent /* extends Object*/ {
 	private String lastName = "박"; // 성 
 	
 
-
 	//기본 생성자
 	public Parent() {
 		System.out.println("Parent() 기본생성자");
@@ -47,7 +46,6 @@ public /*final*/ class Parent /* extends Object*/ {
 	public void setLastName(String LastName) {
 		this.lastName = lastName;
 	}
-	
 	
 	
 	public String toString() {

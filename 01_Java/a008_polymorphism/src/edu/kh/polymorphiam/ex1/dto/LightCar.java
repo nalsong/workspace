@@ -10,18 +10,14 @@ public class LightCar extends Car{
 	}
 	
 	
-	
 	//매개변수 생성자
 	public LightCar(int wheel, int seat, String fuel, double discountDffer) {
 		
 		super(wheel, seat, fuel);
 		
 		this.discountOffer = discountDffer;
-		
-		
 	}
 
-	
 	
 //  getter/setter
 	public double getDiscountOffer() {
@@ -34,24 +30,13 @@ public class LightCar extends Car{
 	}
 
 	
-	
-	
 	@Override
 	public String toString() {
 		return super.toString() + " / 할인율 : " + discountOffer * 100 + "%";
 	}
 	
-	
-	
-	
-	
 	public void print() {
 		System.out.println("고속도로 요금, 주차장 요금, 세금 혜택을 받을 수 있다.");
 	}
-	
-	
-	
-	
-	
 	
 }
