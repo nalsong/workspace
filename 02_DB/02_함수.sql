@@ -351,22 +351,55 @@ SELECT 20230308, TO_DATE(20230308) FROM DUAL;
 
 
 /* 날짜 패턴 Y, R의 차이점*/
+-- 년도를 짧게 해석하는 경우 
+-- 50미만 : Y, R 둘 다 앞부분에 현재세기(21C == 2000년대)를 적용
+-- 50이상 : Y ==  현재세기(2000년대)
+--		   R == 이전세기(1900년대)
 
 --1949-01-15
+--1950-01-15
 SELECT TO_DATE('490115', 'YYMMDD'),
-	   TO_DATE('490115', 'RRMMDD')
+	   TO_DATE('490115', 'RRMMDD'),
+	   TO_DATE('500115', 'YYMMDD'),
+	   TO_DATE('500115', 'RRMMDD')
 FROM DUAL;
 
 
+-----------------------------------------------------------
+
+-- TO_NUMBER(문자열[, 포맷]) : 문자열 -> 숫자
+
+SELECT TO_NUMBER('$1,500', '$9,999') FROM DUAL;
 
 
 
+------------------------------------------------------------
+
+-- <NULL 처리 함수>
+
+-- 1) NVL(컬럼명, 컬럼 값이 NULL일 경우 바꿀 값)
+-- 컬럼값이 NULL일 경우 지정된 값으로 변경
+
+-- EMPLOYEE 테이블에서 이름, 급여, 보너스 조회, 급여+보너스 조회
+
+/* DB에서 NULL과 연산하는 경우 모든 결과는 NULL */
+
+SELECT EMP_NAME, SALARY, NVL(BONUS, 0), SALARY*NVL(BONUS, 0)
+FROM EMPLOYEE;
+
+
+-- ORA-01722: 수치가 부적합합니다
+SELECT EMP_NAME, SALARY, NVL(BONUS, '가나다'), SALARY*NVL(BONUS, 0)
+FROM EMPLOYEE;
 
 
 
+-- 2) NVL2(컬럼명, NULL 없는 경우 값, NULL 있는 경우 값)
 
-
-
+-- EMPLOYEE 테이블에서 기존에 보너스를 받지 못했던 사원은 0.3으로 변경
+-- 기존에 받았던 사원은 기존 보너스 +0.2으로 변경
+SELECT EMP_NAME, BONUS, NVL2(BONUS, BONUS + 0.2 , 0.3) "변경된 BONUS" 
+FROM EMPLOYEE;
 
 
 
