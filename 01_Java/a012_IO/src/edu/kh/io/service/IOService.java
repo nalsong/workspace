@@ -51,7 +51,7 @@ public class IOService {
 			//byte/byteTest.txt [상대경로 : 현재위치를 기준으로 졍로를 작성]
 			
 //			fos = new FileOutputStream("경로");
-			// -> 프로그램 -> 지정된 경로로 차일릉 내보냄(출력)
+			// -> 프로그램 -> 지정된 경로로 파일을 내보냄(출력)
 			// 만약 경로 제일 마지막에 작성한 파일이 존재하지 않는다면
 			// 출력 구문 수행 시 자동으로 생성된다.
 			
@@ -80,6 +80,7 @@ public class IOService {
 		}
 		
 	}
+	
 	
 	
 	
@@ -169,6 +170,7 @@ public class IOService {
 	
 	
 	
+	
 	public void charInput() {
 		//문자 기반 입력 스트림
 		
@@ -202,6 +204,8 @@ public class IOService {
 			}
 		}
 	}
+	
+	
 	
 	
 	

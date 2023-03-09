@@ -2,7 +2,7 @@ package edu.kh.polymorphiam.ex2.dto;
 
 
 //추상클래스(abstract class)
-// - 추상 메서가 포함된 클래스
+// - 추상 메서드가 포함된 클래스
 // 단, 추상메서드가 없어도 추상클래스가 될 수 있다!
 public abstract class Animal /*extends Object*/{
 					//->미작성시 컴파일러가 자동 추가
