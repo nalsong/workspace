@@ -48,6 +48,7 @@ VALUES('장채현', 900, '901123-2345678', 'jang_ch@kh.or.kr', '01012341234',
 
 COMMIT; --  수행된 DML의 결과를 DB에 반영(저장)    
       
+
 SELECT * FROM EMPLOYEE2
 WHERE EMP_ID = 900; -- 장채현 남아있음
 
@@ -62,8 +63,7 @@ ROLLBACK; -- 마지막 COMMIT 시점으로 돌아가라
 CREATE TABLE EMP_01(
     EMP_ID NUMBER,
     EMP_NAME VARCHAR2(30),
-    DEPT_TITLE VARCHAR2(20)
-);
+    DEPT_TITLE VARCHAR2(20));
 
 
 INSERT INTO EMP_01
@@ -369,3 +369,8 @@ SELECT * FROM EMPLOYEE3;
 ROLLBACK;
 -- 롤백 후 복구 확인 -> 복구 안됨을 확인!
 SELECT * FROM EMPLOYEE3;
+
+
+
+
+

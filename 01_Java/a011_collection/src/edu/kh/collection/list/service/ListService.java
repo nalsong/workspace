@@ -32,7 +32,7 @@ public class ListService {
 		// * E(Element) : 요소(객체)를 의미하는 제네릭 표기법
 		//				 == Object타입으로 생각하면 됨.
 		
-		list.add("아무거나");
+		list.add("아무거나"); //String으로 저장
 		list.add(123); // Integer로 저장
 		list.add(3.14); //Double로 저장
 						//Auto Boxing
