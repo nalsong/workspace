@@ -128,6 +128,8 @@ SELECT EMP_ID, EMP_NAME, DEPT_CODE, JOB_CODE, SALARY
 FROM EMPLOYEE
 WHERE SALARY > (SELECT SALARY FROM EMPLOYEE WHERE EMP_NAME ='노옹철');
  
+
+
 -- 부서별(부서가 없는 사람 포함) 급여의 합계 중 가장 큰 부서의
 -- 부서명, 급여 합계를 조회 
 
