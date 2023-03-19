@@ -60,8 +60,8 @@ public class Employee2 {
 
 	@Override
 	public String toString() {
-		return "Employee2 [deptTitle=" + deptTitle + ", jabName=" + jabName + ", empName=" + empName + ", email="
-				+ email + "]";
+		return String.format("%s / %s / %s / %s", 
+				departmentName, jobName, employeeName, email);
 	}
 	
 	
