@@ -18,17 +18,13 @@ public class Employee {
 		private double bonus; // 보너스
 		private int managerId; // 사수번호
 	   
-	   
-	public Employee() {
+		
+	public Employee() { // 기본생성자
 		
 	}
-	
-	
-
 
 	
-
-
+	// 매개변수 생성자
 	public Employee(int empId, String empName, String phone, String departmentTitle, String jobName) {
 		super();
 		this.empId = empId;
@@ -38,22 +34,18 @@ public class Employee {
 		this.jobName = jobName;
 	}
 
-
-
-
-
-
-
+	
+	// getter/setter
 	public int getEmpId() {
 		return empId;
 	}
 
-
+	
 	public void setEmpId(int empId) {
 		this.empId = empId;
 	}
 
-
+	
 	public String getEmpName() {
 		return empName;
 	}
@@ -172,15 +164,6 @@ public class Employee {
 	public void setManagerId(int managerId) {
 		this.managerId = managerId;
 	}
-
-
-	
-	
-	
-	
-	   
-	
-
 }
 
 
