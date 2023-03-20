@@ -12,16 +12,12 @@ public class Employee1 {
 	
 	public Employee1() {} // 기본 생성자
 	
-	
 	public Employee1(String empId, String empName, int salary, String DepartmentTitle) { // 매개변수 생성자
 		this.empId = empId;
 		this.empName = empName;
 		this.salary = salary;
 		this.DepartmentTitle = DepartmentTitle;
-		
-		
 	}
-	
 	
 	
 	// getter / setter
@@ -58,12 +54,6 @@ public class Employee1 {
 		DepartmentTitle = departmentTitle;
 	} 
 	
-	
-
-	
-	
-	
-
 }
 
 

@@ -88,7 +88,6 @@ public class JDBCExample2 {
 		}catch(ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
 			// 4단계 : 사용한 JDBC 객체 자원 반환

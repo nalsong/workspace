@@ -42,13 +42,7 @@ public class JDBCExample3 { // 실행만 하는 객체
 								emp.getEmpName(), 
 								emp.getSalary() );
 		}
-		
-		
-		 
-		 
 	}
-	
-	
 }
 
 

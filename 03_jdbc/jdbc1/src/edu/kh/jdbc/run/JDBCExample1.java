@@ -24,7 +24,6 @@ public class JDBCExample1 {
 		 * 								(ojdbc11.jar -> OrcleDriver.class)
 		 * */
 
-		
 		// 1단계 : JDBC 객체 참조변수 선언
 		
 		Connection conn = null;
@@ -82,9 +81,7 @@ public class JDBCExample1 {
 			// 18c 버전 또는 강의장 DB : :XE
 			
 			String user = "kh_jsy"; // 계정명
-			
 			String pw = "oracle_jsy123A"; // 비밀번호
-
 			
 			// DriverManager 객체
 			// - 메모리에 로드 된 JDBC드라이버 객체를 이용해 DB에 접근하고 작성된 정보를 이용해 
@@ -92,11 +89,9 @@ public class JDBCExample1 {
 			
 			conn = DriverManager.getConnection( type + ip + port + dbName , user, pw );
 			
-			
 //			System.out.println(conn);
 			// -> 정상적으로 작성한 경우 conn 객체의 주소가 출력
 			// -> 잘못 작성한 경우 예외 발생
-			
 			
 			// 3. SQL 작성
 			// ** Java에서 작성되는 SQL은 마지막에 세미콜론(;)을 작성하지 않는다! ** 
@@ -116,7 +111,6 @@ public class JDBCExample1 {
 			// 3단계 : SQL 수행결과로 반환 받은 ResultSet을 첫 번째 행부터 1행씩 접근하여 컬럼 값을 얻어와 출력
 			
 			while(rs.next()) {
-				
 				// 조건식의 결과가 true일 때 수행
 				
 				// rs.next()
@@ -125,7 +119,6 @@ public class JDBCExample1 {
 				
 				
 				// ** 현재 접근한 행의 컬럼 값을 얻어와 출력 **
-				
 				// rs.get자료형(컬럼명|컬럼순서);
 				
 				// [Java]              [DB]
@@ -133,7 +126,6 @@ public class JDBCExample1 {
 				// int, long           NUMBER(정수만)
 				// float, double       NUMBER(실수만)
 				// java.sql.Date	   DATE
-				
 				
 				String empId = rs.getString("EMP_ID");
 				// 현재 커서가 접근한 행의 "EMP_ID" 컬럼의 값을 얻어와 String으로 반환
@@ -149,12 +141,8 @@ public class JDBCExample1 {
 				Date hireDate = rs.getDate("HIRE_DATE");
 //				java.sql.Date hireDate = rs.getDate("HIRE_DATE"); -> 이것도 가능!
 				
-				
 				System.out.printf("사번: %s / 이름: %s / 급여: %d / 입사일: %s \n", empId, empName, salary, hireDate.toString());
-				
-				
 			} // while문 종료
-			
 			
 			
 		}catch(ClassNotFoundException e) {

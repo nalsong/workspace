@@ -9,20 +9,14 @@ public class Employee2 {
 	private String empName;
 	private String email;
 	
-	
-	
 	public Employee2() {}
 
-	
-	
 	public Employee2(String deptTitle, String jabName, String empName, String email) {
 		this.deptTitle = deptTitle;
 		this.jabName = jabName;
 		this.empName = empName;
 		this.email = email;
 	}
-
-	
 	
 	public String getDeptTitle() {
 		return deptTitle;
@@ -57,20 +51,14 @@ public class Employee2 {
 	}
 
 
-
 	@Override
 	public String toString() {
 		return String.format("%s / %s / %s / %s", 
-				departmentName, jobName, employeeName, email);
+				deptTitle, jabName, empName, email);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 }
+
+
+
+
+

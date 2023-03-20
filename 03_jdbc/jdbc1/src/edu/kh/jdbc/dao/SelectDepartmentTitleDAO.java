@@ -80,7 +80,7 @@ public class SelectDepartmentTitleDAO {
 			rs = stmt.executeQuery(sql); // SELECT 수행 후 결과 반환 받기
 			
 			
-			// 3단계
+			// 3단계 : SQL 수행결과로 반환 받은 ResultSet을 첫 번째 행부터 1행씩 접근하여 컬럼 값을 얻어와 출력
 			
 			while(rs.next()) { // 커서를 1행씩 이동. 다음 행이 없을 때 까지 
 				
@@ -104,6 +104,8 @@ public class SelectDepartmentTitleDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
+			
+			// 4단계 : 사용한 JDBC 객체 자원 반환
 			try {
 				if( rs != null) rs.close();
 				if( stmt != null) stmt.close();
