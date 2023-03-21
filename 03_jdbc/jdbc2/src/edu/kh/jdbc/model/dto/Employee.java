@@ -35,6 +35,26 @@ public class Employee {
 	}
 
 	
+	
+	// 5. 사원 정보 추가(insertEmployee)에 필요한 매개변수 담기~~~
+	
+	public Employee(String empName, String empNo, String email, String phone, int salary, String deptCode,
+			String jobCode, String salLevel, double bonus, int managerId) {
+		super();
+		this.empName = empName;
+		this.empNo = empNo;
+		this.email = email;
+		this.phone = phone;
+		this.salary = salary;
+		this.deptCode = deptCode;
+		this.jobCode = jobCode;
+		this.salLevel = salLevel;
+		this.bonus = bonus;
+		this.managerId = managerId;
+	}
+
+	
+
 	// getter/setter
 	public int getEmpId() {
 		return empId;
