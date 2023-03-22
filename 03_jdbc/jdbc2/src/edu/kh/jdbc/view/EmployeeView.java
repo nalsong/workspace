@@ -380,7 +380,7 @@ public class EmployeeView {
 		char check = sc.next().toUpperCase().charAt(0);
 		
 		if(check == 'N') {
-			System.out.println("[최소되었습니다]");
+			System.out.println("[취소되었습니다]");
 			return;
 		}
 		
@@ -413,7 +413,7 @@ public class EmployeeView {
 		
 		}catch(Exception e) {
 			System.out.println("\n[퇴사 처리 중 예외 발생]\n");
-			
+			e.printStackTrace();
 		}
 		
 		

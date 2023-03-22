@@ -106,7 +106,7 @@ public class EmpService {
 		Connection conn = getConnection();
 		
 		// 2. DAO메서드 호출 후 결과 반환 받기
-		int result = dao.updateEmployee(conn, emp);
+		int result = dao.updateEmp(conn, emp);
 		
 		// 3. 트랜잭션 제어 처리 
 		if(result > 0) commit(conn);
@@ -114,6 +114,54 @@ public class EmpService {
 		
 		// 4. 커넥션 반환
 		close(conn);
+		
+		return result;
+	}
+
+
+
+
+
+
+	/**
+	 * @param input
+	 * @return
+	 * @throws SQLException
+	 */
+	public int deleteEmp(int input) throws SQLException{
+
+		Connection conn = getConnection();
+		
+		int result = dao.deleteEmp(conn, input);
+		
+		if(result > 0)  commit(conn);
+		else 			rollback(conn);
+			
+		// 4. 커넥션 반환
+		close(conn);		
+		
+		
+		return result;
+	}
+
+
+
+
+
+
+	public int retireEmp(int input) throws SQLException{
+		
+		Connection conn = getConnection();
+		
+		// 2. DAO메서드 호출 후 결과 반환 받음
+		int result = dao.retireEmp(conn, input);
+				
+		// 3. 트랜잭션 제어 처리
+		if(result > 0)  commit(conn);
+		else 			rollback(conn);
+			
+		// 4. 커넥션 반환
+		close(conn);	
 		
 		return result;
 	}

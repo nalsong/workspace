@@ -53,7 +53,7 @@ public class EmpDAO {
 				String phone = rs.getString(6);
 				String email = rs.getString(7);
 				
-				Emp emp = new Emp(empId, empName, departmentTitle, jobName, salary, phone, email);
+				Emp emp = new Emp(salary, empName, email, phone, salary, departmentTitle, jobName);
 				
 				empList.add(emp);
 			}
@@ -65,6 +65,7 @@ public class EmpDAO {
 		return empList;
 	}
 
+	
 
 
 	/**
@@ -89,11 +90,12 @@ public class EmpDAO {
 				
 				String empId = rs.getString(1);
 				String empName = rs.getString(2);
-				String phone = rs.getString(6);
-				String email = rs.getString(7);
-				Date entDate = rs.getDate(8);
+				String phone = rs.getString(3);
+				String email = rs.getString(4);
+				Date entDate = rs.getDate(5);
 				
-				Emp emp = new Emp(empId, empName, phone, email, entDate);
+				
+				Emp emp = new Emp(0, empName, email, phone, email);
 				
 				empList.add(emp);
 			}
@@ -131,7 +133,6 @@ public class EmpDAO {
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 			
-			
 			if(rs.next()) {
 				String empId = rs.getString(1);
 				String empName = rs.getString(2);
@@ -166,13 +167,8 @@ public class EmpDAO {
 		int result = 0;
 		
 		try {
-			// 2. PreparedStatement 객체 생성
-			
-			// 1) SQL 작성 
 			String sql = "INSERT INTO EMPLOYEE VALUES( SEQ_EMP_ID.NEXTVAL, "
 					+ "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, SYSDATE, NULL, 'N' )";
-			
-			// 2) PreparedStatement 객체 생성 후 placeholder에 값 세팅
 			
 			pstmt = conn.prepareStatement(sql);
 			
@@ -187,26 +183,13 @@ public class EmpDAO {
 			pstmt.setDouble(9, emp.getBonus());
 			pstmt.setInt(10, emp.getManagerId());
 			
-			
-			// 3. SQL수행 후 결과 반환 받기
-			// executeQuery() : SELECT 수행 후 ResultSet 반환
-			// executeUpdate() : DML 수행 후 결과 행의 개수 반환
-			
-			
 			result = pstmt.executeUpdate();
 			
-			// ** SELECT와 다르게 옮겨담는 과정이 없다! **
-			
 		}finally {
-			// 4. JDBC 객체 자원 반환
 			close(pstmt);
-		
-		
+		}	
 		return result;
 	}
-	
-	
-	
 	
 	
 	
@@ -219,10 +202,9 @@ public class EmpDAO {
 	 * @param emp
 	 * @return
 	 */
-	public int updateEmployee(Connection conn, Emp emp) throws SQLException{
+	public int updateEmp(Connection conn, Emp emp) throws SQLException{
 			
 		int result = 0;
-		
 		
 		try {
 			String sql = "UPDATE EMPLOYEE \r\n"
@@ -230,7 +212,7 @@ public class EmpDAO {
 					+ "	PHONE = ?,\r\n"
 					+ "	SALARY = ?,\r\n"
 					+ "	BONUS = ?\r\n"
-					+ "WHERE EMP_NO = ?";
+					+ "WHERE EMP_ID = ?";
 				
 			pstmt = conn.prepareStatement(sql);
 			
@@ -238,16 +220,84 @@ public class EmpDAO {
 			pstmt.setString(2, emp.getPhone());
 			pstmt.setInt(3, emp.getSalary());
 			pstmt.setInt(4, emp.getEmpId());
-			pstmt.setDouble(5, emp.getEmpBonus());
+			pstmt.setDouble(5, emp.getBonus());
 			
 			result = pstmt.executeUpdate();
 		}finally {
 			close(pstmt);
 		}
-		
-			
 		return result;
 	}
+
+
+
+	/**
+	 * @param conn
+	 * @param input
+	 * @return
+	 * @throws SQLException
+	 */
+	public int deleteEmp(Connection conn, int input) throws SQLException{
+		int result = 0;
+		
+		try {
+			// 2. SQL 작성 + PreparedStatement 객체 생성 후 값 세팅
+			String sql = "DELETE FROM EMPLOYEE\r\n"
+					+ "WHERE EMP_ID = ?";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, input);
+
+			result = pstmt.executeQuery();
+			
+		}finally {
+			close(pstmt);
+		}
+		return result;
+	}
+
+
+
+
+	/**
+	 * @param conn
+	 * @param input
+	 * @return
+	 * @throws SQLException
+	 */
+	public int retireEmp(Connection conn, int input) throws SQLException{
+		int result = 0;
+		
+		try {
+			
+			// 2. SQL 작성 + PreparedStatement 객체 생성 후 값 세팅
+			String sql = "UPDATE EMPLOYEE \r\n"
+						+ "SET ENT_YN = 'Y',\r\n"
+						+ "ENT_DATE = SYSDATE\r\n"
+						+ "WHERE EMP_ID = ?";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, input);
+			
+			
+			// 3. SQL 수행 후 결과 반환 받기
+			result = pstmt.executeUpdate(); // 1행 성공, 0행 성공
+			
+		}finally {
+			// 4. JDBC객체 자원 반환
+			close(pstmt);
+		}
+		// 5.결과 반환
+		return result;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 }
 
 

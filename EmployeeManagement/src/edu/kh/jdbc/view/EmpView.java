@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Scanner;
 
 import edu.kh.jdbc.model.dto.Emp;
-import edu.kh.jdbc.model.dto.Employee;
 import edu.kh.jdbc.model.service.EmpService;
 
 public class EmpView {
@@ -105,9 +104,9 @@ public class EmpView {
 				case 2: selectRetire(); break;
 				case 3: selectOne(); break;
 				case 4: insertEmp(); break;
-				case 5: UpdateEmp(); break;
-				case 6:  break;
-				case 7:  break;
+				case 5: updateEmp(); break;
+				case 6: deleteEmp(); break;
+				case 7: retireEmp(); break;
 				case 8:  break;
 				case 9:  break;
 				case 0: System.out.println("\n[프로그램을 종료합니다...]\n"); break;
@@ -130,6 +129,9 @@ public class EmpView {
 	
 	
 	
+	/**
+	 * 재직중인 사원 전체 조회
+	 */
 	private void selectAll() {
 		System.out.println("----- 재직중인 사원 전체 조회 -----");
 		
@@ -159,6 +161,9 @@ public class EmpView {
 	
 	
 	
+	/**
+	 * 퇴직한 사원 전체 조회
+	 */
 	private void selectRetire() {
 		System.out.println("---- 퇴직한 사원 전체 조회 ----");
 		
@@ -169,25 +174,26 @@ public class EmpView {
 				System.out.println("[퇴직한 사원이 존재하지 않습니다.]");
 			}
 			
-			while( Emp emp : empList) {
+			for( Emp emp : empList) {
 				System.out.printf(" %s, %s, %s, %s, %s \n", 
-						emp.getEmpId,
+						emp.getEmpId(),
 						emp.getEmpName(),
 						emp.getPhone(), 
 						emp.getEmail(),
 						emp.getEntDate());
 			}
-			
-			
 		} catch (SQLException e) {
 			System.out.println("\n[퇴직한 사원 전체 조회 중 예외 발생]\n");
 			e.printStackTrace();
 		}
-		
 	}
 	
 	
 	
+	
+	/**
+	 * 사번이 일치하는 사원 조회
+	 */
 	private void selectOne() {
 		System.out.println("--- 사번이 일치하는 사원 조회 ---");
 		
@@ -219,6 +225,11 @@ public class EmpView {
 	}
 	
 	
+	
+	
+	/**
+	 * 사원 정보 추가
+	 */
 	private void insertEmp() {
 		System.out.println("--- 사원 정보 추가 ---");
 		
@@ -269,53 +280,138 @@ public class EmpView {
 	    	System.out.println("\n[사원정보 삽입 중 예외 발생]\n");
 	    	e.printStackTrace();
 	    }
-	    	    		
-	}
-	
-	private void UpdateEmp() {
-		
-	System.out.println("\n---- 사번으로 사원 정보 수정 ----\n");
-		
-	System.out.print("수정할 사원의 사번 : ");
-	int empId = sc.nextInt();
-		
-	System.out.print("이메일 : ");
-	String email = sc.next();
-		
-	System.out.print("전화번호 : ");
-	String phone = sc.next();
-		
-	System.out.print("급여 : ");
-	int salary = sc.nextInt();
-	
-	System.out.print("보너스 : ");
-	double bonus = sc.nextDouble();
-	
-	sc.nextLine();
-	
-	Emp emp = new Emp();
-	
-	emp.setEmpId(empId);
-	emp.setEmail(email);
-	emp.setPhone(phone);
-	emp.setSalary(salary);
-	emp.setBonus(bonus);
-	
-	try {
-		int result = service.updateEmp(emp);
-	} catch (SQLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	
-	
 	}
 	
 	
 	
 	
+	/**
+	 * 사번으로 사원 정보 수정
+	 */
+	private void updateEmp() {
+		
+		System.out.println("\n---- 사번으로 사원 정보 수정 ----\n");
+			
+		System.out.print("수정할 사원의 사번 : ");
+		int empId = sc.nextInt();
+			
+		System.out.print("이메일 : ");
+		String email = sc.next();
+			
+		System.out.print("전화번호 : ");
+		String phone = sc.next();
+			
+		System.out.print("급여 : ");
+		int salary = sc.nextInt();
+		
+		System.out.print("보너스 : ");
+		double bonus = sc.nextDouble();
+		
+		sc.nextLine();
+		
+		Emp emp = new Emp();
+		
+		emp.setEmpId(empId);
+		emp.setEmail(email);
+		emp.setPhone(phone);
+		emp.setSalary(salary);
+		emp.setBonus(bonus);
+		
+		try {
+			int result = service.updateEmp(emp);
+			
+			if(result > 0) { //성공
+				System.out.println("[수정 성공]");
+				}else //실패
+				System.out.println("[수정 실패]");
+			
+		} catch (SQLException e) {
+			System.out.println("\n[사번으로 사원 정보 수정 중 예외 발생]\n");
+			e.printStackTrace();
+		}
+	}
 	
 	
+	
+	
+	/**
+	 * 사번으로 사원 정보 삭제
+	 */
+	private void deleteEmp() {
+		System.out.println("\n---- 사번으로 사원 정보 삭제 ----\n");
+		 
+		System.out.print("삭제할 사원의 사번 입력 : ");
+		int input = sc.nextInt();
+		
+		System.out.print("정말 삭제 하시겠습니까?(Y/N)");
+		char check = sc.next().toUpperCase().charAt(0);
+		
+		if(check == 'N') {
+			System.out.println("[취소]");
+			return;
+		}
+		
+		try {
+			int result = service.deleteEmp(input);
+					
+			String str = null;
+			
+			if(result >0) str = "\n[삭제가 완료되었습니다.]\n";
+			else str = "\n[사번이 일치하는 사원이 없습니다.]\n";
+					
+			System.out.println(str);
+		
+		}catch(Exception e) {
+			System.out.println("\n[삭제처리 중 예외 발생]\n");
+			
+		}
+		
+	}
+	
+	
+	
+	
+	/**
+	 * 사번이 일치하는 사원 퇴직 처리
+	 */
+	private void retireEmp() {
+		System.out.println("\n---- 사번이 일치하는 사원 퇴직 처리 ----\n");
+		
+		System.out.print("퇴사 처리할 사원의 사번 입력 : ");
+		int input = sc.nextInt();
+		
+		System.out.print("정말 퇴사처리 하게시겠습니까?(Y/N)");
+		char check = sc.next().toUpperCase().charAt(0);
+		
+		if(check == 'N') {
+			System.out.println("[취소되었습니다]");
+			return;
+		}
+		
+		if(check != 'Y') {
+			System.out.println("[잘못 입력하셨습니다.]");
+			return;
+		}
+		
+		try {
+			int result = service.retireEmp(input);
+					
+			String str = null;
+			
+			if(result >0) str = "\n[퇴사처리가 완료되었습니다.]\n";
+			else str = "\n[사번이 일치하지 않거나 이미 퇴직한 사원입니다.]\n";
+			
+			System.out.println(str);
+		
+		}catch(Exception e) {
+			System.out.println("\n[퇴사 처리 중 예외 발생]\n");
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+	}
 	
 	
 	

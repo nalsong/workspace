@@ -1,546 +1,426 @@
-/*SELECT (조회, DQL 또는 DML)
+/* VIEW
  * 
- * -데이터를 조회하면 조건에 맞는 행들이 조회됨
- * 	-> 조회된 행들의 집합을 "RESULT SET"이라고 한다.
+ * 	- 논리적 가상 테이블
+ * 	-> 테이블 모양을 하고는 있지만, 실제로 값을 저장하고 있진 않음.
  * 
- * -RESULT SET은 0개 이상의 행이 포함될 수 있다.
- *  -> 왜 0개 이상?? 조건에 맞는 행이 없을 수도 있기 때문에....
- * 
- * [작성법]
- * SELECT 컬럼명 | *(모든 컬럼)
- * FROM 테이블명
- * WHERE 조건식; -- 조건에 맞는 행만 조회
+ *  - SELECT문의 실행 결과(RESULT SET)를 저장하는 객체
  * 
  * 
- *  * */
-
--- EMPLOYEE 테이블에서 모든 행, 모든 컬럼을 조회
--- (WHERE절이 없음 == 모든 행)
--- '*' : ALL, 모두, 전부를 의미 
-SELECT * FROM EMPLOYEE;
-
-SELECT EMP_NAME FROM EMPLOYEE;
-
-SELECT EMP_ID, EMP_NAME, PHONE FROM EMPLOYEE;
-
-
--- DEPARTMENT 테이블의 모든 행, 열 조회
-SELECT * FROM DEPARTMENT;
-
--- DEPARTMENT 테이블에서 부서명만 조회
- --> 테이블 정보에서 컬럼명, COMMENT확인
-SELECT DEPT_TITLE FROM DEPARTMENT;
-
------------------------------------------
-
-
--- <컬럼 값 산술 연산>
--- 컬럼 값 : 행과 열이 교차되는 테이블의 한 캄(== 한 셀)에 작성된 값(DATA)
-
--- SELECT문 작성 시 컬럼명에 산술 연산을 작성하면 조회되는 결과 컬럼 값의 산술연산이 반영된다.
-
--- EMPLOYEE 테이블에서 모든 사원의 사번, 이름, 급여, 급여 + 100만을 조회
-
-SELECT EMP_ID, EMP_NAME , SALARY, SALARY+ 1000000 
-FROM EMPLOYEE;
-
-
--- EMPLOYEE 케이블에서 모든 사원의 이름, 연봉(급여 * 12) 조회
-SELECT EMP_NAME, SALARY * 12 FROM EMPLOYEE;
-
-
-----------------------------------------------------------------------------
-
--- (중요!!) <오늘 날짜 조회>
-
-SELECT SYSDATE FROM DUAL;
--- SYSDATE : 시스템상의 현재 날짜(시간)
-
--- DUAL(DUmmy tAbLe) : 가짜 테이블(실제 테이블이 아닌 임시 테이블 용도)
-SELECT 100*20+30 FROM DUAL;
-
--- 어제, 오늘, 내일 조회
---> DATE타입에 +,- 연산 가능(일 단위)
-SELECT SYSDATE-1, SYSDATE, SYSDATE+1
-FROM DUAL;
-
--- 한 시간 후 조회
-SELECT SYSDATE+(1/24) FROM DUAL;
-
--- 1분 후 조회
-SELECT SYSDATE+(1/24/60) FROM DUAL;
-
--- 30분 후 조회
-SELECT SYSDATE+(1/24/60*30) FROM DUAL;
-
-
--- EMPLOYEE 테이블에서 이름, 입사일, 오늘 까지 근무한 날짜 조회
--- 시간 끼리 연산 가능(미래로 갈 수록 큰 수)
--- 연산 결과는 일 단위로 조회
-SELECT EMP_NAME, HIRE_DATE, (SYSDATE - HIRE_DATE) / 365
-FROM EMPLOYEE;
-
-
------------------------------------------------------------
-
---<컬럼 별칭 지정>
--- 별칭 지정방법
--- 1) 컬럼명 AS 별칭 : 문자는 가능하나 띄어쓰기X, 특수문자X
--- 2) 컬럼명 AS "별칭" : 문자 가능, 띄어쓰기 가능, 특수문자 가능
--- 3) 컬럼명  별칭 : 문자는 가능하나 띄어쓰기X, 특수문자X
--- 4) 컬럼명 "별칭" : 문자 가능, 띄어쓰기 가능, 특수문자 가능
-
-
--- EMPLOYEE 테이블에서 이름 연봉 조회
-SELECT EMP_NAME AS "[사원 이름]", SALARY *12 "사원 연봉"
-FROM EMPLOYEE;
-
-
--------------------------------------------------------------
-
--- 리터럴 : 표현되는 값 자체
--- DB에서 리터럴 : 임의로 지정한 값을 기존 테이블에 존재하는 값 처럼 사용
---> 리터럴 표기법 : '' (홑따옴표, 기본적으로 문자열을 의미) 
-SELECT EMP_NAME, SALARY, '원' AS 단위
-FROM EMPLOYEE;
-
-
--------------------------------------------------------------
-
--- <DISTINCT> (따로따로, 별개의)
---> 조회 시 지정된 컬럼에 중복 값을 한 번만 표시할 때 사용
-
-
--- EMPLOYEE 테이블에서 현재 사원들이 속해있는 부서 코드 종류 조회
-SELECT DISTINCT DEPT_CODE FROM EMPLOYEE;
-
----------------------------------------------------------------
-
-
---<WHERE 절>
--- 테이블에서 조건을 충족하는 컬럼 값을 가진 행만 조회할 때 사용
-
--- WHERE 절에는 조건식(TRUE/FALSE)을 작성
-
--- 비교연산자 : >, >=, <, <=, =(같다), !=, <>(같지 않다)
--- 논리연산자 : AND, OR, NOT
-
-
-
-
--- EMPLOYEE 테이블에서 급여가 3백만원 초과인 사원의 
--- 사번, 이름, 급여 부서코드 조회
-/*해석 순서*/
-/*3*/ SELECT EMP_ID, EMP_NAME, SALARY, DEPT_CODE 
-/*1*/ FROM EMPLOYEE
-/*2*/ WHERE SALARY > 3000000; 
--- 단, SALARY값이 300만 초과
-
-
-
-
--- EMPLOYEE 테이블에서 연봉이 5000만원 이하인 사원의 사번, 이름 조회
-/*3*/SELECT EMP_ID, EMP_NAME 
-/*1*/FROM EMPLOYEE
-/*2*/WHERE SALARY * 12 <= 50000000;
-
-
-
-
--- EMPLOYEE 테이블에서 부서코드가 'D9'이 아닌 사원의 사번, 이름, 부서코드, 전화번호 조회
-SELECT EMP_ID 사번, EMP_NAME 이름, DEPT_CODE 부서코드, PHONE 전화번호  
-FROM EMPLOYEE
-WHERE DEPT_CODE != 'D9';
-
-
-
-
--- EMPLOYEE 테이블에서 부서코드가 'D6'이고 급여가 300만 이상인 사원의 이름, 급여, 부서코드 조회
-SELECT EMP_NAME, SALARY, DEPT_CODE 
-FROM EMPLOYEE
-WHERE DEPT_CODE = 'D6' 
-AND SALARY >= 3000000;
-
-
-
-
---EMPLOYEE 테이블에서 급여가 급여가 300만 이상 500만 이하인 직원의 모든 컬럼 조회
-SELECT *
-FROM EMPLOYEE
-WHERE SALARY >= 3000000 
-AND SALARY <=5000000;
-
-
-
-
--- 컬럼명 BETWEEN A AND B : 컬럼 값이 A이상 B이하인 경우 TRUE 
-SELECT *
-FROM EMPLOYEE
-WHERE SALARY BETWEEN 3000000 AND 5000000;
-
-
-
-
---EMPLOYEE 테이블에서 급여가 급여가 300만 이상 500만 이하가 아닌 직원의 모든 컬럼 조회
--- == 300만 미만 500만 초과
-SELECT *
-FROM EMPLOYEE
-WHERE SALARY < 3000000 
-OR SALARY > 5000000;
-
-
-
---EMPLOYEE 테이블에서 급여가 급여가 300만 이상 500만 이하가 아닌 직원의 모든 컬럼 조회(BETWEEN)
--- == 300만 미만 500만 초과
--- NOT BETWEEN A AND B : 컬럼 값이 A이상 B이하가 아닌 경우
--- == A 미만 B 초과
-SELECT *
-FROM EMPLOYEE
-WHERE SALARY NOT BETWEEN 3000000 AND 5000000;
---WHERE NOT SALARY BETWEEN 3000000 AND 5000000;
-
-
-
-
--- EMPLOYEE테이블에서 부서코드가 'D5' 또는 'D6' 또는 'D9'인 사원의 사번, 이름, 부서코드 조회
-SELECT EMP_ID, EMP_NAME, DEPT_CODE 
-FROM EMPLOYEE
-WHERE DEPT_CODE = 'D5'
-OR    DEPT_CODE = 'D6'
-OR    DEPT_CODE = 'D9';
-
-
-
--- 컬럼명 IN (값1, 값2, 값3, ...) : 컬럼 값에 ()안의 값이 포함된 행은 TRUE
-SELECT EMP_ID, EMP_NAME, DEPT_CODE 
-FROM EMPLOYEE
-WHERE DEPT_CODE IN ('D5', 'D6', 'D9');
-
-
-
-
--- EMPLOYEE테이블에서 부서코드가 'D5' 또는 'D6' 또는 'D9'가 아닌 사원의 사번, 이름, 부서코드 조회
-SELECT EMP_ID, EMP_NAME, DEPT_CODE 
-FROM EMPLOYEE
-WHERE DEPT_CODE != 'D5'
-AND DEPT_CODE != 'D6'
-AND DEPT_CODE != 'D9';
-
-
-
-
--- EMPLOYEE테이블에서 부서코드가 'D5' 또는 'D6' 또는 'D9'가 아닌 사원의 사번, 이름, 부서코드 조회(IN구문 사용)
--- NOT IN(값1, 값2, 값3, ...) : ()내 값을 제외한 행 TRUE
-SELECT EMP_ID, EMP_NAME, DEPT_CODE 
-FROM EMPLOYEE
-WHERE DEPT_CODE NOT IN ('D5', 'D6', 'D9');
-
-
------------------------------------------------------------------
-
-
-
---<NULL 처리 연산>
-
--- JAVA에서 NULL : 참조하는 객체가 없다.
--- DB에서 NULL : 컬럼 값이 없다.
-
--- IS NULL     : 컬럼 값이 NULL인     경우 TRUE
--- IS NOT NULL : 컬럼 값이 NULL이 아닌 경우 TRUE
-
-
-
--- EMPLOYEE 테이블에서 부서가 없는 사원의 모든 컬럼 조회
-SELECT * 
-FROM EMPLOYEE
-WHERE DEPT_CODE IS NULL;
-
--- EMPLOYEE 테이블에서 부서가 있는 사원의 모든 컬럼 조회
-SELECT * 
-FROM EMPLOYEE
-WHERE DEPT_CODE IS NOT NULL;
-
-
---------------------------------------------------------------
-
--- 연결 연산자 ( || )
--- 여러 값을 하나의 컬럼 값으로 연결하는 연산자
--- (== 자바의 문자열 이어쓰기(+) )
-
--- ooo의 급여는 ooo원 입니다.
-SELECT EMP_NAME || '의 급여는 ' || SALARY ||'원 입니다.' AS 결과
-FROM EMPLOYEE;
-
--- ' ': 값, 리터럴
--- " ": 계정명, 비밀번호, 컬럼명, 테이블명
--- 		값이 아닌 것들에 대한 대소문자 구분
-
-
-
---------------------------------------------------------------------
-
-
-/*LIKE
- * -비교하려는 값이 특정한 패턴을 만족시키면(TRUE) 조회하는 연산자
+ * ** VIEW 사용 목적 **
+ *  1) 복잡한 SELECT문을 쉽게 재사용하기 위해.
+ *  2) 테이블의 진짜 모습을 감출 수 있어 보안상 유리.
  * 
- * [작성법]
- * WHERE 컬럼명 LIKE '패턴'
- *
- * - LIKE 패턴 (== 와일드 카드) 
- * 
- * 1. '%' : 포함이라는 의미
- * - '%A' : 문자열이 앞은 어떤 문자든 포함되고 마지막은 A
- * 			 -> A로 끝나는 문자열
- * - 'A%' : A로 시작하는 문자열
- * - '%A%' : A가 포함된 문자열 
+ * ** VIEW 사용 시 주의 사항 **
+ * 	1) 가상의 테이블(실체 X)이기 때문에 ALTER 구문 사용 불가.
+ * 	2) VIEW를 이용한 DML(INSERT,UPDATE,DELETE)이 가능한 경우도 있지만
+ *     제약이 많이 따르기 때문에 조회(SELECT) 용도로 대부분 사용.
  * 
  * 
- * 2. '_' : 글자 수를 의미
- * - 'A_' : A 뒤에 아무거나 한 글자만 있는 문자열(AB, A1, AQ, A가)
+ *  ** VIEW 작성법 **
+ *  CREATE [OR REPLACE] [FORCE | NOFORCE] VIEW 뷰이름 [컬럼 별칭]
+ *  AS 서브쿼리(SELECT문)
+ *  [WITH CHECK OPTION]
+ *  [WITH READ OLNY];
  * 
- * - '___A' : A 앞에 아무거나 3글자만 있는 문자열
  * 
+ *  1) OR REPLACE 옵션 : 
+ * 		기존에 동일한 이름의 VIEW가 존재하면 이를 변경
+ * 		없으면 새로 생성
  * 
+ *  2) FORCE | NOFORCE 옵션 : 
+ *    FORCE : 서브쿼리에 사용된 테이블이 존재하지 않아도 뷰 생성
+ *    NOFORCE(기본값): 서브쿼리에 사용된 테이블이 존재해야만 뷰 생성
+ *    
+ *  3) 컬럼 별칭 옵션 : 조회되는 VIEW의 컬럼명을 지정
  * 
+ *  4) WITH CHECK OPTION 옵션 : 
+ * 		옵션을 지정한 컬럼의 값을 수정 불가능하게 함.
  * 
- * */
-
---EMPLOYEE테이블에서 성이 '전'씨인 사원의 사번, 이름 조회
-SELECT EMP_ID , EMP_NAME 
-FROM EMPLOYEE --1
-WHERE EMP_NAME LIKE '전%';
-
-
-
---EMPLOYEE 테이블에서 이름에 '하'가 포함되는 사원의 사번, 이름 조회
-SELECT EMP_ID, EMP_NAME 
-FROM EMPLOYEE
-WHERE EMP_NAME LIKE '%하%';
-
-
---EMPLOYEE 테이블에서 전화번호가 010으로 시작하는 사원의 사번, 이름, 전화번호 조회(%사용)
-SELECT EMP_ID, EMP_NAME, PHONE  
-FROM EMPLOYEE
-WHERE PHONE LIKE '010%';
-
-
---EMPLOYEE 테이블에서 전화번호가 010으로 시작하는 사원의 사번, 이름, 전화번호 조회(_사용)
-SELECT EMP_ID, EMP_NAME, PHONE  
-FROM EMPLOYEE
-WHERE PHONE LIKE '010________';
-
-
-
---EMPLOYEE 테이블에서 전화번호가 010으로 시작하지 않는 사원의 사번, 이름, 전화번호 조회
-SELECT EMP_ID, EMP_NAME, PHONE  
-FROM EMPLOYEE
-WHERE PHONE NOT LIKE '010%';
-
-
-
---EMPLOYEE 테이블에서 전화번호가 010으로 시작하지 않는 사원의 사번, 이름, 전화번호 조회(NULL포함)
-SELECT EMP_ID, EMP_NAME, PHONE  
-FROM EMPLOYEE
-WHERE PHONE NOT LIKE '010%'
-OR PHONE IS NULL; 
-
-
-
---EMPLOYEE테이블에서 이메일에 @의 앞글자가 5글자인 사원의 사번, 이름, 이메일 조회
-SELECT EMP_ID, EMP_NAME, EMAIL 
-FROM EMPLOYEE
-WHERE EMAIL LIKE '______@%';
-
-
-
---EMPLOYEE테이블에서 이메일에 _의 앞글자가 3글자인 사원의 사번, 이름, 이메일 조회
-SELECT EMP_ID, EMP_NAME, EMAIL 
-FROM EMPLOYEE
-WHERE EMAIL LIKE '____%';
---> 문제점 : 와일드 카드 문자(_)와 패턴에 사용된 일반 문자가 
---         같은 문자이기 때문에 구분이 안되는 문제가 발생
---> 해결방법 : ESCAPE옵션을 이용하여 일반 문자(_)를 구분
-
-SELECT EMP_ID, EMP_NAME, EMAIL 
-FROM EMPLOYEE
-WHERE EMAIL LIKE '___$_%' ESCAPE '$';
-				--> '$'뒤에 한 글자(_)를 일반 문자로 벗어나게 함
-
-
-
-------------------------------------------------------------
-
--- <WHERE절 날짜(시간)비교>
---EMPLOYEE테이블에서 입사일(고용일)이 '1990/01/01'~'2000/12/31'사이인 사원의 
--- 사번, 이름, 고용일을 조회
-SELECT EMP_ID , EMP_NAME , HIRE_DATE 
-FROM EMPLOYEE
-WHERE HIRE_DATE >= '1990/01/01'
-AND   HIRE_DATE <= '2000/12/31';
---> '1990/01/01' == 문자열 -> DATE타입으로 변경
---> 오라클 DB는 작성된 값이 다른 형식의 데이터 타입이어도
---  표기법이 다른 데이터 타입과 일치하다면 자동으로 데이터 타입을 변경할 수 있다.
-
--- 이것도 됨!
-SELECT EMP_ID , EMP_NAME , HIRE_DATE 
-FROM EMPLOYEE
-WHERE HIRE_DATE >= '1990-01-01'
-AND   HIRE_DATE <= '2000-12-31';
-
--- 이것도 됨!
-SELECT EMP_ID , EMP_NAME , HIRE_DATE 
-FROM EMPLOYEE
-WHERE HIRE_DATE >= '1990@01@01'
-AND   HIRE_DATE <= '2000@12@31';
-
-SELECT EMP_NAME , SALARY 
-FROM EMPLOYEE
-WHERE SALARY >= '3000000';
--- 3000000 : NUMBER
--- '3000000' : CHAR --> 숫자로 인식
--- '3000000원' : CHAR --> 이건 안됨
-
----------------------------------------------
-
-/*ORDER BY절
- * 
- * -SELECT문의 조회 결과(RESULT SET)를 정렬할 때 사용하는 구문
- * 
- * - *** SELECT구문에서 제일 마지막에 해석된다! ***
- * 
- * [작성법]
- * 3: SELECT 컬럼명 AS별칭, 컬럼명, 컬럼명, ...
- * 1: FROM 테이블명
- * 2: WHERE 조건식
- * 4: ORDER BY 컬럼명 | 별칭 | 컬럼 순서 [오름/내림 차순] [NULLS FIRST | NULLS LAST]
- * */
-
---EMPLOYEE 테이블에서 모든 사원의 이름, 급여를 급여 오름차순으로 조회
-SELECT EMP_NAME, SALARY 
-FROM EMPLOYEE
-ORDER BY SALARY ; 
-
-
-
-SELECT EMP_NAME, SALARY 
-FROM EMPLOYEE
-ORDER BY SALARY ASC; 
-				--> 오름차순(ASC)가 기본값
-
-
-
---EMPLOYEE 테이블에서 모든 사원의 이름, 급여를 급여 내림차순으로 조회
-SELECT EMP_NAME, SALARY 
-FROM EMPLOYEE
-ORDER BY SALARY DESC; 
-			--> 내림차순을 원할 경우 DESC작성
-
-
--- 급여가 200만 이상인 사원을 급여 오름차순으로 조회
-SELECT EMP_NAME, SALARY 
-FROM EMPLOYEE
-WHERE SALARY >= 2000000
-ORDER BY SALARY;
-
-/* 문자열, 날짜, 숫자 모두 졍렬 가능*/
-
--- 이름 오름차순 정렬
-SELECT EMP_NAME FROM EMPLOYEE ORDER BY EMP_NAME;
-
--- 입사일 내림차순 정렬
-SELECT EMP_NAME, HIRE_DATE
-FROM EMPLOYEE
-ORDER BY HIRE_DATE DESC;
-
-
-
-
-
---	
-
---연봉 내림차순 조회
-
--- 1) 컬럼명 사용
-/*2*/SELECT EMP_NAME, SALARY * 12 AS 연봉
-/*1*/FROM EMPLOYEE
-/*3*/ORDER BY SALARY * 12 DESC;  
-
--- 2) 별칭 사용
-/*2*/SELECT EMP_NAME, SALARY * 12 AS 연봉
-/*1*/FROM EMPLOYEE
-/*3*/ORDER BY  연봉 DESC;  
-
--- 3) 순서 사용
-/*2*/SELECT EMP_NAME, SALARY * 12 AS 연봉
-/*1*/FROM EMPLOYEE
-/*3*/ORDER BY 2 DESC ;  
-
--- 4)
-/*(주의) WHERE절에서 별칭|순서는 사용할 수 없다.*/
-/*3*/SELECT EMP_NAME, SALARY * 12 AS 연봉
-/*1*/FROM EMPLOYEE
-/*2*/WHERE 연봉 >= 50000000; 
---오류발생(SELECT절 해석이 안된 상태에서 별칭을 WHERE절 작성)
-
-
-
-
---NULLS FIRST|LAST확인
---전화번호 오름차순 조회
-
---NULL이 뒤에
-SELECT EMP_NAME , PHONE 
-FROM EMPLOYEE
-ORDER BY PHONE;
-
---NULL이 뒤에
-SELECT EMP_NAME , PHONE 
-FROM EMPLOYEE
-ORDER BY PHONE NULLS LAST;
-			--오름차순 기본값
-
-
---NULL이 앞에
-SELECT EMP_NAME , PHONE 
-FROM EMPLOYEE
-ORDER BY PHONE NULLS FIRST;
-
---전화번호 내림차순 조회
-
---NULL이 앞에
-SELECT EMP_NAME , PHONE 
-FROM EMPLOYEE
-ORDER BY PHONE DESC;
-
---NULL이 앞에
-SELECT EMP_NAME , PHONE 
-FROM EMPLOYEE
-ORDER BY PHONE DESC NULLS FIRST ;
-					-- 내림차순 기본값
-
---NULL이 뒤에
-SELECT EMP_NAME , PHONE 
-FROM EMPLOYEE
-ORDER BY PHONE DESC NULLS LAST;
-
-
-
-/*<정렬 중첩>
- * - 큰 분류를 먼저 정렬하고, 내부 분류를 다음에 정렬하는 방식
- * 
+ *  5) WITH READ OLNY 옵션 :
+ * 		뷰에 대해 SELECT만 가능하도록 지정.
  * */
 
 
--- 부서 코드별 급여 내림 차순(부서코드는 오름차순)
-SELECT EMP_NAME, DEPT_CODE, SALARY 
-FROM EMPLOYEE
-ORDER BY DEPT_CODE, SALARY DESC;
+-- EMPLOYEE 테이블에서
+-- 모든 사원의 사번, 이름, 부서명, 직급명 조회
+SELECT EMP_ID, EMP_NAME, DEPT_TITLE, JOB_NAME
+FROM EMPLOYEE 
+LEFT JOIN DEPARTMENT ON(DEPT_CODE = DEPT_ID)
+JOIN JOB USING (JOB_CODE);
+--> VIEW 생성
+CREATE VIEW V_EMP
+AS SELECT EMP_ID, EMP_NAME, DEPT_TITLE, JOB_NAME
+	FROM EMPLOYEE 
+	LEFT JOIN DEPARTMENT ON(DEPT_CODE = DEPT_ID)
+	JOIN JOB USING (JOB_CODE);
+
+--ORA-01031: 권한이 불충분합니다
+
+--> SYS 계정으로 접속
+ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
+
+--> 각자 계정에 CREATE VIEW 권한 부여
+GRANT CREATE VIEW TO kh_bdh;
+
+--> 다시 kh 계정으로 접속해서 VIEW 생성 구문 수행
 
 
--- 부서 코드별 급여 내림 차순(부서코드는 내림차순, NULL뒤로)
-SELECT EMP_NAME, DEPT_CODE, SALARY 
-FROM EMPLOYEE
-ORDER BY DEPT_CODE DESC NULLS LAST, SALARY DESC;
+-- 생성된 VIEW를 이용해서 조회
+SELECT * FROM V_EMP;
+
+
+-- V_EMP 뷰 수정하기(OR REPLACE)
+CREATE OR REPLACE VIEW V_EMP
+AS SELECT EMP_ID 사번, EMP_NAME 이름, 
+		DEPT_TITLE 부서명, JOB_NAME 직급명
+	FROM EMPLOYEE 
+	LEFT JOIN DEPARTMENT ON(DEPT_CODE = DEPT_ID)
+	JOIN JOB USING (JOB_CODE);
+
+SELECT * FROM V_EMP;
+
+-- V_EMP에서 직급이 대리인 사원의 정보를 조회
+SELECT * FROM V_EMP
+WHERE 직급명 = '대리';
+
+----------------------------------------------------------
+
+/* VIEW를 이용한 DML */
+
+-- 테이블 복사
+CREATE TABLE DEPT_COPY2
+AS SELECT * FROM DEPARTMENT;
+
+SELECT * FROM DEPT_COPY2;
+
+-- DEPT_COPY2에서
+-- DEPT_ID, LOCATION_ID 컬럼만 조회하는
+-- VIEW 생성
+CREATE VIEW V_DCOPY2
+AS SELECT DEPT_ID, LOCATION_ID
+   FROM DEPT_COPY2;
+  
+SELECT * FROM V_DCOPY2;
+
+-- VIEW를 이용한 INSERT
+INSERT INTO V_DCOPY2 VALUES('D0', 'L3');
+
+-- INSERT 확인
+SELECT * FROM V_DCOPY2;
+--> VIEW는 값을 저장하지 않는다고 했는데...
+--  저장된 것 처럼 보인다!
+--->  실제 VIEW에 저장된 것이 아니라
+--    VIEW를 생성할 때 사용한 서브쿼리의 테이블(DEPT_COPY2)에
+--    값이 삽입되어있다!
+
+-- 원본 테이블(DEPT_COPY2) 확인
+SELECT * FROM DEPT_COPY2;
+-- D0	NULL	L3
+--> 원본 테이블에 삽입됨을 확인
+---> INSERT 구문에 포함되지 않은 DEPT_TITLE 컬럼은
+--   NULL이 삽입되어 있다!(중요)
+
+ROLLBACK;
+SELECT * FROM V_DCOPY2;
+
+-- 복사한 테이블(DEPT_COPY2)의
+-- DEPT_TITLE 컬럼에 NOT NULL 제약조건 추가
+ALTER TABLE DEPT_COPY2
+MODIFY DEPT_TITLE CONSTRAINT TITLE_NN NOT NULL;
+
+
+-- 다시 VIEW를 이용해서 INSERT 
+INSERT INTO V_DCOPY2 VALUES('D0', 'L3');
+--> 원본 테이블 DEPT_ID, LOCATION_ID 컬럼에 'D0', 'L3' 삽입
+---> DEPT_TITLE 컬럼에는 NULL 삽입
+---> 그런데.... DEPT_TITLE에는 NOT NULL 제약조건이 설정되어
+--   NULL 값이 삽입될 수 없음.
+
+--  ORA-01400: NULL을 ("KH_BDH"."DEPT_COPY2"."DEPT_TITLE") 
+--  안에 삽입할 수 없습니다
+
+
+-- 데이터 무결성 : 중복 X, NULL X -> 신뢰도 높은 데이터
+--> 대부분의 컬럼에 NOT NULL 제약조건 추가되어 있음
+---> NOT NULL이 설정된 테이블을 이용해서 VIEW를 만들면
+--   INSERT가 거의 불가능함.
+
+--> 결론 : VIEW 가지고 DML을 수행하는 행동을 지양해라.
+
+-----------------------------------------------------
+
+/* WITH READ ONLY 옵션 추가 */
+-- 읽기전용 X로 VIEW 변경
+CREATE OR REPLACE VIEW V_DCOPY2
+AS SELECT DEPT_ID, DEPT_TITLE, LOCATION_ID FROM DEPT_COPY2;
+					-- DEPT_TITLE 포함
+
+INSERT INTO V_DCOPY2
+VALUES('D0', '기획팀', 'L3'); --> 오류 없이 삽입됨
+
+ROLLBACK;
+
+-- 읽기전용 O로 VIEW 변경
+CREATE OR REPLACE VIEW V_DCOPY2
+AS SELECT DEPT_ID, DEPT_TITLE, LOCATION_ID FROM DEPT_COPY2
+WITH READ ONLY;
+
+-- 다시 INSERT 시도
+INSERT INTO V_DCOPY2 VALUES('D0', '기획팀', 'L3');
+-- ORA-42399: 읽기 전용 뷰에서는 DML 작업을 수행할 수 없습니다.
+
+
+----------------------------------------------------------------
+
+/* SEQUENCE(순서, 연속)
+ * - 순차적으로 일정한 간격의 숫자(번호)를 발생시키는 객체
+ *   (번호 생성기)
+ * 
+ * *** SEQUENCE 왜 사용할까?? ***
+ * PRIMARY KEY(기본키) : 테이블 내 각 행을 구별하는 식별자 역할
+ * 						 NOT NULL + UNIQUE의 의미를 가짐
+ * 
+ * PK가 지정된 컬럼에 삽입될 값을 생성할 때 SEQUENCE를 이용하면 좋다!
+ * 
+ *   [작성법]
+  CREATE SEQUENCE 시퀀스이름
+  [STRAT WITH 숫자] -- 처음 발생시킬 시작값 지정, 생략하면 자동 1이 기본
+  [INCREMENT BY 숫자] -- 다음 값에 대한 증가치, 생략하면 자동 1이 기본
+  [MAXVALUE 숫자 | NOMAXVALUE] -- 발생시킬 최대값 지정 (10의 27승 -1)
+  [MINVALUE 숫자 | NOMINVALUE] -- 최소값 지정 (-10의 26승)
+  [CYCLE | NOCYCLE] -- 값 순환 여부 지정
+  [CACHE 바이트크기 | NOCACHE] -- 캐쉬메모리 기본값은 20바이트, 최소값은 2바이트
+	-- 시퀀스의 캐시 메모리는 할당된 크기만큼 미리 다음 값들을 생성해 저장해둠
+	-- --> 시퀀스 호출 시 미리 저장되어진 값들을 가져와 반환하므로 
+	--     매번 시퀀스를 생성해서 반환하는 것보다 DB속도가 향상됨.
+ * 
+ * 
+ * ** 사용법 **
+ * 
+ * 1) 시퀀스명.NEXTVAL : 다음 시퀀스 번호를 얻어옴.
+ * 						 (INCREMENT BY 만큼 증가된 수)
+ * 						 단, 생성 후 처음 호출된 시퀀스인 경우
+ * 						 START WITH에 작성된 값이 반환됨.
+ * 
+ * 2) 시퀀스명.CURRVAL : 현재 시퀀스 번호를 얻어옴.
+ * 						 단, 시퀀스가 생성 되자마자 호출할 경우 오류 발생.
+ * 						== 마지막으로 호출한 NEXTVAL 값을 반환
+ * */
+
+-- 테이블 생성
+CREATE TABLE TB_TEST(
+	TEST_NO NUMBER PRIMARY KEY,
+	TEST_NAME VARCHAR2(30) NOT NULL
+);
+
+-- 시퀀스 생성
+CREATE SEQUENCE SEQ_TEST_NO
+START WITH 100   -- 100번부터 시작
+INCREMENT BY 5	 -- 5씩 증가
+MAXVALUE 150	 -- 최대값 150
+NOMINVALUE		 -- 최소값 없음
+NOCYCLE			 -- 반복 X
+NOCACHE;		 -- 미리 만들어두는 숫자 없음
+
+-- 시퀀스 생성 확인
+
+SELECT SEQ_TEST_NO.NEXTVAL FROM DUAL; -- 100
+
+SELECT SEQ_TEST_NO.CURRVAL FROM DUAL; -- 100
+-- ORA-08002: 시퀀스 SEQ_TEST_NO.CURRVAL은 
+--				이 세션에서는 정의 되어 있지 않습니다
+
+-- 다시 NEXTVAL 호출
+SELECT SEQ_TEST_NO.NEXTVAL FROM DUAL; -- 105
+SELECT SEQ_TEST_NO.NEXTVAL FROM DUAL; -- 110
+SELECT SEQ_TEST_NO.NEXTVAL FROM DUAL; -- 115
+SELECT SEQ_TEST_NO.NEXTVAL FROM DUAL; -- 120
+
+SELECT SEQ_TEST_NO.CURRVAL FROM DUAL; -- 120
+
+-- TB_TEST에 값 삽입
+INSERT INTO TB_TEST 
+VALUES( SEQ_TEST_NO.NEXTVAL, '홍길동' || SEQ_TEST_NO.CURRVAL  );
+
+SELECT * FROM TB_TEST; -- 삽입 확인
+
+-- INSERT 추가 수행(3번)
+INSERT INTO TB_TEST 
+VALUES( SEQ_TEST_NO.NEXTVAL, '홍길동' || SEQ_TEST_NO.CURRVAL  );
+
+SELECT * FROM TB_TEST;
+
+-- UPDATE에 시퀀스 사용
+UPDATE TB_TEST
+SET TEST_NO = SEQ_TEST_NO.NEXTVAL,
+    TEST_NAME = '고길동' || SEQ_TEST_NO.CURRVAL
+WHERE TEST_NO = (SELECT MAX(TEST_NO) FROM TB_TEST);
+
+-- UPDATE 확인
+SELECT * FROM TB_TEST;
+
+--> UPDATE 추가 수행
+UPDATE TB_TEST
+SET TEST_NO = SEQ_TEST_NO.NEXTVAL,
+    TEST_NAME = '고길동' || SEQ_TEST_NO.CURRVAL
+WHERE TEST_NO = (SELECT MAX(TEST_NO) FROM TB_TEST);
+
+-- UPDATE 확인
+SELECT * FROM TB_TEST;
+
+--> UPDATE 추가 추가 수행
+UPDATE TB_TEST
+SET TEST_NO = SEQ_TEST_NO.NEXTVAL,
+    TEST_NAME = '고길동' || SEQ_TEST_NO.CURRVAL
+WHERE TEST_NO = (SELECT MAX(TEST_NO) FROM TB_TEST);
+-- ORA-08004: 시퀀스 SEQ_TEST_NO.NEXTVAL exceeds 
+--              MAXVALUE은 사례로 될 수 없습니다
+--				-> SEQUENCE MAXVALUE 초과
+
+
+
+-- 가장 마지막 TEST_NO를 조회하는 SELECT
+SELECT MAX(TEST_NO) FROM TB_TEST;
+
+SELECT * FROM 
+	(SELECT TEST_NO FROM TB_TEST
+	ORDER BY TEST_NO DESC)
+WHERE ROWNUM = 1;
+
+
+--------------------------------
+
+-- SEQUENCE 변경(ALTER)
+
+/*
+ [작성법]
+  ALTER SEQUENCE 시퀀스이름
+  [INCREMENT BY 숫자] -- 다음 값에 대한 증가치, 생략하면 자동 1이 기본
+  [MAXVALUE 숫자 | NOMAXVALUE] -- 발생시킬 최대값 지정 (10의 27승 -1)
+  [MINVALUE 숫자 | NOMINVALUE] -- 최소값 지정 (-10의 26승)
+  [CYCLE | NOCYCLE] -- 값 순환 여부 지정
+  [CACHE 바이트크기 | NOCACHE] -- 캐쉬메모리 기본값은 20바이트, 최소값은 2바이트
+*/	
+
+-- SEQ_TEST_NO의 증가값을 1, 최대값 155로 수정
+ALTER SEQUENCE SEQ_TEST_NO
+INCREMENT BY 1
+MAXVALUE 155;
+
+-- UPDATE 구문 다시 수행
+UPDATE TB_TEST
+SET TEST_NO = SEQ_TEST_NO.NEXTVAL,
+    TEST_NAME = '고길동' || SEQ_TEST_NO.CURRVAL
+WHERE TEST_NO = (SELECT MAX(TEST_NO) FROM TB_TEST);
+
+-- UPDATE 확인
+SELECT * FROM TB_TEST;
+
+
+-----------------------------------------------------
+
+-- VIEW, SEQUENCE 삭제
+DROP VIEW V_DCOPY2; -- VIEW 삭제
+DROP SEQUENCE SEQ_TEST_NO; -- SEQUENCE 삭제
+-- 시퀀스는 START WITH를 변경하고 싶을 때 삭제 후 다시 생성해야 한다.
+
+------------------------------------------------------------------------
+
+/* INDEX(색인)
+ * - SQL 구문 중 SELECT 처리 속도를 향상 시키기 위해 
+ *   컬럼에 대하여 생성하는 객체
+ * 
+ * - 인덱스 내부 구조는 B* 트리 형식으로 되어있음.
+ * 
+ * 
+ * ** INDEX의 장점 **
+ * - 이진 트리 형식으로 구성되어 자동 저렬 및 검색 속도 증가.
+ * 
+ * - 조회 시 테이블의 전체 내용을 확인하며 조회하는 것이 아닌
+ *   인덱스가 지정된 컬럼만을 이용해서 조회하기 때문에
+ *   시스템의 부하가 낮아짐.
+ * 
+ * ** 인덱스의 단점 **
+ * - 데이터 변경(INSERT,UPDATE,DELETE) 작업 시 
+ * 	 이진 트리 구조에 변형이 일어남
+ *    -> DML 작업이 빈번한 경우 시스템 부하가 늘어 성능이 저하됨.
+ * 
+ * - 인덱스도 하나의 객체이다 보니 별도 저장공간이 필요(메모리 소비)
+ * 
+ * - 인덱스 생성 시간이 필요함.
+ * 
+ * 
+ * 
+ *  [작성법]
+ *  CREATE [UNIQUE] INDEX 인덱스명
+ *  ON 테이블명 (컬럼명[, 컬럼명 | 함수명]);
+ * 
+ *  DROP INDEX 인덱스명;
+ * 
+ * 
+ *  ** 인덱스가 자동 생성되는 경우 **
+ *  -> PK 또는 UNIQUE 제약조건이 설정된 컬럼에 대해 
+ *    UNIQUE INDEX가 자동 생성된다. 
+ * */
+
+-- INDEX를 사용 X 검색
+SELECT * FROM EMPLOYEE
+WHERE EMP_NAME != '0';
+
+-- INDEX를 사용 O 검색 
+---> WHERE에 INDEX가 설정된 컬럼을 언급
+SELECT * FROM EMPLOYEE
+WHERE EMP_ID != '0';
+--> 데이터가 적어서 차이 식별 불가
+
+
+-- 인덱스 확인용 테이블 생성
+CREATE TABLE TB_INDEX_TEST(
+	TEST_NO NUMBER PRIMARY KEY, -- UNIQUE INDEX 자동 생성
+	TEST_ID VARCHAR2(20) NOT NULL
+);
+
+-- TB_INDEX_TEST 테이블에 샘플 데이터 100만개 삽입
+-- (PL/SQL 사용)
+
+BEGIN
+	FOR I IN 1..1000000
+	LOOP
+		INSERT INTO TB_INDEX_TEST VALUES(I, 'TEST' || I);
+	END LOOP;
+
+	COMMIT;
+END;
+
+
+-- 인덱스 사용 X 조회
+SELECT * FROM TB_INDEX_TEST
+WHERE TEST_ID = 'TEST500000'; -- 20/14/16/15/14 ms
+
+-- 인덱스 사용 O 조회
+SELECT * FROM TB_INDEX_TEST
+WHERE TEST_NO = 500000; -- 1/1/1/0/0 ms
+
+-- TEST_ID 컬럼에 대한 인덱스 생성
+CREATE INDEX IDX_TEST_ID
+ON TB_INDEX_TEST(TEST_ID);
+
+-- 인덱스 생성 후 조회
+SELECT * FROM TB_INDEX_TEST
+WHERE TEST_ID = 'TEST500000'; -- 6/1/0/0/0 
+
+----------------------
+
+-- 인덱스 삭제
+DROP INDEX IDX_TEST_ID;
+
+SELECT * FROM TB_INDEX_TEST
+WHERE TEST_ID = 'TEST500000'; -- 22 15 17
+
+-- 테스트용 테이블 삭제
+DROP TABLE TB_INDEX_TEST;
+
+
 
 
 
