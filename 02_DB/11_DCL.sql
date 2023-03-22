@@ -1,4 +1,4 @@
-/*DCL(Data Control Language)
+/* DCL(Data Control Language)
  * - 사용자(USER)에 DB 또는 DB객체에 대한 접근 권한을
  * 	 부여(GRANT, 허가)하고 회수(REVOKE, 취소)하는 언어
  * 

@@ -188,7 +188,7 @@ FROM EMPLOYEE LEFT /*OUTER*/ JOIN DEPARTMENT ON (DEPT_CODE = DEPT_ID);
 -- 오라클 구문
 SELECT EMP_NAME, DEPT_TITLE
 FROM EMPLOYEE, DEPARTMENT
-WHERE DEPT_CODE = DEPT_ID(+); --LIFT조인이지만 +가 반대방향에 붙음
+WHERE DEPT_CODE = DEPT_ID(+); --LEFT조인이지만 +가 반대방향에 붙음
 -- NULL = D1 ~ D9(+)
 -- 왼쪽 테이블 컬럼의 값과 , 오른쪽 테이블 컬럼의 값이 일치하지 않아도
 -- 억지로 추가해라.(걍 외워..)
