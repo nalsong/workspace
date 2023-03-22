@@ -544,9 +544,8 @@ CREATE TABLE USER_USED_FK(
   -- 컬럼 레벨로 FK제약 조건 설정
   GRADE_CODE NUMBER CONSTRAINT GRADE_CODE_FK1 REFERENCES USER_GRADE(GRADE_CODE)
 );
-
-
 -- 컬럼명 자료형 [CONSTRAINT 이름]  REFERENCES 참조할테이블명 [(참조할컬럼)] [삭제룰]
+
 
 INSERT INTO USER_USED_FK
 VALUES(1, 'user01', 'pass01', '홍길동', '남', '010-1234-5678', 'hong123@kh.or.kr', 10);
@@ -563,7 +562,6 @@ VALUES(4, 'user04', 'pass04', '안중근', '남', '010-2222-1111', 'ahn123@kh.or
 -- 여기서의 NULL은 참조할 게 없다는 의미(JAVA의 NULL과 의미가 같음)
 
 SELECT * FROM USER_USED_FK;
-
 
 INSERT INTO USER_USED_FK
 VALUES(5, 'user05', 'pass05', '윤봉길', '남', '010-6666-1234', 'yoon123@kh.or.kr', 50);
@@ -629,8 +627,6 @@ CREATE TABLE USER_USED_FK2(
   REFERENCES USER_GRADE2(GRADE_CODE) ON DELETE SET NULL 
   										--> 삭제 옵션 추가
 );
-
-
 
 --샘플 데이터 삽입
 INSERT INTO USER_USED_FK2
