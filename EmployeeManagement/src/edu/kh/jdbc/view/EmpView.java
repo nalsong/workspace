@@ -1,6 +1,7 @@
 package edu.kh.jdbc.view;
 
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Map;
@@ -142,10 +143,11 @@ public class EmpView {
 			
 			if(empList.isEmpty()) {
 				System.out.println("[재직 중인 사원이 존재하지 않습니다.]");
+				return;
 			}
 			
 			for( Emp emp : empList ) {
-				System.out.printf(" %s, %s, %s, %s, %d, %s, %s ",
+				System.out.printf(" %d/ %s / %s / %s / %d / %s / %s \n ",
 						emp.getEmpId(),
 						emp.getEmpName(),
 						emp.getDepartmentTitle(),
@@ -159,7 +161,15 @@ public class EmpView {
 			e.printStackTrace();
 		}
 		
+		
+		
+		
 	}
+	
+	
+	
+	
+	
 	
 	
 	
@@ -212,13 +222,15 @@ public class EmpView {
 				return;
 			}
 			
-			System.out.printf("%d, %s, %s, %s, %d, %s, %s, %s, %s\n", 
+			System.out.printf("%d / %s / %s / %s / %d / %s / %s / %s / %s\n", 
 					emp.getEmpId(), 
 					emp.getEmpName(), 
+					emp.getDepartmentTitle(),
 					emp.getJobName(), 
 					emp.getSalary(), 
 					emp.getPhone(), 
 					emp.getEmail(), 
+					emp.getHireDate().toString(),
 					emp.getEntYN());
 			
 		} catch (SQLException e) {
@@ -270,6 +282,11 @@ public class EmpView {
 	    
 	    Emp emp = new Emp(empName, empNo, email, phone, salary, deptCode, jobCode, salLevel, bonus, managerId);
 	
+	   
+	    
+	    
+	    
+	    
 	    try {
 	    	int result = service.insertEmp(emp);
 	    	

@@ -25,48 +25,6 @@ public class Emp {
 
 	
 	
-
-
-
-	public Emp(int empId, String empName, String email, String phone, int salary, String departmentTitle,
-			String jobName) {
-		super();
-		this.empId = empId;
-		this.empName = empName;
-		this.email = email;
-		this.phone = phone;
-		this.salary = salary;
-		this.departmentTitle = departmentTitle;
-		this.jobName = jobName;
-	}
-
-
-	
-
-	
-	
-
-
-	public Emp(int empId, String empName, String email, String phone, String entDate) {
-		super();
-		this.empId = empId;
-		this.empName = empName;
-		this.email = email;
-		this.phone = phone;
-		this.entDate = entDate;
-	}
-
-
-
-	
-	
-
-
-
-
-
-
-
 	public Emp(String empName, String empNo, String email, String phone, int salary, String deptCode,
 			String jobCode, String salLevel, double bonus, int managerId) {
 		super();
@@ -82,7 +40,9 @@ public class Emp {
 		this.managerId = managerId;
 	}
 
-	
+
+
+
 	
 	public int getEmpId() {
 		return empId;

@@ -1,6 +1,6 @@
 package edu.kh.jdbc.model.dao;
 
-import static edu.kh.jdbc.common.JDBCTemplate.close;
+import static edu.kh.jdbc.common.JDBCTemplate.*;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -36,9 +36,11 @@ public class EmpDAO {
 			String sql = "SELECT EMP_ID, EMP_NAME, DEPT_TITLE, JOB_NAME, SALARY, PHONE, EMAIL \r\n"
 					+ "FROM EMPLOYEE\r\n"
 					+ "JOIN JOB USING(JOB_CODE)\r\n"
-					+ "JOIN DEPARTMENT ON(DEPT_CODE = DEPT_ID)\r\n"
+					+ "LEFT JOIN DEPARTMENT ON(DEPT_CODE = DEPT_ID)\r\n"
 					+ "WHERE ENT_YN = 'N'\r\n"
-					+ "ORDER BY DEPT_CODE";
+					+ "ORDER BY JOB_CODE";
+			
+		
 			
 			stmt = conn.createStatement();
 			
@@ -46,22 +48,28 @@ public class EmpDAO {
 			
 			while(rs.next()) {
 				
-				int empId = rs.getInt(1);
-				String empName = rs.getString(2);
-				String departmentTitle = rs.getString(3);
-				String jobName = rs.getString(4);
-				int salary = rs.getInt(5);
-				String phone = rs.getString(6);
-				String email = rs.getString(7);
+				int empId = rs.getInt("EMP_ID");
+				String empName = rs.getString("EMP_NAME");
+				String departmentName = rs.getString("DEPT_TITLE");
+				String jobName = rs.getString("JOB_NAME");
+				int salary = rs.getInt("SALARY");
+				String phone = rs.getString("PHONE");
+				String email = rs.getString("EMAIL");
 				
-				Emp emp = new Emp(empId, empName, email, phone, salary, departmentTitle, jobName);
+				Emp emp = new Emp();
+				emp.setEmpId(empId);
+				emp.setEmpName(empName);
+				emp.setDepartmentTitle(departmentName);
+				emp.setJobName(jobName);
+				emp.setSalary(salary);
+				emp.setPhone(phone);
+				emp.setEmail(email);
 				
 				empList.add(emp);
 			}
 		}finally {
-			close(stmt);
 			close(rs);
-			
+			close(stmt);
 		}
 		return empList;
 	}
@@ -97,7 +105,10 @@ public class EmpDAO {
 				String entDate = rs.getString(5); // TO_CHAR로 형변환 해서 조회
 				
 				
-				Emp emp = new Emp(empId, empName, email, phone, email);
+				Emp emp = new Emp();
+				emp.setEmpId(empId);
+				emp.setEmpName(empName);
+				emp.setPhone(phone);
 				
 				empList.add(emp);
 			}
@@ -127,7 +138,7 @@ public class EmpDAO {
 		
 		try {
 			
-			String sql = "SELECT EMP_ID, EMP_NAME, JOB_NAME, SALARY, PHONE, EMAIL, ENT_YN\r\n"
+			String sql = "SELECT EMP_ID, EMP_NAME, JOB_NAME, DEPT_TITLE, SALARY, PHONE, EMAIL, HIRE_DATE, ENT_YN\r\n"
 					+ "FROM EMPLOYEE\r\n"
 					+ "JOIN JOB USING(JOB_CODE)\r\n"
 					+ "LEFT JOIN DEPARTMENT ON(DEPT_CODE = DEPT_ID) "
@@ -177,6 +188,8 @@ public class EmpDAO {
 		try {
 			String sql = "INSERT INTO EMPLOYEE VALUES( SEQ_EMP_ID.NEXTVAL, "
 					+ "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, SYSDATE, NULL, 'N' )";
+			// ORA-02289: 시퀀스가 존재하지 않습니다.
+			
 			
 			pstmt = conn.prepareStatement(sql);
 			

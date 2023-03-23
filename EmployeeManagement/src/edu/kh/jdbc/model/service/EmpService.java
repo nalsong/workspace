@@ -20,7 +20,7 @@ public class EmpService {
 	
 	
 	/** 재직중인 사원 정보 반환 서비스
-	 * @return
+	 * @return empList
 	 * @throws SQLException
 	 */
 	public List<Emp> selectAll() throws SQLException{
@@ -33,6 +33,7 @@ public class EmpService {
 		
 		
 		return empList;
+	
 	}
 
 
