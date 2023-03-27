@@ -49,9 +49,10 @@ public class MemberView {
 				case 2 : selectMemberList(); break;
 				case 3 : updateMember(); break;
 				case 4 : updatePassword(); break;
-				case 5 : if( unRegisterMember() ) {
+				case 5 : 
+					if( unRegisterMember() ) {
 							return; //메인메뉴
-				}; 
+					};
 				break;
 				case 9 : System.out.println("====메인메뉴로 돌아갑니다.====");break;
 				case 0 : 
@@ -247,10 +248,9 @@ public class MemberView {
 		System.out.println("현재 비밀번호 : ");
 		String memberPw = sc.next();
 		
-		
 		String code = service.createSecurityCode();
-		System.out.printf("보안문자 입력: [%s]", code);
 		
+		System.out.printf("보안문자 입력: [%s]", code);
 		String input = sc.next();
 		
 		//보안문자 일치여부 확인

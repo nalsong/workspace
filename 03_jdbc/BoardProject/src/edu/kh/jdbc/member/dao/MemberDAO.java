@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -155,7 +156,7 @@ public class MemberDAO {
 	 * @param memberNo
 	 * @return result
 	 */
-	public int unRegisterMember(Connection conn, String memberPw, int memberNo) {
+	public int unRegisterMember(Connection conn, String memberPw, int memberNo) throws SQLException{
 		
 		int result = 0;
 		try {
@@ -163,7 +164,7 @@ public class MemberDAO {
 			pstmt = conn.prepareStatement(sql);	
 			
 			
-			pstmt.setString(1, memberNo);
+			pstmt.setInt(1, memberNo);
 			pstmt.setString(2, memberPw);
 			
 			
