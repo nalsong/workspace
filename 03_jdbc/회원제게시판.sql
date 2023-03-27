@@ -205,15 +205,27 @@ WHERE UNREGISTER_FL = 'N'
 ORDER BY MEMBER_NO DESC ;
 
 
+--회원 정보 (이름 성별)수정
+UPDATE "MEMBER"
+SET MEMBER_NM = ?,
+	MEMBER_GENDER = ?
+WHERE MEMBER_NO = ?
 
 
 
+-- 비밀번호 수정
+UPDATE "MEMBER"
+SET MEMBER_PW = ?, --새 비밀번호
+WHERE MEMBER_PW = ?, -- 현재비밀번호
+AND MEMBER_NO = ?
+;
 
 
-
-
-
-
+-- 회원탈퇴
+UPDATE "MEMBER" 
+SET MEMBER_NO = ?
+WHERE MEMBER_PW = ?
+;
 
 
 
