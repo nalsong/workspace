@@ -43,48 +43,40 @@ public class BoardDAO {
 	 */
 	public List<Board> selectAllboard(Connection conn) throws Exception{
 		
-		
 		List<Board> boardList = new ArrayList<>();
 		try {
 			
 			//sql 작성
 			String sql = prop.getProperty("selectAllBoard");
 			
-			
-			
 			// sql수행 후 결과 반환
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
-			
-			
 			
 			//1행씩 접근하여 컬럼 값을 얻어와 옮겨담기
 			while(rs.next()) {
 				int boardNo = rs.getInt("BOARD_NO");
 				String boardTitle = rs.getString("BOARD_TITLE");
-				String boardName = rs.getString("MEMBER_NM");
-				int resdCount = rs.getInt("READ_COUNT");
+				String memberName = rs.getString("MEMBER_NM");
+				int readCount = rs.getInt("READ_COUNT");
 				String createDate = rs.getString("CREATE_DT");
 				int commentCount = rs.getInt("COMMENT_COUNT");
 				
 				Board board = new Board();
 				board.setBoardNo(boardNo);
 				board.setBoardTitle(boardTitle);
-				board.setMemberName(boardName);
-				board.setReadCount(resdCount);
+				board.setMemberName(memberName);
+				board.setReadCount(readCount);
 				board.setCreateDate(createDate);
 				board.setCommentCount(commentCount);
 				
 				boardList.add(board);
 			}
-			
-			
 		}finally {
 			//jdbc객체 자원 반환
 			close(rs);
 			close(stmt);
 		}
-		
 		// 결과 반환
 		return boardList;
 	}
@@ -92,6 +84,12 @@ public class BoardDAO {
 
 
 	
+	/**
+	 * @param conn
+	 * @param input
+	 * @return board
+	 * @throws Exception
+	 */
 	public Board selectBoard(Connection conn, int input) throws Exception{
 	      
 	      Board board = null;
@@ -119,15 +117,13 @@ public class BoardDAO {
 	            board = new Board();
 	            
 	            board.setBoardNo(boardNo);
-	               board.setBoardTitle(boardTitle);
-	               board.setMemberName(memberName);
-	               board.setReadCount(readCount);
-	               board.setCreateDate(createDate);
+	            board.setBoardTitle(boardTitle);
+	            board.setMemberName(memberName);
+	            board.setReadCount(readCount);
+	            board.setCreateDate(createDate);
 	               
-	               board.setBoardContent(boardContent);
-	               board.setMemberNo(memberno);
-	               
-	               
+	            board.setBoardContent(boardContent);
+	            board.setMemberNo(memberno);
 	         }
 	         
 	      } finally {
@@ -136,7 +132,6 @@ public class BoardDAO {
 	         close(pstmt);
 
 	      }
-	      
 	      return board;
 	   }
 

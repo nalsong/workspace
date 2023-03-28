@@ -58,7 +58,7 @@ public class EmployeeView {
 				// WHERE EMP_ID = 입력한 사번;
 				
 				
-				System.out.println("8. 사번으로 사운 정보 삭제");
+				System.out.println("8. 사번으로 사원 정보 삭제");
 				// DELETE
 				
 				System.out.println("0. 프로그램 종료");
@@ -76,7 +76,7 @@ public class EmployeeView {
 				case 5: insertEmployee(); break;
 				case 6: updateEmployee(); break;
 				case 7: retireEmployee(); break;
-				case 8: break;
+//				case 8: deleteOne(); break;
 				case 0: System.out.println("\n[프로그램을 종료합니다...]\n"); break;
 				default: System.out.println("\n[메뉴에 존재하는 번호를 입력하세요.]\n");  
 				}
@@ -102,7 +102,7 @@ public class EmployeeView {
 		
 		
 		try {
-			// DB에서 전체 사원 정보를 조회하는 service
+			// DB에서 전체 사원 정보를 조회하는 service에서
 			//selectAll()을 호출하여 결과 반환받기
 			List<Employee> empList = service.selectAll();
 			
@@ -163,10 +163,12 @@ public class EmployeeView {
 			System.out.println("\n[사번으로 사원 조회 중 예외 발생]\n");
 			e.printStackTrace();
 		}
-		
-		
 	}
 
+	
+	
+	
+	
 	
 	/** 
 	 * 이름에 글자가 포함된 사원 조회
@@ -191,7 +193,6 @@ public class EmployeeView {
 		System.out.print("입력 : ");
 		String inputName = sc.nextLine();
 
-		
 		
 		try {
 
@@ -255,6 +256,7 @@ public class EmployeeView {
 		}
 		
 	}
+	
 	
 	
 	
@@ -389,11 +391,7 @@ public class EmployeeView {
 			return;
 		}
 		
-		
-		
-		
 		// 서비스 호출 후 결과 반환 받기
-		
 		try {
 			int result = service.retireEmployee(input);
 		
@@ -415,18 +413,10 @@ public class EmployeeView {
 			System.out.println("\n[퇴사 처리 중 예외 발생]\n");
 			e.printStackTrace();
 		}
-		
-		
-		
-		
-		
-		
 	}
 
 
 
-
-	
 	
 	
 	

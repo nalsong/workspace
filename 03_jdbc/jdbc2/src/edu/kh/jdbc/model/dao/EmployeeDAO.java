@@ -166,7 +166,6 @@ public class EmployeeDAO {
 		
 		List<Employee> empList = new ArrayList<>();
 		
-		
 		try {
 			String sql = "SELECT EMP_ID, EMP_NAME, NVL(DEPT_TITLE, '없음') DEPT_TITLE, JOB_NAME, NVL(PHONE, '없음') PHONE "
 					+ "FROM EMPLOYEE "
@@ -186,11 +185,7 @@ public class EmployeeDAO {
 				String phone = rs.getString(5);
 				
 				empList.add(new Employee(empId, empName, departmentTitle, jobName, phone));
-				
 			}
-			
-		
-			
 		}finally {
 			close (rs);
 			close(stmt);
@@ -300,7 +295,7 @@ public class EmployeeDAO {
 	 */
 	public int insertEmployee(Connection conn, Employee emp) throws SQLException {
 		
-		// ** DML 수행 시 영향으 ㄹ끼친 행의 개수가 반환 된다!! **
+		// ** DML 수행 시 영향을 끼친 행의 개수가 반환 된다!! **
 		// (삽입된 행의 개수, 수정된 행의 개수, 삭제된 행의 개수)
 		// -> 행의 개수 == 숫자 (정수) == int 사용
 		
@@ -344,10 +339,7 @@ public class EmployeeDAO {
 			close(pstmt);
 			// -> Statement를 close() 하는 메서드 호출
 			// 	  (매개변수에 다형성 업캐스팅 적용)
-			
-			
 		}
-		
 		// 5. 결과 반환
 		return result;
 	}
@@ -382,7 +374,7 @@ public class EmployeeDAO {
 			pstmt.setInt(3, emp.getSalary());
 			pstmt.setInt(4, emp.getEmpId());
 			
-			// set자료형()dmfh ?에 값을 세팅할 때 
+			// set자료형()을 ?에 값을 세팅할 때 
 			// 자료형에 맞는 DB 리터럴 표기번으로 변환되서 세팅된다!
 			// setString() -> 'hong_gd@naver.com'
 			// setInt()    -> 1200000
