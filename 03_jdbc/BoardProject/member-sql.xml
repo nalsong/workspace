@@ -38,10 +38,43 @@
 	
 	<!-- 회원탈퇴 -->
 	<entry key ="unRegisterMember">
-		UPDATE "MEMBER"
-		SET MEMBER_NO = ?
-		WHERE MEMBER_PW = ? 
+		UPDATE "MEMBER" 
+		SET UNREGISTER_FL = 'Y' 
+		WHERE MEMBER_NO = ?
+		AND MEMBER_PW = ?
 	</entry>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

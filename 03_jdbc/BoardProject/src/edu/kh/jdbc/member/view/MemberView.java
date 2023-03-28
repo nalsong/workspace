@@ -51,7 +51,7 @@ public class MemberView {
 				case 4 : updatePassword(); break;
 				case 5 : 
 					if( unRegisterMember() ) {
-							return; //메인메뉴
+						return; //메인메뉴
 					};
 				break;
 				case 9 : System.out.println("====메인메뉴로 돌아갑니다.====");break;
@@ -242,7 +242,7 @@ public class MemberView {
 	 * @return true/false
 	 * 회원탈퇴
 	 */
-	private void unRegisterMember() {
+	private boolean unRegisterMember() {
 		System.out.println("\n*회원탈퇴*\n");
 		
 		System.out.println("현재 비밀번호 : ");

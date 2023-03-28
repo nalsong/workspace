@@ -156,17 +156,15 @@ public class MemberDAO {
 	 * @param memberNo
 	 * @return result
 	 */
-	public int unRegisterMember(Connection conn, String memberPw, int memberNo) throws SQLException{
+	public int unRegisterMember(Connection conn, String memberPw, int memberNo) throws Exception{
 		
 		int result = 0;
 		try {
 			String sql = prop.getProperty("unRegisterMember");
 			pstmt = conn.prepareStatement(sql);	
 			
-			
 			pstmt.setInt(1, memberNo);
 			pstmt.setString(2, memberPw);
-			
 			
 			result = pstmt.executeUpdate();
 			

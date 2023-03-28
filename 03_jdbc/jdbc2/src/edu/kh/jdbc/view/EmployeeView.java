@@ -80,19 +80,17 @@ public class EmployeeView {
 				case 0: System.out.println("\n[프로그램을 종료합니다...]\n"); break;
 				default: System.out.println("\n[메뉴에 존재하는 번호를 입력하세요.]\n");  
 				}
-				
-				
-				
 			}catch(InputMismatchException e) {
 				System.out.println("\n[잘못된 입력입니다.]");
 				sc.nextLine(); // 입력 버퍼에 남아있는 문자열 제거
 				input = -1; // while문이 종료되지 않게 하기 위한 값 대입
 			}	
 		}while(input != 0);
-		
-		
 	}
 
+	
+	
+	
 	
 	/**
 	 * 전체 사원 조회
@@ -318,6 +316,8 @@ public class EmployeeView {
 			e.printStackTrace();
 		}
 	}
+	
+	
 	
 	
 	/**
