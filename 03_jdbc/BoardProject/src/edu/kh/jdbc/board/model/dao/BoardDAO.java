@@ -209,7 +209,7 @@ public class BoardDAO {
 	/** 게시글 삭제 sql수행
 	 * @param conn
 	 * @param boardNo
-	 * @return
+	 * @return result
 	 * @throws Exception
 	 */
 	public int deleteBoard(Connection conn, int boardNo) throws Exception{

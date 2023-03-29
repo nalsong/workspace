@@ -67,46 +67,19 @@ public class CommentDAO {
 	}
 	
 	
-	
-	
-		/** 다음 댓글 번호 조회SQL 수행
-		 * @param conn
-		 * @return commentNo
-		 * @throws Exception
-		 */
-		public int nextCommentNo(Connection conn) throws Exception{
-		
-		int commentNo = 0;
-		
-		try {
-			String sql = prop.getProperty("nextCommentNo");
-			
-			stmt = conn.createStatement();
-			rs= stmt.executeQuery(sql);
-			
-			if(rs.next()) {
-				commentNo = rs.getInt(1); //컬럼 순서
-			}
-			
-		}finally {
-			close(rs);
-			close(stmt);
-		}
-		return commentNo;
-	}
+
 	
 	
 	
-	/** 댓글 입력하기
+	/** 댓글 등록 SQL 수행
 	 * @param conn
 	 * @param boardNo
-	 * @param commentNo
 	 * @param commentContent
 	 * @param memberNo
 	 * @return result
 	 * @throws Exception
 	 */
-	public int insertComment(Connection conn, int commentNo, String commentContent, int memberNo) throws Exception{
+	public int insertComment(Connection conn, int boardNo, String commentContent, int memberNo) throws Exception{
 		
 		int result = 0;
 		
@@ -115,9 +88,9 @@ public class CommentDAO {
 			
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setInt(1, commentNo);
-			pstmt.setString(2, commentContent);
-			pstmt.setInt(3, memberNo);
+			pstmt.setString(1, commentContent);
+			pstmt.setInt(2, memberNo);
+			pstmt.setInt(3, boardNo);
 			
 			result = pstmt.executeUpdate();
 		}finally {
@@ -125,7 +98,40 @@ public class CommentDAO {
 		}
 		return result;
 	}
+	
+	
+	
+	/** 댓글 확인 SQL수행
+	 * @param conn
+	 * @param commentNo
+	 * @param boardNo
+	 * @param memberNo
+	 * @return
+	 * @throws Exception
+	 */
+	public int checkCommentNo(Connection conn, int commentNo, int boardNo, int memberNo) throws Exception{
 
+		int check = 0;
+
+		try {
+			String sql = prop.getProperty("checkCommentNo");
+
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, commentNo);
+			pstmt.setInt(2, memberNo);
+			pstmt.setInt(3, boardNo);
+
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				check = rs.getInt(1);
+			}
+
+		}finally {
+			close(pstmt);
+		}
+
+		return check;
+	}
 
 	
 	
@@ -134,10 +140,10 @@ public class CommentDAO {
 	/** 댓글 수정
 	 * @param conn
 	 * @param commentContent
-	 * @param boardNo
+	 * @param commentNo
 	 * @return result
 	 */
-	public int updateBoard(Connection conn, String commentContent, int boardNo) throws Exception{
+	public int updateBoard(Connection conn, String commentContent, int commentNo) throws Exception{
 		
 		
 		int result = 0;
@@ -148,7 +154,7 @@ public class CommentDAO {
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setString(1, commentContent);
-			pstmt.setInt(2, boardNo);
+			pstmt.setInt(2, commentNo);
 			
 			
 			result = pstmt.executeUpdate(); 
@@ -158,12 +164,34 @@ public class CommentDAO {
 		return result;
 	
 	}
+
+
+
+	public int deleteComment(Connection conn, int commentNo) throws Exception{
+		
+		int result = 0; // 결과 저장용 변수
+		
+		try {
+			String sql = prop.getProperty("deleteBoard");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, commentNo);
+
+			result = pstmt.executeUpdate();
+							// DDL(CREATE, ALTER, DROP) 수행도 가능
+							// 결과로 -1 반환
+		}finally {
+			close(pstmt);
+		}
+		return result;
+	}
 	
 	
 	
 	
 	
-	
+
 	
 	
 	

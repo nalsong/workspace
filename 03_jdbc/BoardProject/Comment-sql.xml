@@ -18,21 +18,11 @@
 	
 	
 	
-	<!-- 댓글 번호 생성 -->
-	
-	<entry key = "nextCommentNo">
-		SELECT SEQ_COMMENT_NO.NEXTVAL FROM DUAL
-	</entry>
-	
-	
-	
-	<!-- 댓글 등록하기 -->
-	<entry key = "insertComment">
+<!-- 댓글 등록 -->
+	<entry key="insertComment">
 		INSERT INTO "COMMENT"
-		VALUES (?, ?, DEFAULT, DEFAULT, ?, ?)
+		VALUES(SEQ_COMMENT_NO.NEXTVAL, ?, DEFAULT, DEFAULT, ?, ?)
 	</entry>
-	
-	
 	
 	
 	<!-- 댓글 수정  -->
@@ -40,14 +30,11 @@
 	<entry key = "updateComment">
 		UPDATE "COMMENT" 
 		SET COMMENT_CONTENT = ?
-		WHERE BOARD_NO = ?
-		AND COMMENT_NO = ?
+		WHERE COMMENT_NO = ?
 	</entry>
 	
 	
-	
-	
-	<!-- 댓글 삭제 -->
+		<!-- 댓글 삭제 -->
 	<entry key="deleteComment"> 
 		UPDATE "COMMENT"  
 		SET DELETE_FL ='Y'
@@ -61,7 +48,7 @@
 		
 	</entry>
 	
-	
+	 
 </properties>
 
 
