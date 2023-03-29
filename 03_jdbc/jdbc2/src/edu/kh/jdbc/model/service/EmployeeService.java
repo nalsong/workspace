@@ -27,6 +27,7 @@ public class EmployeeService {
 	private EmployeeDAO dao = new EmployeeDAO(); 
 	
 	
+	
 	/** 전체 사원 정보 반환 서비스
 	 * @return empList
 	 * @throws SQLException
@@ -55,8 +56,6 @@ public class EmployeeService {
 		
 		// 4. 결과 반환
 		return empList;
-		
-		
 	}
 
 
@@ -64,7 +63,7 @@ public class EmployeeService {
 	
 	/** 사원 1명 정보 반환 서비스
 	 * @param input
-	 * @return 
+	 * @return emp
 	 */
 	public Employee selectOne(int input) throws SQLException{
 		
@@ -88,7 +87,7 @@ public class EmployeeService {
 
 	/** 글자 포함 사원 정보 조회 서비스
 	 * @param inputName
-	 * @return
+	 * @return empList
 	 * @throws SQLException
 	 */
 	public List<Employee> selectName(String inputName) throws SQLException{
@@ -131,7 +130,7 @@ public class EmployeeService {
 
 	/** 사원 정보 삽입 서비스
 	 * @param emp
-	 * @return
+	 * @return result
 	 * @throws SQLException
 	 */
 	public int insertEmployee(Employee emp) throws SQLException {
@@ -165,7 +164,7 @@ public class EmployeeService {
 
 	/** 회원 정보 수정 서비스
 	 * @param emp
-	 * @return 
+	 * @return result
 	 * @throws SQLException
 	 */
 	public int updateEmployee(Employee emp) throws SQLException {

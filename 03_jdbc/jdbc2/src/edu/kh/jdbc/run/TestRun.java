@@ -21,11 +21,9 @@ public class TestRun {
 		
 		try {
 			// 2. 참조 변수에 알맞은 객체 대입
-			
 
 //			conn = JDBCTemplate.getConnection();
 			conn = getConnection();
-			
 			
 			//SQL작성
 			String sql = "SELECT EMP_ID, EMP_NAME, SALARY FROM EMPLOYEE" ;

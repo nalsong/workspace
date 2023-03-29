@@ -5,11 +5,11 @@ package edu.kh.jdbc.board.model.dto;
 // Data Transfer Object : 
 public class Board {
 	
-	private int boardNo; 
-	private String boardTitle;
-	private String boardContent;
-	private String CreateDate;
-	private int readCount;
+	private int boardNo; // 게시글 번호
+	private String boardTitle; // 게시글 제목
+	private String boardContent; // 게시글 내용
+	private String CreateDate; // 작성일
+	private int readCount; // 조회수
 	private int memberNo; //회원번호(작성자)
 	private String memberName; //회원이름
 	private int commentCount; //댓글 수

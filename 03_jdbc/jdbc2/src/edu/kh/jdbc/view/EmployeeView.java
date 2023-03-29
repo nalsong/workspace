@@ -5,23 +5,13 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-import javax.print.attribute.SetOfIntegerSyntax;
-
 import edu.kh.jdbc.model.dto.Employee;
 import edu.kh.jdbc.model.service.EmployeeService;
 
-
-// 값 입력, 결과 출력용 클래스
-// -> 사용자와 맞닿는(접점) 클래스 == User Interface(UI)
-/**
- * @author user1
- *
- */
 public class EmployeeView {
+	
 	private Scanner sc = new Scanner(System.in);
-	
 	private EmployeeService service = new EmployeeService();
-	
 	
 	public void displayMenu() {
 	
@@ -63,7 +53,6 @@ public class EmployeeView {
 				
 				System.out.println("0. 프로그램 종료");
 				
-				
 				System.out.print("메뉴선택 >> ");
 				input = sc.nextInt();
 				sc.nextLine(); // 입력버퍼 개행문자 제거
@@ -76,7 +65,7 @@ public class EmployeeView {
 				case 5: insertEmployee(); break;
 				case 6: updateEmployee(); break;
 				case 7: retireEmployee(); break;
-//				case 8: deleteOne(); break;
+				case 8: break;
 				case 0: System.out.println("\n[프로그램을 종료합니다...]\n"); break;
 				default: System.out.println("\n[메뉴에 존재하는 번호를 입력하세요.]\n");  
 				}
@@ -414,16 +403,6 @@ public class EmployeeView {
 			e.printStackTrace();
 		}
 	}
-
-
-
-	
-	
-	
-	
-	
-	
-	
 }
 
 

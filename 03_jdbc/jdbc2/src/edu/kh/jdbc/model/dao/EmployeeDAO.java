@@ -2,7 +2,6 @@ package edu.kh.jdbc.model.dao;
 
 import static edu.kh.jdbc.common.JDBCTemplate.*;
 
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,7 +10,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.kh.jdbc.common.JDBCTemplate;
 import edu.kh.jdbc.model.dto.Employee;
 
 // DAO (Data Access Object) : DB 접근용 객체 
@@ -78,14 +76,11 @@ public class EmployeeDAO {
 			
 			// catch문 대신 throws 구문으로 예외 처리
 			
-			
 			// 4. JDBC 객체 자원 반환(단, conn 빼고)
 			close(stmt);
 			close(rs);
 			
 		}
-		
-		
 		return empList;
 	}
 
@@ -93,7 +88,7 @@ public class EmployeeDAO {
 	/** 사원 1명 정보 조회 SQL 수행 후 결과 반환 메서드
 	 * @param conn
 	 * @param input
-	 * @return 
+	 * @return emp
 	 */
 	public Employee selectOne(Connection conn, int input) throws SQLException{
 		
@@ -129,7 +124,6 @@ public class EmployeeDAO {
 				
 				// 객체 생성해서 emp에 대입
 				emp = new Employee(empId, empName, departmentTitle, jobName, phone);
-				
 			}
 			
 			// if(조건식){ture이면 수행} -> 1번 수행
@@ -138,17 +132,14 @@ public class EmployeeDAO {
 			// --> 불필요한 검사를 진행할 수 있다.
 			// ---> 1행 조회에서는 if문 권장!!
 			
-			
 		}finally {
 			
 			// 4. JDBC 객체 자원 반환(단, conn 빼고)
 			close (rs);
 			close(stmt);
-			
 		}
 		
 		// 5.결과 반환
-		
 		return emp;
 	}
 
@@ -207,7 +198,7 @@ public class EmployeeDAO {
 		// 1. 결과를 저장할 변수/ 객체 선언
 		List<Employee> empList = new ArrayList<>();
 		
-		try {
+		try {	
 			/*
 			// 2. Statement, ResultSet 객체를 생성해서 대입
 			
@@ -229,7 +220,6 @@ public class EmployeeDAO {
 			//-------------------------------------------------------------
 			
 			// ** 2. PreparedStatement 사용하기
-			
 			// SQL작성
 			String sql = "SELECT EMP_ID, EMP_NAME, JOB_NAME, SALARY\r\n"
 					+ "FROM EMPLOYEE\r\n"
@@ -253,7 +243,6 @@ public class EmployeeDAO {
 			// -> PreparedStatement 객체 생성 시 SQL을 담겨져 있기 때문에 
 			// SQL 수행 구문에서 따로 매개변수를 작성하지 않는다!
 			
-			
 			// 3. 커서를 이용해서 조회 결과를 1행씩 접근
 			while(rs.next()) {
 				
@@ -264,9 +253,7 @@ public class EmployeeDAO {
 				
 				// Employee 객체를 생성해서 컬럼 값을 세팅
 				// (기본 생성자 + setter)
-				
 				Employee emp = new Employee();
-				
 				emp.setEmpId(empId);
 				emp.setEmpName(empName);
 				emp.setJobName(JobName);
@@ -275,22 +262,22 @@ public class EmployeeDAO {
 				// empList에 추가
 				empList.add(emp);
 			}
-			
 		} finally {
 			// 4. JDBC 객제 자원 반환(생성 역순 권장)
 			close(rs);
 			close(stmt);
 		}
-		
 		// 5. 결과 반환
 		return empList;
 	}
 
+	
+	
 
 	/** 사원 정보를 삽입하는 SQL수행 후 결과 행 개수 반환하는 메서드
 	 * @param conn
 	 * @param emp
-	 * @return 
+	 * @return result
 	 * @throws SQLException
 	 */
 	public int insertEmployee(Connection conn, Employee emp) throws SQLException {
@@ -344,11 +331,14 @@ public class EmployeeDAO {
 		return result;
 	}
 
+	
+	
+	
 
 	/** 사원 정보를 수정하는 SQL 수행 후 결과 행 개수 반환하는 메서드
 	 * @param conn
 	 * @param emp
-	 * @return
+	 * @return result
 	 * @throws SQLException
 	 */
 	public int updateEmployee(Connection conn, Employee emp) throws SQLException {
