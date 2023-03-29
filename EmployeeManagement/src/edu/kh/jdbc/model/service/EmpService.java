@@ -31,9 +31,7 @@ public class EmpService {
 		
 		close(conn);
 		
-		
 		return empList;
-	
 	}
 
 
@@ -81,9 +79,9 @@ public class EmpService {
 
 
 
-	/**
+	/** 사원정보 추가 서비스
 	 * @param emp
-	 * @return
+	 * @return result
 	 * @throws SQLException
 	 */
 	public int insertEmp(Emp emp) throws SQLException{
@@ -142,9 +140,9 @@ public class EmpService {
 
 
 
-	/**
+	/**사번으로 사원 정보 삭제 서비스
 	 * @param input
-	 * @return
+	 * @return result
 	 * @throws SQLException
 	 */
 	public int deleteEmp(int input) throws SQLException{
@@ -158,7 +156,6 @@ public class EmpService {
 			
 		// 4. 커넥션 반환
 		close(conn);		
-		
 		
 		return result;
 	}
@@ -181,8 +178,6 @@ public class EmpService {
 		return check;
 	}
 	
-	
-
 
 
 	/** 퇴직처리 서비스
@@ -200,11 +195,8 @@ public class EmpService {
 		// DB예외 발생 시 SQL수행이 정상적으로 진행되지 않음
 		commit(conn);
 		
-			
 		// 4. 커넥션 반환
 		close(conn);	
-		
-		
 	}
 
 
