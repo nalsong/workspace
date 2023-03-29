@@ -41,8 +41,7 @@ public class EmpDAO {
 					+ "ORDER BY JOB_CODE";
 			
 		
-			
-			stmt = conn.createStatement();
+						stmt = conn.createStatement();
 			
 			rs = stmt.executeQuery(sql);
 			
@@ -175,10 +174,10 @@ public class EmpDAO {
 	
 	
 	
-	/**
+	/** 사원 추가 SQL수행 후 결과 반환
 	 * @param conn
 	 * @param emp
-	 * @return
+	 * @return result
 	 * @throws SQLException
 	 */
 	public int insertEmployee(Connection conn, Emp emp) throws SQLException{
@@ -266,10 +265,10 @@ public class EmpDAO {
 
 
 
-	/**
+	/** 사번으로 사원 정보 삭제 SQL수행 후 결과 반환
 	 * @param conn
 	 * @param input
-	 * @return
+	 * @return result
 	 * @throws SQLException
 	 */
 	public int deleteEmp(Connection conn, int input) throws SQLException{
@@ -411,13 +410,6 @@ public class EmpDAO {
 		// 5. 결과 반환
 		return mapList;
 	}
-	
-	
-	
-	
-	
-	
-	
 	
 }
 

@@ -26,7 +26,6 @@ public class EmpView {
 		int input = 0;
 		
 		do {
-			
 			try {
 				System.out.println("\n*****************************\n");
 				System.out.println("***** 사원 관리 프로그램*****");
@@ -36,37 +35,30 @@ public class EmpView {
 				// 사번, 이름, 부서명, 직급명, 급여, 전화번호, 이메일
 				// 직급코드 오름차순으로 조회
 				
-				
 				System.out.println("2. 퇴직한 사원 전체 조회"); 
 				// 현재 퇴직한 사원의
 				// 사번, 이름, 전화번호, 이메일, 퇴사일을
 				// 퇴사일 오름차순으로 조회
-				
 				
 				System.out.println("3. 사번이 일치하는 사원 조회"); 
 				// 사번을 입력 받아 일치하는 사원의  
 				// 사번, 이름, 부서명, 직급명, 급여, 전화번호, 이메일, 입사일, 퇴직여부 조회
 				// 단, 사번이 일치하는 사원이 없으면
 				// "사번이 일치하는 사원이 없습니다" 출력
-				
-				
-				System.out.println("4. 사원 정보 추가(INSERT)");
+								System.out.println("4. 사원 정보 추가(INSERT)");
 				// 사번(EMP_ID) -> SEQ_EMP_ID SEQUENCE 사용
-				
 				
 				System.out.println("5. 사번으로 사원 정보 수정(UPDATE)");
 				// 이메일, 전화번호, 급여, 보너스 수정
 				// 단, 사번이 일치하는 사원이 없으면
 				// "사번이 일치하는 사원이 없습니다" 출력
 
-				
 				System.out.println("6. 사번으로 사원 정보 삭제(DELETE)");
 				// 사번을 입력 받아 일치하는 사원 삭제
 				// - 사번을 입력 받은 후 정말 삭제할 것인지 Y/N을 입력 받아 
 				//   Y인 경우에만 삭제, N인 경우 취소
 				// - 사번이 일치하는 사원이 없으면
 				//   "사번이 일치하는 사원이 없습니다" 출력
-				
 				
 				System.out.println("7. 사번이 일치하는 사원 퇴직 처리");
 				// - ENT_YN -> 'Y' , ENT_DATE -> SYSDATE로 수정
@@ -78,11 +70,9 @@ public class EmpView {
 				//   "사번이 일치하는 않거나, 이미 퇴직된 사원입니다." 출력
 				
 				System.out.println("8. 가장 최근 입사한 사원 5명 조회");
-				
 				// 가장 최근(입사일이 늦은) 사원 5명의
 				// 사번, 이름, 부서명, 입사일을
 				// 입사일 내림차순으로 조회
-				
 				
 				System.out.println("9. 부서별 통계 조회"); 
 				// 각 부서별
@@ -93,9 +83,7 @@ public class EmpView {
 				// - 별도의 DTO 작성 또는 
 				//   Map(LinkedHashMap : key 순서가 유지되는 Map) 이용
 				
-				
 				System.out.println("0. 프로그램 종료");
-				
 				
 				System.out.print("메뉴 선택 >> ");
 				input = sc.nextInt();
@@ -160,9 +148,6 @@ public class EmpView {
 			System.out.println("\n[재직 중인 사원 전체 조회 중 예외 발생]\n");
 			e.printStackTrace();
 		}
-		
-		
-		
 		
 	}
 	
@@ -282,11 +267,6 @@ public class EmpView {
 	    
 	    Emp emp = new Emp(empName, empNo, email, phone, salary, deptCode, jobCode, salLevel, bonus, managerId);
 	
-	   
-	    
-	    
-	    
-	    
 	    try {
 	    	int result = service.insertEmp(emp);
 	    	
@@ -309,32 +289,28 @@ public class EmpView {
 	 * 사번으로 사원 정보 수정
 	 */
 	private void updateEmp() {
-		
 		System.out.println("\n---- 사번으로 사원 정보 수정 ----\n");
 			
 		System.out.print("수정할 사원의 사번 : ");
 		int input = sc.nextInt();
 		sc.nextLine();
 		
-		//수정된 정부를 입력 받기 전
+		// 수정된 정부를 입력 받기 전
 		// 해당 사번을 가진 사원이 존재하는 지 확인
 		// -> 3번. 사번으로 사원 조회 서비스를 이용해서 확인
-	
 		try {
 			// 사번으로 사원 조회
 			Emp emp = service.selectOne(input);
+			
 			// -> 사번이 일치하는 사원이 있으면 null이 아님
 			// -> 사번이 일치하는 사원이 없으면null
-			
 			if(emp == null) {
 				System.out.println("[사번이 일치하는 사원이 없습니다.]");
 				return;
 			}
 			
-			
 			// 입력 받은 사원의 사원이 존재할 때 수정할 정보 입력
 			// 이메일, 전화번호, 급여, 보너스
-			
 			System.out.print("이메일 : ");
 			String email = sc.next();
 				
@@ -347,30 +323,24 @@ public class EmpView {
 			System.out.print("보너스 : ");
 			double bonus = sc.nextDouble();
 			
-			
 			// 입력 받은 정보를 객체에 담아서 서비스 전달
 			// (변수 재 사용)
 			emp = new Emp();
-			
 			emp.setEmpId(input);
 			emp.setEmail(email);
 			emp.setPhone(phone);
 			emp.setSalary(salary);
 			emp.setBonus(bonus);
-			
 			int result = service.updateEmp(emp);
 			
 			if(result > 0) { //성공
 				System.out.println("[수정 성공]");
 				}else //실패
 				System.out.println("[수정 실패]");
-			
 		}catch(SQLException e) {
 			System.out.println("[사번으로 사원 수정 중 예외 발생]");
 			e.printStackTrace();
 		}
-		
-
 	}	
 		
 
@@ -425,13 +395,6 @@ public class EmpView {
 		int input = sc.nextInt();
 		sc.nextLine();
 		
-		
-
-		
-
-		
-		
-		
 		try {
 			// 1. 사번이 일치하는 사원이 있는지
 			//	 + 있어도 퇴직한 사원인지 확인하는 서비스 호출
@@ -448,11 +411,8 @@ public class EmpView {
 				return;
 			}
 			
-			
-			
 			// 2. 사원이 존재하고 퇴직하지 않았으면 정말 퇴직처리 할 것인지
 						// 확인 후 서비스 호출
-			
 			System.out.print("정말 퇴사처리 하게시겠습니까?(y/n)");
 			char ch = sc.next().toLowerCase().charAt(0);
 			
@@ -474,8 +434,6 @@ public class EmpView {
 			
 			// --> 퇴직 서비스는 성공 또는 예외만 존재
 			// --> 반환 값이 따로 필요 없음
-			
-			
 			
 			String str = null;
 			str = "\n[퇴사처리가 완료되었습니다.]\n";
@@ -506,12 +464,10 @@ public class EmpView {
 		
 		emp.setEmpId(200);
 		emp.setEmpName("고길동");
-		
 		emp.getEmpId();
 		emp.getEmpName();
 		
 		// tip. DTO의 필드를 Map의 Key라고 생각
-		
 		Map<String ,Object> map = new HashMap<>(); 
 		map.put("empId", 200);
 		map.put("empName", "고길동");
@@ -519,20 +475,17 @@ public class EmpView {
 		map.get("empId");
 		map.get("empName");
 		
-		
 		//다량의 객체 저장
 		List<Emp> empList;
 		
 		List<Map<String, Object>> mapList;
 		*/
 		
-		
 		// 서비스 호출
 		try {
 			List<Map<String, Object>> mapList = service.selectDepartment();
 			
 			// 조회 결과 출력
-			
 			// List에서 요소를 하나씩 순차접근
 			for( Map<String, Object> map : mapList ) {
 				
@@ -547,22 +500,12 @@ public class EmpView {
 					System.out.print(map.get(key) + "  ");
 				}
 				System.out.println(); //줄바꿈
-				
 			}
 		} catch (SQLException e) {
 			System.out.println("[부서별 통계 조회 중 예외 발생]");
 			e.printStackTrace();
 		}
-		
-		
-		
 	}
-	
-	
-	
-	
-	
-	
 }
 
 

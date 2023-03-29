@@ -20,6 +20,8 @@ public class BoardDAO {
 	private Properties prop;
 	
 	
+	
+	
 	public BoardDAO() {
 		//xml에 작성된 sql을 읽어와 저장할 객체를 참조하는 변수
 		
@@ -84,7 +86,7 @@ public class BoardDAO {
 
 
 	
-	/**
+	/** 
 	 * @param conn
 	 * @param input
 	 * @return board
@@ -174,7 +176,7 @@ public class BoardDAO {
 	 * @param boardTitle
 	 * @param boardContent
 	 * @param boardNo
-	 * @return
+	 * @return result
 	 * @throws Exception
 	 */
 	public int updateBoard(Connection conn, String boardTitle, String boardContent, int boardNo) throws Exception{
