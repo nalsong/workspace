@@ -327,7 +327,8 @@ VALUES (?, ?, DEFAULT, DEFAULT, ?, ?);
 
 
 
-
+SELECT *
+FROM "COMMENT";
 
 
 -- 댓글 수정
@@ -336,6 +337,7 @@ SET COMMENT_CONTENT = ?
 WHERE BOARD_NO = ?
 AND COMMENT_NO = ?
 ;
+
 
 
 

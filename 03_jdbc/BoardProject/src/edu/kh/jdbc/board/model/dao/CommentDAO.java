@@ -143,7 +143,7 @@ public class CommentDAO {
 	 * @param commentNo
 	 * @return result
 	 */
-	public int updateBoard(Connection conn, String commentContent, int commentNo) throws Exception{
+	public int updateBoard(Connection conn, int commentNo, String commentContent) throws Exception{
 		
 		
 		int result = 0;

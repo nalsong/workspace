@@ -45,6 +45,7 @@ public class CommentService {
 	 * @throws Exception
 	 */
 	public int checkCommentNo(int commentNo, int boardNo, int memberNo) throws Exception{
+		
 		Connection conn = getConnection();
 
 		int check = dao.checkCommentNo(conn, commentNo, boardNo, memberNo);
@@ -69,7 +70,7 @@ public class CommentService {
 		Connection conn = getConnection();
 		
 		//게시글 수정 DAO호출
-		int result = dao.updateBoard(conn, commentContent, commentNo);
+		int result = dao.updateBoard(conn, commentNo, commentContent);
 		
 		//트랜잭션 처리
 		if(result > 0) commit(conn);

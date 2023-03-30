@@ -42,7 +42,7 @@ public class CommentView {
 	            
 	            
 	            
-//	            case 2: updateComment(boardNo); break; // 댓글 수정
+	            case 2: updateComment(boardNo); break; // 댓글 수정
 	            // 댓글 번호를 입력 받아서
 	            // 1) 해당 댓글이 현재 게시글의 댓글이며
 	            // 	  로그인한 회원이 쓴 댓글이 맞는지 확인하는 서비스 호출
@@ -60,7 +60,7 @@ public class CommentView {
 	            
 	            
 	            
-//	            case 3: deleteComment(boardNo); break; // 댓글 삭제
+	            case 3: deleteComment(boardNo); break; // 댓글 삭제
 	            // 댓글 번호를 입력 받아서
 	            // 1) 해당 댓글이 현재 게시글의 댓글이며
 	            // 	  로그인한 회원이 쓴 댓글이 맞는지 확인하는 서비스 호출
@@ -94,7 +94,7 @@ public class CommentView {
 	 *  @param BoardNo
 	 */
 	private void insertComment(int boardNo) {
-		System.out.println("[댓글 입력] <!wq 입력 시 종료>");
+			System.out.println("[댓글 입력] <!wq 입력 시 종료>");
 
 		   
 		  
@@ -140,63 +140,61 @@ public class CommentView {
 	 * 댓글 수정하기
 	 */
 	private void updateComment(int boardNo) {
-		System.out.println("댓글 수정하기");
-		
-		
-		 // 댓글 번호를 입력 받아서
-        // 1) 해당 댓글이 현재 게시글의 댓글이며
-        // 	  로그인한 회원이 쓴 댓글이 맞는지 확인하는 서비스 호출
-		
-		System.out.print("수정할 댓글 번호 입력:");
-		int commentNo = sc.nextInt();
-		sc.nextLine();
-		
-		// 2-1) 1번 결과가 맞지 않으면
-        // 		"작성한 댓글만 수정할 수 있습니다." 출력
-        
 		try {  
-        
-	        // 2-2) !wq가 입력 될 때까지 내용 입력 후
-	        // 		댓글번호, 내용을 이용해 댓글을 수정하는 서비스 호출
-			int check = service.checkCommentNo(commentNo, boardNo, Session.loginMember.getMemberNo());
+			System.out.println("댓글 수정하기");
 			
-			if(check == 0) {
+			
+			 // 댓글 번호를 입력 받아서
+	        // 1) 해당 댓글이 현재 게시글의 댓글이며
+	        // 	  로그인한 회원이 쓴 댓글이 맞는지 확인하는 서비스 호출
+			
+			System.out.print("수정할 댓글 번호 입력:");
+			int commentNo = sc.nextInt();
+			sc.nextLine();
+			
+			// 2-1) 1번 결과가 맞지 않으면
+	        // 		"작성한 댓글만 수정할 수 있습니다." 출력
+	        
+			
+	        
+			// 2-2) !wq가 입력 될 때까지 내용 입력 후
+			// 댓글번호, 내용을 이용해 댓글을 수정하는 서비스 호출
+			int check = service.checkCommentNo(commentNo, boardNo, Session.loginMember.getMemberNo());
+
+			if (check == 0) {
 				System.out.println("작성한 댓글만 수정할 수 있습니다.");
 				return;
 			}
-			
-				StringBuffer sb = new StringBuffer();
-				
-				System.out.println(" 수정내용 입력 <!wq 입력 시 종료>");
-				
-				// 특정 단어가 입력 될때까지 무한히 입력
-				while(true) {
-					String str = sc.nextLine();
-					
-					if(str.equals("!wq")) break;
-					
-					// append : 제일 뒤에 추가
-					sb.append(str);
-					sb.append("\n"); // 줄 바꿈을 추가
-				}
-				
-			
-			
-				//게시글 수정 서비스 호출
-				int result = service.updateComment(commentNo, sb.toString());
-				
-				if(result > 0) {
-					System.out.println("수정완료");
-				}else {
-					System.out.println("수정실패");
-				}
-				
-			}catch(Exception e) {
-				System.out.println("게시글 수정 중 예외발생");
-				e.printStackTrace();
+
+			System.out.println(" 수정내용 입력 <!wq 입력 시 종료>");
+			StringBuffer sb = new StringBuffer();
+			// 특정 단어가 입력 될때까지 무한히 입력
+			while (true) {
+				String str = sc.nextLine();
+
+				if (str.equals("!wq"))
+					break;
+
+				// append : 제일 뒤에 추가
+				sb.append(str);
+				sb.append("\n"); // 줄 바꿈을 추가
 			}
-			
+
+			// 게시글 수정 서비스 호출
+			int result = service.updateComment(commentNo, sb.toString());
+
+			if (result > 0) {
+				System.out.println("수정완료");
+			} else {
+				System.out.println("수정실패");
+			}
+
+		} catch (Exception e) {
+			System.out.println("게시글 수정 중 예외발생");
+			e.printStackTrace();
 		}
+			
+	}
 	
 	
 	
