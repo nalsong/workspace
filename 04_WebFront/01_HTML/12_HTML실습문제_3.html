@@ -9,22 +9,56 @@
 <body>
     <fieldset>
         <legend>필수 입력 사항</legend>
-        <strong>ID</strong> <input type="text" placeholder="아이디 10글자 이내">
-            <button>중복확인</button><br>
-        <strong>비밀번호</strong> <input type="text" placeholder="영문, 숫자, 특수문자 포함 8자 이상"><br>
-        <strong>비밀번호 확인</strong> <input type="text"><br>
-        <strong>Email</strong> <input type="text"><br>
+        <table>
+            <tr>
+                <th>ID</th>
+                <td><input type="text" placeholder="아이디 10글자 이내"> <button>중복확인</button>
+            </tr>
+            <tr>
+                <th>비밀번호</th>
+                <td><input type="text" placeholder="영문, 숫자, 특수문자 포함 8자 이상" size="30"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>비밀번호 확인</th>
+                <td><input type="text" size="30"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td><input type="text"> <select name="email" id="url">
+                                            <option value="">직접입력</option>
+                                            <option value="naver">@naver.com</option>
+                                            <option value="daum">@daum.co.kr</option>
+                                            <option value="google">@google.com</option>
+                                        </select>
+                </td>
+            </tr>
+        </table>
     </fieldset>
     <fieldset>
         <legend>추가 정보</legend>
         프로필사진 <button>파일 선택</button> 선택된 파일 없음<br>
+        <br>
         성별 : <input type="radio"> 남자 <input type="radio"><br>
-        생년월일<br> 
+        <br>
+        생년월일<input type="date"><br> 
         취미<br>
+        <input type="checkbox">야구   <input type="checkbox">농구   <input type="checkbox">축구<br>
+        <input type="checkbox">공부   <input type="checkbox">음악감상<br>
+        <input type="checkbox">기타 <input type="text"><br>
+        <br>
         자기소개<br>
+        <textarea name="me" id="me" cols="80" rows="10" style="resize:none"></textarea>
+        
     </fieldset>
+    <br>
+    <button>회원가입</button>
+    <button>다시입력</button>
+    <button>이전으로</button>
 
 
-    
+
+
 </body>
 </html>
