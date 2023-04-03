@@ -48,22 +48,22 @@
 
 /* #test6후손 중 10번만 선택 */
 
-/* 1 */
+/* 1번째 방법 */
 /* #test6>li:nth-of-type(5) > span{
     background-color: yellow;
 } */
 
-/* 2 */
+/* 2번째 방법 */
 /* #test6>li:last-of-type() > span{
     background-color: yellow;
 } */
 
-/* 3 */
+/* 3번째 방법 */
 /* #test6>li:nth-last-child(3)> span{
     background-color: yellow;
 } */
 
-/* 4 */
+/* 4번째 방법 */
 #test6>li:nth-last-of-type(1)> span{
     background-color: yellow;
 }

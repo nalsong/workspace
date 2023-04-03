@@ -54,51 +54,56 @@ p[name='name-1']{ background-color: aquamarine;}
     cursor: pointer ; /* 요소에 마우스가 올라오면 손가락 모양으로 변경 */
 }
 
-    /* :active */
-    #activeTest:active{
-        background-color: yellow;
-    }
+/* :active */
+#activeTest:active{
+    background-color: yellow;
+}
 
-    /* :hover */
-    #hoverTest:hover{
-        width: 220px;
-        height: 220px;
-        background-color: hotpink;
-    }
+/* :hover */
+#hoverTest:hover{
+    width: 220px;
+    height: 220px;
+    background-color: hotpink;
+}
 
-    /* #hoverTest의 스타일이 변하는 시간을 0.5초로 */
-    #hoverTest:hover{transition-duration: 0.5s;}
-
-
-    /* :focus */
-    #focusTest:focus{background-color: springgreen;}
+/* #hoverTest의 스타일이 변하는 시간을 0.5초로 */
+#hoverTest:hover{transition-duration: 0.5s;}
 
 
-    /* checked */
-    /* name이 fruits인 checkbox가 체크 되었을 때 */
-    [name="fruits"]:checked{
-        width: 30px;
-        height: 30px;
-
-        background-color: red;
-        /* radio, checkbox는 크기를 지정하는 CSS를 제외한 스타일은 적용되지 않는다. */
-    }
-    
-    
-    /* :enabled / :disabled  */
-    #parent3> input:enabled{background-color: lime;}
-    #parent3> input:enabled{background-color: tomato;}
+/* :focus */
+#focusTest:focus{background-color: springgreen;}
 
 
-    /* 동위 선택자 */
-    /* 내용이 2번입니다인 div요소를 선택 */
+/* checked */
+/* name이 fruits인 checkbox가 체크 되었을 때 */
+[name="fruits"]:checked{
+    width: 30px;
+    height: 30px;
 
-    #div1 + div{background-color: blueviolet;}
+    background-color: red;
+    /* radio, checkbox는 크기를 지정하는 CSS를 제외한 스타일은 적용되지 않는다. */
+}
 
-    /* 4번, 5번 선택 */
-    #div3 ~ div{background-color: gold;}
 
-    #div3 ~ *{font-family: '궁서';}
+/* :enabled / :disabled  */
+#parent3> input:enabled{background-color: lime;}
+#parent3> input:enabled{background-color: tomato;}
+
+
+/* 동위 선택자 */
+/* 내용이 2번입니다인 div요소를 선택 */
+
+#div1 + div{background-color: blueviolet;}
+
+/* 4번, 5번 선택 */
+#div3 ~ div{background-color: gold;}
+
+#div3 ~ *{font-family: '궁서';}
+
+
+
+
+
 
 /**** checkbox모양 바꾸기 ****/
 
@@ -132,3 +137,5 @@ p[name='name-1']{ background-color: aquamarine;}
 
 /* #check1을 존재는 하지만 화면에 보이지 않게 지정 */
 #check1{ display: none;}
+
+
