@@ -31,12 +31,12 @@
 
 
 /* flex-basis : item의 중심축 방향의 기본 점유율(크기)을 지정하는 속성 */
-.basis-150px{ flex-basis: 150px;}
-.basis-10px{ flex-basis: 10%;}
-.basis-25px{ flex-basis: 25%;}
+/* .basis-150px{ flex-basis: 150px;} */
+/* .basis-10px{ flex-basis: 10%;} */
+/* .basis-25px{ flex-basis: 25%;} */
 
 /* flex속성 : flex-grow, flex-shrink, flex-basis 한 번에 작성되는 속성 */
-.flex1{ flex: 0 0 200px;}
+/* .flex1{ flex: 0 0 200px;} */
 
 
 

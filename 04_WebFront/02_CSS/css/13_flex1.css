@@ -7,9 +7,9 @@
 
     /* flex-direction: 중심축의 방향, 시작/끝 지정 */
     flex-direction: row;
-    /* flex-direction: row-reverse;
-    flex-direction: column;
-    flex-direction: column-reverse; */
+    /* flex-direction: row-reverse; */
+    /* flex-direction: column; */
+    /* flex-direction: column-reverse; */
 
 
 
@@ -23,6 +23,7 @@
     justify-content: space-around;
     justify-content: space-evenly;
     justify-content: space-between;
+
 
 
 

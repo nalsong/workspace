@@ -2,7 +2,6 @@
 #colorList>li{
     font-size: 24px;
     font-weight: bold;
-
 }
 
 #colorList >li:nth-child(1){color : red;}
@@ -36,16 +35,14 @@
 /* letter-spacing */
 
 /* 넓힐 때 */
-/* #letterSpacing{letter-spacing: 3px;} */
+#letterSpacing{letter-spacing: 3px;}
 
 /* 좁힐 때 */
-#letterSpacing{letter-spacing: -3px;}
+/* #letterSpacing{letter-spacing: -3px;} */
 
 
 
 /* font-family  */
-
-
 
 #fontFamily>li:nth-child(1){font-family: '궁서';}
 #fontFamily>li:nth-child(2){font-family: '궁서체';}
