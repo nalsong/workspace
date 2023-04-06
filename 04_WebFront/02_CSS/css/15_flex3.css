@@ -43,7 +43,7 @@
 
 /* align-self : 각각의 item별로 교차축 방향으로 정렬을 지정하는 속성 */
 .self-test{
-    align-items: flex-start;
+    align-items: center;
 }
 
 .self-start{align-self: flex-start;}
