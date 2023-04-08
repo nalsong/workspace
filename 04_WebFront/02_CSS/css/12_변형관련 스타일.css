@@ -69,7 +69,7 @@ margin: 100px, 0;
 
 
 /* 요소 회전 */
-.trans-scale-2d{
+.trans-rotate{
                 /* 각도 deg (+가 시계방향, -가 반시계방향)*/
     transform: rotate(-180deg);
 }

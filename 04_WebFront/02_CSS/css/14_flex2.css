@@ -1,7 +1,7 @@
 .flex-container{
     height: 75vh; /* 현재 화면 높이의 75% */
     /* vh(Viewport Height) : 화면의 높이
-                            100포 == 100%
+                            100vh == 100%
      */
     display: flex; /* 내부 item을 유연하게 정렬, 배치 */
 
@@ -10,8 +10,9 @@
     flex-wrap: wrap;
     /* flex-wrap: wrap-reverse; */
 
-    /*  flex-flow :  flex-direction  +  flex-wrap; */
 
+
+    /*  flex-flow :  flex-direction  +  flex-wrap; */
     /* flex-flow: column wrap-reverse; */
 
 

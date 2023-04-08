@@ -34,7 +34,7 @@ function getBoxElement(){
     console.log(temp.innerHTML);
 
     //(참고) 감싸고 있는 요소 전체 얻어오기
-    console.log(temp.outerHTML);
+    // console.log(temp.outerHTML);
 
 }
 
