@@ -1,0 +1,49 @@
+*{ 
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+main, header, section, footer{
+    border: 1px solid black;
+}
+
+main{
+    width: 940px;
+    margin: auto;
+
+    
+    min-height: 500px;
+}
+
+
+
+header{
+
+}
+
+
+header>section:nth-child(1){
+    height: 57px; 
+}
+
+header>section:nth-child(2){
+    height: 384px; 
+}
+
+header>section:nth-child(3){
+    min-height: 500px; 
+}
+
+header>section div{
+    display: inline-block;
+
+}
+
+
+
+footer{
+    width: 1475px;
+    height: 335.6px;
+}
