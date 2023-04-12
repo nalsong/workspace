@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05-1_간이계산기_만들기</title>
+</head>
+<body>
+    두 수를 입력 받아 버튼에 작성된 연산을 수행하는 계산기 만들기
+    <!-- 
+        if, for, while, switch, break, continue 사용 가능
+    -->
+
+    <hr>
+    첫 번째 값 : <input type="text" id="num1"><br>
+    두 번째 값 : <input type="text" id="num2"><br>
+
+    <button onclick="plus()">+</button>
+    <button onclick="minus()">-</button>
+    <button onclick="multiplication()">*</button>
+    <button onclick="division()">/</button>
+    <button onclick="mod()">%</button>
+
+    <br><br>
+    계산 결과 : <span id="result"><!--여기에 결과 출력--></span>
+
+    <script>
+        // 작성된 HTML요소에 원하는 속성(id, class, onclick)을 작성하고 필요한 JS코드(Function)를 이용하여 계산기 만들기
+
+        // 내가 한 방법
+        function plus(){
+        var input1 = document.getElementById('num1');
+        var input2 = document.getElementById('num2');
+
+        var result = document.getElementById('result');
+
+        result.innerHTML = Number(input1.value) + Number(input2.value);
+        }
+
+
+        function minus(){
+        var input1 = document.getElementById('num1');
+        var input2 = document.getElementById('num2');
+
+        var result = document.getElementById('result');
+
+        result.innerHTML = Number(input1.value) - Number(input2.value);
+        }
+
+
+        function multiplication(){
+        var input1 = document.getElementById('num1');
+        var input2 = document.getElementById('num2');
+
+        var result = document.getElementById('result');
+
+        result.innerHTML = Number(input1.value) * Number(input2.value);
+        }
+
+
+        function division(){
+        var input1 = document.getElementById('num1');
+        var input2 = document.getElementById('num2');
+
+        var result = document.getElementById('result');
+
+        result.innerHTML = Number(input1.value) / Number(input2.value);
+        }
+
+
+        function mod(){
+        var input1 = document.getElementById('num1');
+        var input2 = document.getElementById('num2');
+
+        var result = document.getElementById('result');
+
+        result.innerHTML = Number(input1.value) % Number(input2.value);
+        }
+
+
+
+
+        /** 강사님 풀이 1 **/
+
+        // ** 방법 1
+        function plus(){
+        const num1= document.getElementById("num1");
+        const num2= document.getElementById("num2");
+        const result= document.getElementById("result");
+
+        // console.log(num1.value);
+        // console.log(num2.value);
+        // result.innerText = "테스트";
+
+        // result.innerText = num1.value + num2.value;
+        // -> 왜? 이어서 써질까?
+        // -> HTML에서 얻어오는 모든 것는 다 String(문자열)
+        // 얻어온 문자열이 숫자로만 되어 있어 number타입으로 변환 시키고 싶으면 Number(문자열) 작성
+        result.innerText = Number(num1.value) + Number(num2.value);
+        }
+
+
+        function minus(){
+        const num1= document.getElementById("num1");
+        const num2= document.getElementById("num2");
+        const result= document.getElementById("result");
+
+        result.innerText = Number(num1.value) - Number(num2.value);
+        }
+
+
+        function multiplication(){
+        const num1= document.getElementById("num1");
+        const num2= document.getElementById("num2");
+        const result= document.getElementById("result");
+
+        result.innerText = Number(num1.value) * Number(num2.value);
+        }
+
+
+        function division(){
+        const num1= document.getElementById("num1");
+        const num2= document.getElementById("num2");
+        const result= document.getElementById("result");
+
+        result.innerText = Number(num1.value) / Number(num2.value);
+        }
+
+
+        function mod(){
+        const num1= document.getElementById("num1");
+        const num2= document.getElementById("num2");
+        const result= document.getElementById("result");
+
+        result.innerText = Number(num1.value) % Number(num2.value);
+        }
+
+
+
+        //** 방법 2
+
+        // 함수 밖에 변수선언 (전역 변수)
+        // 전역 변수에 각 요소 저장
+        const num1= document.getElementById("num1");
+        const num2= document.getElementById("num2");
+        const result= document.getElementById("result");
+
+        function plus(){
+        // console.log(num1.value);
+        // console.log(num2.value);
+        // result.innerText = "테스트";
+
+        // result.innerText = num1.value + num2.value;
+        // -> 왜? 이어서 써질까?
+        // -> HTML에서 얻어오는 모든 것는 다 String(문자열)
+        // 얻어온 문자열이 숫자로만 되어 있어 number타입으로 변환 시키고 싶으면 Number(문자열) 작성
+        result.innerText = Number(num1.value) + Number(num2.value);
+        }
+
+        
+
+        function minus(){
+        result.innerText = Number(num1.value) - Number(num2.value);
+        }
+
+
+        function multiplication(){
+        result.innerText = Number(num1.value) * Number(num2.value);
+        }
+
+
+        function division(){
+        result.innerText = Number(num1.value) / Number(num2.value);
+        }
+
+
+        function mod(){
+        result.innerText = Number(num1.value) % Number(num2.value);
+        }
+
+
+    </script>
+
+</body>
+</html>
