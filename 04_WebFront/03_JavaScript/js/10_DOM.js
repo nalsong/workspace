@@ -4,48 +4,46 @@ document.getElementById("btn1").addEventListener("click", () => {
 
     // #test의 모든 자식 노드를 얻어오기
     // - 요소.childNodes : 요소의 자식 노드를 모두 반환(NodeList)
-    const list = document.getElementById("test").childNodes;
+    list = document.getElementById("test").childNodes;
 
     console.log(list);
 
+    // #li1의 부모 노드 탐색 : parentNode
+    const li1 = document.getElementById("li1");
+    console.log(li1.parentNode);
+
+    // #li1의 부모 노드 배경색 변경
+    li1.parentNode.style.backgroundColor = "yellowgreen";
+
+    // #li1의 부모 노드의 마지막 자식으로 새로운 노드 추가
+    // ** append(노드) : 마지막 자식으로 추가(덧붙이다) **
+    li1.parentElement.append("ABCD");
+
+
+    // #test의 첫 번째 자식 노드 탐색 : firstChild
+    console.log(document.getElementById("test").firstChild);
+
+    // #test의 마지막 자식 노드 탐색 : lastChild
+    console.log(document.getElementById("test").lastChild);
+
+    // #test의 중간에 존재하는 자식 노드 탐색 : childNodes[인덱스]
+    // -> 위에 #test의 자식 노드를 저장한 list가 존재함
+    console.log(list[11]);
+    list[11].append("9876");
+
+    // 이전 형제 노드 탐색 : previousSibling
+    console.log(list[8].previousSibling);
+
+    // 다음 형제 노드 탐색 : nextSibling
+    console.log(list[8].nextSibling);
+
+
+    // 탐색 구문은 연달아서 작성 가능 
+    console.log(list[11].firstChild.nextSibling.nextSibling.nextSibling.nextSibling);
+
+    // ** 탐색 범위를 넘어가면 null을 반환 **
+
 });
-
-
-// #li1의 부모 노드 탐색 : parentNode
-const li1 = document.getElementById("li1");
-console.log(li1.parentNode);
-
-// #li1의 부모 노드 배경색 변경
-li1.parentNode.style.backgroundColor = "yellowgreen";
-
-// #li1의 부모 노드의 마지막 자식으로 새로운 노드 추가
-// ** append(노드) : 마지막 자식으로 추가(덧붙이다) **
-li1.parentElement.append("ABCD");
-
-
-// #test의 첫 번째 자식 노드 탐색 : firstChild
-console.log(document.getElementById("test").firstChild);
-
-// #test의 마지막 자식 노드 탐색 : lastChild
-console.log(document.getElementById("test").lastChild);
-
-// #test의 중간에 존재하는 자식 노드 탐색 : childNodes[인덱스]
-// -> 위에 #test의 자식 노드를 저장한 list가 존재함
-console.log(list[11]);
-list[11].append("9876");
-
-// 이전 형제 노드 탐색 : previousSibling
-console.log(list[8].previousSibling);
-
-// 다음 형제 노드 탐색 : nextSibling
-console.log(list[8].nextSibling);
-
-
-// 탐색 구문은 연달아서 작성 가능 
-console.log(list[11].firstChild.nextSibling.nextSibling.nextSibling.nextSibling);
-
-// ** 탐색 범위를 넘어가면 null을 반환 **
-
 
 // Element탐색 확인하기
 document.getElementById("btn2").addEventListener("click", () => {
