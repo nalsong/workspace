@@ -42,6 +42,7 @@ c.onclick = function(){
 
 
 // 표준 이벤트 모델 확인하기
+
 /* 
     [ 표준 이벤트 모델 작성 방법 ]
     요소.addEventListener(감지할 이벤트, 이벤트 핸들러);
@@ -62,7 +63,7 @@ test3.addEventListener("click", function(){
 });
 
 
-// 중간에 코드 2만줄.....
+// 중간에 코드 2만줄 있다고 생각하기.....
 
 
 test3.addEventListener("click", function(){
@@ -86,6 +87,7 @@ test3.addEventListener("click", function(e){
     // 현재 너비가 500px을 초과하며 너비/높이를 200px로 초기화
     if(currentWidth > 500-20){
         e.target.style.width = "200px";
+        e.target.style.height = "200px";
     }
 
 });
@@ -189,6 +191,8 @@ document.getElementById("btn").addEventListener("click", function(){
     }
 });
 */
+
+
 
 // form태그 기본 이벤트 제거 2 (인라인 이벤트 모델)
 function fnCheck(){
