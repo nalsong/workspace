@@ -45,6 +45,8 @@ document.getElementById("btn1").addEventListener("click", () => {
 
 });
 
+
+
 // Element탐색 확인하기
 document.getElementById("btn2").addEventListener("click", () => {
     const test = document.getElementById("test");
@@ -113,3 +115,6 @@ btn4.addEventListener("click", () => {
     // -> child를 화면에 추가를 했다고 해서 해당 코드에서 추적을 못하는 것이 아닌 아직 child변수를 이용해서 계속 접근 가능
     child.innerText = count2++;
 });
+
+
+
