@@ -41,7 +41,7 @@ document.getElementById("btn1").addEventListener("click", () => {
     // 탐색 구문은 연달아서 작성 가능 
     console.log(list[11].firstChild.nextSibling.nextSibling.nextSibling.nextSibling);
 
-    // ** 탐색 범위를 넘어가면 null을 반환 **
+    // ** 탐색 범위를 넘어가면 null을 반환 **image.png
 
 });
 

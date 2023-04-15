@@ -24,19 +24,21 @@ document.getElementById("btn1").addEventListener("click", () => {
 
 });
 
+
+// 배열 함수 확인하기
 document.getElementById("btn2").addEventListener("click", () => {
     // 비어있는 배열 생성
     const arr = new Array(); // const arr = []
 
     //배열명.push() : 배열 마지막 자식요소로 추가
-    arr.puch("김밥");
-    arr.puch("삼겹살");
-    arr.puch("갈비");
-    arr.puch("냉면");
+    arr.push("김밥");
+    arr.push("삼겹살");
+    arr.push("갈비");
+    arr.push("냉면");
 
     // unshift : 첫 번째 자식 요소로 추가
-    arr.unshft("샌드위치");
-    arr.unshft("햄버거");
+    arr.unshift("샌드위치");
+    arr.unshift("햄버거");
 
     console.log(arr);
 

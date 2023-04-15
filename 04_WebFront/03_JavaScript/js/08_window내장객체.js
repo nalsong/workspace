@@ -71,11 +71,10 @@ document.getElementById("stop").addEventListener("click", () => {
 
 
 
-//
+// 팝업창 열기
 const openPopup1 = document.getElementById("openPopup1");
 const openPopup2 = document.getElementById("openPopup2");
 const openPopup3 = document.getElementById("openPopup3");
-
 
 openPopup1.addEventListener("click", () => {
     // window.open(url);

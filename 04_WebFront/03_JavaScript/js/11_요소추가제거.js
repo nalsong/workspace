@@ -7,27 +7,25 @@ document.getElementById("calc").addEventListener("click", () => { // 강사님 �
 
     let result = 0; // 합계 저장용 변수
     // 계산 버튼이 클릭되는 시점의 .in input 태그들을 모두 읽어옴
-    const input = document.getElementsByClassName("in");
+    const list = document.getElementsByClassName("in");
     /*
     일반 for문
-    for(var i = 0; i < input.length; i++){
-        // console.log(input[i]);
+    for(var i = 0; i < list.length; i++){
+        // console.log(list[i]);
 
         // HTML에 작성된 모든 내용, 속성, 값은 string(문자열)!!!!
-        result += Number(input[i].value); 
+        result += Number(list[i].value); 
     }
     */
 
     // 향상된 for문
     for(let input of list){
-        result += Number(input[i].value); 
+        result += Number(input.value); 
     }
     alert(`결과값은 ${result}입니다.`);
 });
 
 //--------------------------------------------------------
-
-
 
 
 // 추가 버튼이 클릭되었을 때

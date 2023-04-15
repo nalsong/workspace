@@ -7,7 +7,7 @@ document.querySelector('#btn1').addEventListener('click', () => {
     const str1 = "hello world!";
 
     console.log(str1.substring(0,5)); //hello
-    console.log(str1.substring(6,10)); //world
+    console.log(str1.substring(6,11)); //world
 
     // 문자열.split("구분자" [,최대 분할 개수])
     // - 문자열을 구분자를 기준으로 나누어 배열 형태로 반환
