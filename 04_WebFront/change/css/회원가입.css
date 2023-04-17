@@ -1,0 +1,74 @@
+
+*{ 
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+/* 임시테두리 */
+main, header, section, footer{
+    border: 1px solid black;
+}
+
+main{
+    width: 960px;
+    height: 925px;
+    margin: auto;
+    
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer{
+    width: 960px;
+    height: 335px;
+    margin: auto;
+    
+    background-color: #ccc;
+
+    display: block;
+    
+}
+
+footer>article{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+footer>article *{
+    margin-top: 6%;
+    margin-bottom: 6%;
+    
+}
+
+footer>article>div>dl>dt{
+    font-size: 15px;
+    color: grey;
+    font-weight: bold;
+}
+
+
+
+
+
+footer>div>p{
+    font-size: 12px;
+
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+}
+
+a{
+    color: black;
+    font-size: 15px;
+    text-decoration: none;
+    
+}
+
