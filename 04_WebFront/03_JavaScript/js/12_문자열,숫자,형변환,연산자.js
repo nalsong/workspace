@@ -89,10 +89,10 @@ document.querySelector("#btn3").addEventListener("click", ()=>{
     // const num = "1.234";
     const num = "10";
 
-
     console.log(parseInt(num));
 
     console.log(parseFloat(num));
 
     console.log(Number(num));
+    
 });

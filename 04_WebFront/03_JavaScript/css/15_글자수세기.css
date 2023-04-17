@@ -1,0 +1,9 @@
+#content{
+    /* resize : none; -> textarea 크기변경 불가 */
+    resize : none;
+}
+
+.error{
+    color: red;
+    font-weight: bold;
+}
