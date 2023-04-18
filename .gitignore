@@ -10,3 +10,10 @@ bin/
 *.zip
 *.tar.gz
 *.rar
+
+# Servers폴더
+Servers
+*.war
+*.zip
+*.tar.gz
+*.rar
