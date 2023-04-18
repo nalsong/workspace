@@ -33,12 +33,11 @@ public class ExampleController1 extends HttpServlet{
 		
 		// HTML에서 얻어오는 모든 값은 String!!!!!
 		String name = req.getParameter("inputName");
-		
 		String age = req.getParameter("inputAge");
 		
 		System.out.println("입력 받은 이름 : " + name);
 		System.out.println("입력 받은 나이 : " + age);
-		
+
 		// 서버 -> 클라이언트 응답하기
 		// HttpServletResponse 객체 이용
 		
