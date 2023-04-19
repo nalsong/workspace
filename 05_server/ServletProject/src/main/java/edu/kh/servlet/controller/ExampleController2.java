@@ -19,7 +19,6 @@ import javax.servlet.http.HttpServletResponse;
  *  -> 해당 클래스를 Servlet으로 등록하고 매핑할 주소를 연결하라고 지시하는 어노테이션
  *  	=> 서버 실행 시 자동으로 web.xml에 <servlet><servlet-mapping>태그를 작성하는 효과
  *  */
-
 @WebServlet("/example2.do")
 public class ExampleController2 extends HttpServlet{
 
@@ -37,14 +36,12 @@ public class ExampleController2 extends HttpServlet{
 		String coffee = req.getParameter("coffee");
 		String type = req.getParameter("type");
 		
-		
 		/* name속성 값이 같은 파라미터가 여러 개인 경우 String[]로 한번에 반환 받는 getParameterValues("name")사용 */
 		
 		String[] optionArr = req.getParameterValues("opt");
 		
 		// 파라미터 확인
 		System.out.println("주문 내용 확인");
-		
 		
 		// -----------------------------------------------------------------------------------
 		
@@ -60,9 +57,7 @@ public class ExampleController2 extends HttpServlet{
 		out.println("<html>");
 		out.println("<head> <title> "+orderer+" 님의 주문결과 </title> </head>");
 		
-		
 		out.println("<body>");
-		
 		
 		out.println("<h3>주문자명 : " + orderer + "</h3>");
 		
@@ -84,18 +79,11 @@ public class ExampleController2 extends HttpServlet{
 			for(String opt : optionArr ) {
 				out.println("<li>"+opt+"</li>");
 			}
-			
 			out.println("</ul>");
 		}
-		
 		out.println("</body>");
 		out.println("</html>");
-		
-		
 	}
-	
-	
-	
 }
 
 

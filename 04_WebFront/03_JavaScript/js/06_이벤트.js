@@ -55,9 +55,9 @@ const test3 = document.getElementById('test3');
 
 // # test3클릭 시 width를 20px만큼 증가
 test3.addEventListener("click", function(){
-    // 요소.clientWidth : 요소의 너비(CSS 로 지정된 값도 읽어옴, readonly)
-    // 요소.clientheight : 요소의 높이(CSS 로 지정된 값도 읽어옴, readonly)
 
+    // 요소.clientWidth : 요소의 너비(CSS 로 지정된 값도 읽어옴, readonly)
+    // 요소.clientHeight : 요소의 높이(CSS 로 지정된 값도 읽어옴, readonly)
     test3.style.width = test3.clientWidth + 20 + "px";
                             /* 현재 너비 */
 });

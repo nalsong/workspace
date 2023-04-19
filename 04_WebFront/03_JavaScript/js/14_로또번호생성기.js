@@ -3,7 +3,6 @@ const container = document.getElementById("container");
 
 createBtn.addEventListener("click", () => {
 
-
     // 난수 배열 생성
     const arr = []; // 빈 배열
 
@@ -14,7 +13,7 @@ createBtn.addEventListener("click", () => {
         // == arr요소 중 중복되는 값이 있으면 push를 안하겠다.
         // == arr요소 중 중복되는 값이 없으면 push를 하겠다.
 
-        // 배열명.indexOd(값) : 값이 일치하는 요소의 index반환. 없으면 -1반환
+        // 배열명.indexOf(값) : 값이 일치하는 요소의 index반환. 없으면 -1반환
         if(arr.indexOf(random) == -1)   arr.push(random); 
                                         // 배열 마지막 요소로 추가
     }
