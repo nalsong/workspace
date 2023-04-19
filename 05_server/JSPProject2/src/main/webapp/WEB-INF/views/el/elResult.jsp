@@ -31,7 +31,6 @@
         opt : ${paramValues.opt[2]}<br>
     </p>
 
-
     <hr>
 
     <h3>세팅된 속성(attribute)출력하기</h3>
@@ -57,7 +56,6 @@
     strList[2] : ${strList[2]} <br>
     <%-- strList[3] : ${strList[3]} (3번 인덱스없음)<br> --%>
 
-
     <br><br>
 
     <%-- book의 title필드(JSP표현식) :  <%= ( (Book)request.getAttribute("book") ).getTitle() %> <br> --%>
@@ -66,10 +64,7 @@
     book의 title필드(EL) : ${book.title} <br>
     book의 writer필드(EL) : ${book.writer} <br>
     book의 price필드(EL) : ${book.price} <br>
-
     </p>
-
-
 
     <hr>
 
