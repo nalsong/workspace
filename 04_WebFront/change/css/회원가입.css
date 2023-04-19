@@ -24,6 +24,107 @@ main{
 
 
 
+/* body */
+
+#signUp{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#haveAccount{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+a{
+    color: red;
+    font-size: 20px;
+}
+
+
+#kakao{
+    background-color: white;
+    width: 350px;
+    height: 40px;
+    margin: 5px;
+}
+
+
+.or{
+    /* margin: 30px auto; */
+    width: 120px; 
+
+    display: flex;
+    flex-basis: 1%;
+    align-items: center;
+    color: #ccc;
+    font-size: 16px;
+
+}
+
+.or::after,
+.or::before{
+    content: "";
+    flex-grow: 1;
+    border-top: 1px solid #ccc;
+    height: 1;
+}
+
+
+input{
+    width: 200px;
+    height: 40px;
+    margin: 5px;
+}
+
+
+#password1{
+    height: 40px;
+    width: 145px;
+}
+
+#password2{
+    height: 40px;
+    width: 142px;
+}
+
+
+
+#address2{
+    height: 40px;
+    width: 300px;
+    
+}
+
+#agree{
+    height: 15px;
+    width: 15px;
+}
+
+
+
+button{
+    height: 40px;
+    width: 90px;
+    border: none;
+    border-radius: 5px;
+
+}
+
+#SignUPSubmit{
+    width: 300px;
+    height: 45px;
+    color: white;
+    font-size: 16px;
+    background-color: #2DB400;
+    border: none;
+    margin: 8px;
+    border-radius: 5px;
+}
+
+
+
+
 
 /*  footer */
 footer{
@@ -89,7 +190,7 @@ footer>div>p{
 
 
 
-a{
+footer>article>dl>dd>a{
     color: black;
     font-size: 15px;
     text-decoration: none;
