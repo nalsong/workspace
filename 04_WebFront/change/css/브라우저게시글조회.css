@@ -1,4 +1,6 @@
 
+
+
 *{ 
     box-sizing: border-box;
     padding: 0;
@@ -26,120 +28,49 @@ main{
 
 /* body */
 
-section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    margin: auto;
-}
-
-
-#logIn{
-    font-weight: bold;
-    font-size: 30px;
-}
-
-
-#DontHaveAccount{
-    font-weight: bold;
-    font-size: 20px;
-}
-
-
-#SignUp{
-    color: red;
-    font-size: 20px;
-    text-decoration: none;
-}
-
-
-.searchPw{
-    color: red;
-    font-size: 13px;
-
-    margin-left: 100px;
-}
-
-
-
-#kakao{
-    background-color: white;
-    width: 350px;
-    height: 40px;
-    margin: 5px;
-}
-
-
-
-.or{
-    /* margin: 30px auto; */
-    width: 330px; 
+.top{
     display: flex;
     flex-direction: row;
-    flex-basis: 1%;
-    align-items: center;
-    color: #ccc;
-    font-size: 16px;
+    justify-content: start;
+}
+
+
+.middle{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#discoverP{
+    font-size: 30px;
+    font-weight: bold;
+
+    margin-left: 5px;
+}
+
+.menu *{
+    margin: 0px 10px;
+}
+
+
+
+
+
+
+
+
+
+#moreView{
+    width: 520px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: bold;
     
-}
-
-
-
-.or::after, .or::before{
-    content: "";
-    flex-grow: 1;
-    border-top: 1px solid #ccc;
-    height: 1;
-    margin: 0px 15px;
-}
-
-
-input{
-    width: 200px;
-    height: 40px;
-    margin: 5px;
-}
-
-
-
-#email{
-    height: 40px;
-    width: 300px;
-}
-
-
-#password{
-    height: 40px;
-    width: 300px;
-    
-}
-
-
-#agree{
-    height: 15px;
-    width: 15px;
-}
-
-
-
-button{
-    height: 40px;
-    width: 90px;
-    border: none;
+    border: 1px solid #2DB400;
     border-radius: 5px;
+    background-color: white;
+    color: #2DB400;
 
-}
-
-#loginSubmit{
-    width: 300px;
-    height: 45px;
-    color: white;
-    font-size: 16px;
-    background-color: #2DB400;
-    border: none;
-    margin: 8px;
-    border-radius: 5px;
+    margin-left: 20px;
 }
 
 

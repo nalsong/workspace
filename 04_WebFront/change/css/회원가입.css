@@ -8,9 +8,9 @@
 
 
 /* 임시테두리 */
-main, header, section, footer{
+/* main, header, section, footer{
     border: 1px solid black;
-}
+} */
 
 main{
     width: 960px;
@@ -25,6 +25,15 @@ main{
 
 
 /* body */
+
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: auto;
+}
+
 
 #signUp{
     font-weight: bold;

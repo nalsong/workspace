@@ -30,6 +30,8 @@ main{
 section{
     margin-top: auto;
     margin-bottom: auto;
+
+    
 }
 
 
@@ -41,9 +43,16 @@ section>div{
 
 
 
-#search{
+#searchP{
     font-size: 12px;
+    margin-left: 6px;
 }
+
+#search{
+    margin-bottom: 40px;
+    margin-left: 6px;
+}
+
 
 
 
@@ -68,6 +77,16 @@ section>div{
 }
 
 
+.result{
+    border: 3px solid #ccc;
+
+    display: flex;
+    flex-direction: row;
+
+    border-collapse: collapse;
+
+    margin: 20px 0px;
+}
 
 
 #moreView{
@@ -78,40 +97,75 @@ section>div{
     background-color: white;
     color: #2DB400;
     font-weight: bold;
+
+    margin-left: 6px;
 }
 
 
 section>div>div{
-    
-    border: 1px solid black;
-    
-    
+    border: 3px solid #ccc;
 }
 
 
-.container-1{
-    border: 1px solid black;
+
+
+
+.row{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+}
+
+
+
+.column{
+    width: 350px;
+
+}
+
+
+#title{
+    margin: 20px;
+}
+
+
+#content{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
+
+
+
+.col{
+    margin: 15px;
+}
+
+#column-2{
+    border-top: 6px solid #ccc;
 
     display: flex;
     flex-direction: row;
-
-    margin-top: 20px;
-}
-
-.row{
-    display: block;
+    justify-content: space-around;
 }
 
 
-.column-1{
-    display: block;
+
+#rowPicture{
+    width: 170px;
 }
 
-/* 
-.column-2{
-    display: inline-block;
+
+
+.picture{
+    width: 165px;
+    height: 230px;
+
+    margin-top: 0.5px;
+    
 }
- */
+
+
 
 
 

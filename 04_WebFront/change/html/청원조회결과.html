@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>청원 찾기</title>
+    <title>청원 조회 결과</title>
 
     <link rel="stylesheet" href="../css/청원조회결과.css">
     <script src="https://kit.fontawesome.com/f7459b8054.js" crossorigin="anonymous"></script>
@@ -18,45 +18,38 @@
         
         
         <section>
-            <div id="search">
+            <div id="searchP">
                 Search Petitions
             </div>
             
-            <div>
+            <div id="search">
                 <input type="text" id="searchPetitions" >
                         
                 <button id="searchButton" class="fa-solid fa-magnifying-glass"> search</button>
             </div>
-            <div class="container-1">
+            <div class="result">
                 <div class="row">
-                    <div class="column">
-                        <div>
+                    <div class="column" id="column-1">
+                        <div id="title">
                             서울시 종로구 순덕이 출현
                         </div>
-                        <div>내용내용내용내용</div>
-                        <div></div>
-                        <div></div>
+                        <div id="content">
+                            내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용용내용내용내용내용내용내용내용내용내용내용내용내용용내용내용내용내용내용
+                        </div>
                     </div>
-                    <div class="column">
-                        <div>프로필</div>
-                        <div>서포터 수</div>
-                        <div></div>
-                        <div></div>
+                    <div class="column" id="column-2">
+                        <div class="col" id="profile" >프로필</div>
+                        <div class="col" id="suporterNum">서포터 수</div>
                     </div>
                 </div>
-                <div class="row">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    사진
+                <div class="row" id="rowPicture">
+                    <img src="../image/순덕이.png" class="picture">
                 </div>
             </div>
             <div>
                 <button type="button" id="moreView">더보기</button>
             </div>
         </section>
-
 
 
 
