@@ -8,13 +8,12 @@ content.addEventListener("input", e => {
 
     //e.target : 이벤트가 발생한 요소(== #content)
     // document.getElementById("count").innerText = e.target.value.length;
-
     count.innerText = e.target.value.length;
 
     if( e.target.value.length > 100 ){
         count.classList.add("error");
     }else{
-        count.classList.remove("error")
+        count.classList.remove("error");
     }
 
     // 요소.classList.toggle("클래스명");
@@ -22,7 +21,6 @@ content.addEventListener("input", e => {
     // - 요소에 클래스가 있으면 제거(false반환)
 
 });
-
 
 
 

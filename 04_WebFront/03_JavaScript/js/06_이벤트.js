@@ -198,7 +198,7 @@ document.getElementById("btn").addEventListener("click", function(){
 function fnCheck(){
     // 작성된 아이디, 비밀번호 얻어오기
     const id = document.querySelector("[name='id']").value;
-    const pw = document.querySelector("[name='pw']").value
+    const pw = document.querySelector("[name='pw']").value;
 
     if(id == 'user01' && pw == 'pass01'){
         // 아이디, 비밀번호가 일치할 때 form태그 제출

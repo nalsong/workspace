@@ -26,21 +26,30 @@ main{
 
 /* body */
 
-#signUp{
+#logIn{
     font-weight: bold;
     font-size: 30px;
 }
 
-#haveAccount{
+
+#DontHaveAccount{
     font-weight: bold;
     font-size: 20px;
 }
 
-a{
+
+#SignUp{
     color: red;
     font-size: 20px;
     text-decoration: none;
 }
+
+
+#searchPw{
+    color: red;
+    font-size: 13px;
+}
+
 
 
 #kakao{
@@ -49,6 +58,7 @@ a{
     height: 40px;
     margin: 5px;
 }
+
 
 
 .or{
@@ -60,8 +70,10 @@ a{
     align-items: center;
     color: #ccc;
     font-size: 16px;
-
+    
 }
+
+
 
 .or::after, .or::before{
     content: "";
@@ -79,23 +91,19 @@ input{
 }
 
 
-#password1{
-    height: 40px;
-    width: 145px;
-}
 
-#password2{
+#email{
     height: 40px;
-    width: 142px;
+    width: 300px;
 }
 
 
-
-#address2{
+#password{
     height: 40px;
     width: 300px;
     
 }
+
 
 #agree{
     height: 15px;
@@ -112,7 +120,7 @@ button{
 
 }
 
-#SignUPSubmit{
+#loginSubmit{
     width: 300px;
     height: 45px;
     color: white;
