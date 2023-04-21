@@ -38,7 +38,7 @@
     테스트1(JSP표현식) : <%= request.getParameter("num") %> <%-- null이 표기 --%>
     <%-- 테스트1(JSP표현식) : <%= request.getParameter("num").equals("123") %> => nullPointerException을 발생 --%>
     <br>
-    테스트2(EL) : ${param.num}
+    테스트2(EL) : ${param.num == '123'}
 
     <hr>
     <form action="/elTest" method="POST">
