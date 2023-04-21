@@ -46,10 +46,10 @@
             page scope <br>
 
             <%
-                // application : page scope 객체
-                application.setAttribute("pageValue", 5);
+                // pageContext : page scope 객체
+                pageContext.setAttribute("pageValue", 5);
 
-                application.setAttribute("str", "page범위에 세팅된 문자열");
+                pageContext.setAttribute("str", "page범위에 세팅된 문자열");
             %>
 
             pageValue : ${pageValue} <%-- 5 --%>
