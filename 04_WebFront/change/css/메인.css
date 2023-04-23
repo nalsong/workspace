@@ -1,0 +1,435 @@
+*{ 
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+/* 임시테두리 */
+main, header, section, footer{
+    border: 1px solid black;
+}
+
+main{
+    width: 960px;
+    /* height: 925px; */
+    margin: auto;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    
+    background-image: url("../image/메인배경_수정.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+
+/* body */
+
+
+
+section{
+    margin-top: auto;
+    margin-bottom: auto;
+
+    
+}
+
+/* Welcome */
+#start{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 20px;
+
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    
+}
+
+#start *{
+    margin: 2.5px 0px;
+
+}
+
+#first{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#second{
+    font-size: 12px;
+    font-weight: bold;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#second2{
+    color: #2DB400;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
+#startBtn{
+    width: 100px;
+    height: 30px;
+
+    border-radius: 5px;
+    border: none;
+    background-color: #2DB400;
+    color:  white;
+    cursor: pointer;
+}
+
+
+
+/* 성공한 청원 */
+
+#victory{
+    width: 600px;
+    height: 200px;
+    border: 2px solid #ccc;
+
+    display: flex;
+    flex-direction: row;
+}
+
+
+/* 성공한 청원 - 사진 */
+#imgBox{
+    width: 50%;
+    height: 100%;
+    border: 2px solid #ccc;
+}
+
+
+#vPicture{
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 성공한 청원 - 내용요약 */
+
+#vSummary{
+    width: 50%;
+    height: 100%;
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+#vTitle{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5% 3%;
+}
+
+#vContent{
+    font-size: 12px;
+    margin: 0px 3%;
+}
+
+
+
+
+
+/* 성공한 청원 프로필 */
+
+#vProf{
+    border-top: 2px solid #ccc;
+    width: 100%;
+    
+
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+
+    
+}
+
+#vProf *{
+    margin: 2px;
+}
+
+#vProfile{
+    width: 50%;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+
+.proImg{
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+}
+
+
+#who{
+    display: flex;
+    flex-direction: column;
+}
+
+
+#vSuppoters{
+    width: 20%;
+    
+    margin-top: 15px;
+    margin-left: 15px;
+    
+}
+
+
+
+/* 성공한 청원 목록 */
+#vList{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.vListBox{
+    width: 85px;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 10px;
+}
+
+
+.vListImag{
+    width: 100%;
+    height: 50px;
+
+}
+
+.vListTitle{
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+
+/* 실시간 청원 & 검색어  */
+
+#realTime{
+    margin: 20px;
+}
+
+/* 실시간 청원 */
+#realTime, #rtBox1-1, #rtBox1-2, #rtProfile{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#realTimePart1{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    
+    margin: 10px;
+}
+
+#rtTitle{
+    font-weight: bold;
+
+    margin: 10px;
+}
+
+#rtBox1{
+    border: 1px solid black;
+    border-radius: 10px;
+
+    width: 400px;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    
+
+}
+
+#rtBoxTitle{
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
+
+#rtBox1-1{
+    border-top: 1px solid black;
+    
+    margin: 2px 0px;
+    height: 60%;
+
+    justify-content: space-between;
+}
+
+
+#rtBoxContent{
+    font-size: 12px;
+    
+    margin: 10px;
+}
+
+
+
+
+#rtImg{
+    width: 120px;
+    height: 80px;
+    
+    margin: 10px;
+}
+
+
+
+#rtBox1-2{
+    height: 20%;
+    
+    justify-content: space-between;
+    margin: 5px 20px;
+}
+
+
+
+#pImg{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+
+}
+
+
+
+#rtWho{
+    font-size: 10px;
+}
+
+#rtSuppoters{
+    font-size: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+
+/* 실시간 검색어 */
+
+#realTimePart2{
+    display: flex;
+    flex-direction: column;
+
+    margin: 20px;
+}
+
+#FTTitle{
+    font-weight: bold;
+
+    margin: 10px;
+}
+
+.FTList1{
+    display: flex;
+    flex-direction: row;
+    /* margin: 10px; */
+}
+
+.FTList2{
+    font-size: 12px;
+    
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 5px 10px;
+}
+
+
+/*  footer */
+footer{
+    width: 960px;
+    height: 335px;
+    margin: auto;
+    
+    background-color: #ccc;
+    
+    
+    display: block; 
+}
+
+
+
+footer>article{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+
+
+footer>article>dl{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+
+} 
+
+
+
+footer>article *{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    
+    
+}
+
+
+
+footer>article>dl>dt{
+    font-size: 15px;
+    color: grey;
+    font-weight: bold;
+
+    
+}
+
+
+
+footer>div>p{
+    font-size: 12px;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+}
+
+
+
+footer>article>dl>dd>a{
+    color: black;
+    font-size: 15px;
+    text-decoration: none;
+    
+}

@@ -57,6 +57,7 @@ a{
     width: 350px;
     height: 40px;
     margin: 5px;
+    cursor: pointer;
 }
 
 
@@ -118,6 +119,7 @@ button{
     width: 90px;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 
 }
 
