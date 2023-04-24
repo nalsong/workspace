@@ -18,9 +18,6 @@ public class Student {
 		this.studentAddress = studentAddress;
 		this.departmentName = departmentName;
 	}
-
-
-	
 	
 	
 	public String getStudentNo() {
@@ -68,10 +65,5 @@ public class Student {
 		return "Student [studentNo=" + studentNo + ", studentName=" + studentName + ", studentAddress=" + studentAddress
 				+ ", departmentName=" + departmentName + "]";
 	}
-	
-	
-	
-	
-	
 	
 }

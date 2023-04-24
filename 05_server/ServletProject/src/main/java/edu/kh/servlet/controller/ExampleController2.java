@@ -63,8 +63,8 @@ public class ExampleController2 extends HttpServlet{
 		
 		out.println("<h3>주문한 커피 : ");
 		
-		if(type.equals("ICE")) out.println("따뜻한");
-		else					out.println("차가운");
+		if(type.equals("ICE")) out.println("차가운");
+		else					out.println("따뜻한");
 		
 		out.println(coffee);
 		

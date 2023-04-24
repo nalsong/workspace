@@ -47,7 +47,6 @@ main{
 
 
 #menu>*{
-    
     margin: 5px 10px;
 }
 
@@ -56,6 +55,14 @@ main{
     text-decoration: none;
     
 }
+
+#menu *:hover{
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+    
+}
+
 
 
 /* 게시글뷰 */
