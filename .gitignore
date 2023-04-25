@@ -17,3 +17,12 @@ Servers
 *.zip
 *.tar.gz
 *.rar
+
+# Spring관련 폴더, 파일
+tatget
+/target/
+.springBeans
+pom.properties
+MANIFEST.MF
+*.log
+
