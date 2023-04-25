@@ -13,6 +13,12 @@ public class MemberService {
 	
 	
 	
+	/** 로그인 서비스
+	 * @param inputEmail
+	 * @param inputPw
+	 * @return loginMember
+	 * @throws Exception
+	 */
 	public Member login(String inputEmail, String inputPw) throws Exception{
 		
 		Connection conn = getConnection();

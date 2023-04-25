@@ -16,8 +16,6 @@
 </head>
 
 <body>
-    
-
     <main>
 
         <%-- header.jsp추가(포함) --%>
@@ -30,14 +28,11 @@
         --%>
         <jsp:include page="/WEB-INF/views/common/header.jsp" />
 
-
         <section class="content">
             <section class="content-1">
                 
                 <h3>로그인된 회원 정보</h3>
-
                 ${sessionScope.loginMember}
-                
 
             </section>
             <section class="content-2">
@@ -91,15 +86,16 @@
                             </div>
                         </article>
                     </c:otherwise>
-
                 </c:choose>
-
             </section>
         </section>
     </main>
 
-    <%-- footer --%>
-    <jsp:include page="/WEB-INF/views/common/footer.jsp" />
+
+
+
+<%-- footer --%>
+<jsp:include page="/WEB-INF/views/common/footer.jsp" />
 
 </body>
 

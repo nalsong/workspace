@@ -35,6 +35,13 @@ public class MemberDAO {
 	
 	
 	
+	/** 로그인(회원 정보 조회)
+	 * @param conn
+	 * @param inputEmail
+	 * @param inputPw
+	 * @return loginMember
+	 * @throws Exception
+	 */
 	public Member login(Connection conn, String inputEmail, String inputPw) throws Exception{
 		
 		Member loginMember = null;
@@ -52,14 +59,14 @@ public class MemberDAO {
 			if(rs.next()) {
 				loginMember = new Member();
 				
-				loginMember.setMemberNo( rs.getInt(1));
-				loginMember.setMemberEmail( rs.getString(2));
-				loginMember.setMemberNickname( rs.getString(3));
-				loginMember.setMemberAddress( rs.getString(4));
-				loginMember.setMemberTel( rs.getString(5));
-				loginMember.setProfileImage( rs.getString(6));
-				loginMember.setAuthority( rs.getInt(7));
-				loginMember.setEnrollDate( rs.getString(8));
+				loginMember.setMemberNo(rs.getInt(1));
+				loginMember.setMemberEmail(rs.getString(2));
+				loginMember.setMemberNickname(rs.getString(3));
+				loginMember.setMemberAddress(rs.getString(4));
+				loginMember.setMemberTel(rs.getString(5));
+				loginMember.setProfileImage(rs.getString(6));
+				loginMember.setAuthority(rs.getInt(7));
+				loginMember.setEnrollDate(rs.getString(8));
 				
 			}
 			

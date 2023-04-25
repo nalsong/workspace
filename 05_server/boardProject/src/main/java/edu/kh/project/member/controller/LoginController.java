@@ -34,7 +34,6 @@ public class LoginController extends HttpServlet{
 			MemberService service = new MemberService();
 			
 			//로그인 서비스 호출 후 결과 반환 받기
-			
 			Member loginMember = service.login(inputEmail, inputPw);
 			
 //			System.out.println(loginMember);
@@ -61,7 +60,6 @@ public class LoginController extends HttpServlet{
 				resp.sendRedirect("/"); // 메인페이지 재요청
 				
 				
-				
 			}else { // 로그인 실패
 				
 				// 로그인 실패 메시지를 session에 추가
@@ -72,15 +70,10 @@ public class LoginController extends HttpServlet{
 				
 				resp.sendRedirect(referer);
 				
-				
 			}
-			
-			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-	
 	
 	}
 }

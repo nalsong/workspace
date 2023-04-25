@@ -288,11 +288,65 @@ main{
     flex-direction: column;
     align-items: center;
 
-    
+    margin-top: 80px;
 
     /* 임시 */
-    /* border: 1px solid black; */
+    border: 1px solid black;
 }
+
+
+#gauge{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#haveSign{
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+
+#LetsGet{
+
+    font-size: 20px;
+}
+
+#nextGoal{
+    font-size: 10px;
+}
+#More{
+    font-size: 10px;
+}
+
+
+.prof{
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+
+}
+
+
+#More{
+    font-weight: bold;
+}
+
+
+
+.signUserBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
 
 #postContent{
     display: flex;
