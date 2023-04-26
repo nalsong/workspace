@@ -25,4 +25,5 @@ tatget
 pom.properties
 MANIFEST.MF
 *.log
-
+.factorypath
+settings.json
