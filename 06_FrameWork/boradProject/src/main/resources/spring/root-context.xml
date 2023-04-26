@@ -10,8 +10,6 @@
 	-->
 	
 	
-	
-	
 	<!-- DBCP 사용을 위한 DataSource를 Bean으로 등록 -->
    
    <!-- DataSource란? : java에서 Connection Pool을 지원하기 위한 인터페이스 -->

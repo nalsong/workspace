@@ -40,58 +40,66 @@ public class MemberController {
 	// 로그인 (/member/login), POST 방식 처리
 	
 	
-//  번거로움
-//	@RequestMapping(value="/login", method=RequestMethod.POST)
-//	public String login(HttpServletRequest req) {
-//		
-//		String inputEmail = req.getParameter("inputEmail");
-//		
-//		System.out.println("inpputEmal : " + inputEmail);
-//		
-//		// ** redirect방법 ! **
-//		
-//		// "redirect: 요청주소"
-//		
-//		return "redirect:/";
-//	}
+	
+	
+	/*
+	번거로움
+	@RequestMapping(value="/login", method=RequestMethod.POST)
+	public String login(HttpServletRequest req) {
+		
+		String inputEmail = req.getParameter("inputEmail");
+		
+		System.out.println("inpputEmal : " + inputEmail);
+		
+		// ** redirect방법 ! **
+		
+		// "redirect: 요청주소"
+		
+		return "redirect:/";
+	}
+	*/
+	
+	
+	/*
+	위에 보단 간결하지만 역시 번거로움
+	@RequestMapping(value="/login", method=RequestMethod.POST)
+	public String login(@RequestParam ("inputEmail") String inputEmail) {
+		
+		System.out.println("inputEmail : " + inputEmail);
+		
+		
+		// ** redirect방법 ! **
+		
+		// "redirect: 요청주소"
+		
+		return "redirect:/";
+	}
+	*/
 	
 	
 	
-//	위에 보단 간결하지만 역시 번거로움
-//	@RequestMapping(value="/login", method=RequestMethod.POST)
-//	public String login(@RequestParam ("inputEmail") String inputEmail) {
-//		
-//		System.out.println("inputEmail : " + inputEmail);
-//		
-//		
-//		// ** redirect방법 ! **
-//		
-//		// "redirect: 요청주소"
-//		
-//		return "redirect:/";
-//	}
 	
-	
-	
-	// 간결한 방법
-//	@RequestMapping(value="/login", method=RequestMethod.POST)
-//	public String login(String inputEmail, String inputPw) {
-//		
-//		System.out.println("inputEmail : " + inputEmail);
-//		System.out.println("inputPw : " + inputPw);
-//		
-//		
-//		// ** redirect방법 ! **
-//		
-//		// "redirect: 요청주소"
-//		
-//		return "redirect:/";
-//	}
-	
+	/*
+	 간결한 방법
+	@RequestMapping(value="/login", method=RequestMethod.POST)
+	public String login(String inputEmail, String inputPw) {
+		
+		System.out.println("inputEmail : " + inputEmail);
+		System.out.println("inputPw : " + inputPw);
+		
+		
+		// ** redirect방법 ! **
+		
+		// "redirect: 요청주소"
+		
+		return "redirect:/";
+	}
+	*/
 	
 	
 	//-------------------------------------------------------------------------------
 	
+
 	
 	// 로그인 (/member/login), POST 방식 처리
 	// Class에 작성한 /member를 제외한 나머지 부분을 주소로 작성
@@ -136,13 +144,10 @@ public class MemberController {
 		
 		// * 파라미터의 name속성 값과 매개변수명이 같으면 @RequestParam 생략 가능!! **
 		
-
 		// @RequestParam(value="name", required="fasle", defaultValue="1" )
 	    // [속성]
 	    // value : 전달 받은 input 태그의 name 속성값
 	   
-		
-		
 		System.out.println("inputEmail : " + inputEmail);
 		System.out.println("inputPw : " + inputPw);
 
@@ -168,15 +173,20 @@ public class MemberController {
 		
 		// *** @ModelAttribute를 이용해 값이 필드에 새팅된 객체를 "커맨드 객체" 라고 한다.***
 		
-		
-		
 		System.out.println(inputMember);
 		
 		return "redirect:/";
-		
 	}
 	
+	
 	// -------------------------------------------------------------------------------------------------------
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	// alt + shift + j : 설명용 주석
@@ -195,12 +205,8 @@ public class MemberController {
 		//DB조회 결과 확인
 		System.out.println(loginMember);
 		
-		
-		
 		return "redirect:/";
 	}
-	
-	
 }
 
 
