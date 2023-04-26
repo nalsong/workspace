@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import edu.kh.project.member.model.dto.Member;
 import edu.kh.project.member.model.service.MemberService;
@@ -127,7 +128,7 @@ public class MemberController {
 	// @PostMapping
 	// -> RequestMapping의 자식으로 POST방식 요청을 연결하는 어노테이션
 //	@PostMapping("/login")
-	public String login(/*@RequestParam("inputEmail") String email*/ String inputEmail , /*@RequestParam("inputPw") String pw*/String inputPw) {
+	public String login(/* @RequestParam("inputEmail") String email */ String inputEmail, /* @RequestParam("inputPw") String pw */String inputPw) {
 		
 		// 파라미터 전달 방법 2 : @RequestParam 어노테이션 이용(+ 생략방법) ☆★
 		
@@ -135,19 +136,20 @@ public class MemberController {
 		// - request객체를 이용한 파라미터 전달 어노테이션
 	    // - 매개변수 앞에 해당 어노테이션을 작성하면, 매개변수에 값이 주입됨.
 
-	    // required : 입력된 name 속성값 파라미터 필수 여부 지정(기본값 true)
-	    // -> required = true인 파라미터가 존재하지 않는다면 400 Bad Request 에러 발생
-	    // -> required = true인 파라미터가 null인 경우에도 400 Bad Request
-
-	    // defaultValue : 파라미터 중 일치하는 name 속성 값이 없을 경우에 대입할 값 지정.
-	    // -> required = false인 경우 사용
 		
-		// * 파라미터의 name속성 값과 매개변수명이 같으면 @RequestParam 생략 가능!! **
+		// ** 파라미터의 name속성 값과 매개변수명이 같으면 @RequestParam 생략 가능!! **
 		
 		// @RequestParam(value="name", required="fasle", defaultValue="1" )
 	    // [속성]
 	    // value : 전달 받은 input 태그의 name 속성값
 	   
+		// required : 입력된 name 속성값 파라미터 필수 여부 지정(기본값 true)
+		// -> required = true인 파라미터가 존재하지 않는다면 400 Bad Request 에러 발생
+		// -> required = true인 파라미터가 null인 경우에도 400 Bad Request
+		
+		// defaultValue : 파라미터 중 일치하는 name 속성 값이 없을 경우에 대입할 값 지정.
+		// -> required = false인 경우 사용
+
 		System.out.println("inputEmail : " + inputEmail);
 		System.out.println("inputPw : " + inputPw);
 
@@ -156,7 +158,7 @@ public class MemberController {
 	}
 	
 	
-//	@PostMapping("/login")
+	@PostMapping("/login")
 	public String login(/*@ModelAttribute*/ Member inputMember) {
 		
 		// 파라미터 전달 방법 3 : @ModelAttribute이용한 방법 ☆★
@@ -190,11 +192,10 @@ public class MemberController {
 	
 	
 	// alt + shift + j : 설명용 주석
-	/** 로그인 요청 처리
-	 * 
+	/** 로그인 요청 처리(찐)
 	 * @return 메인페이지 redirect주소
 	 */
-	@PostMapping("/login")
+//	@PostMapping("/login")
 	public String login(Member inputMember, Model model) {
 		
 		// Member inputMember : 커맨드 객체(필드에 파라미터 담겨있음)

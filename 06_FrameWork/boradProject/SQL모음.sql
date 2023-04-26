@@ -12,7 +12,6 @@ QUOTA UNLIMITED ON SYSTEM;
 
 ---------------------------------------------
 
-
 DROP TABLE "MEMBER";
 
 CREATE TABLE "MEMBER" (
@@ -66,6 +65,7 @@ CHECK("AUTHORITY" IN ('1', '2'));
 
 --시퉌스
 CREATE SEQUENCE SEQ_MEMBER_NO NOCACHE;
+
 
 
 --샘플 계정 추가

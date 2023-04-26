@@ -16,8 +16,8 @@ import edu.kh.project.member.model.dto.Member;
 public interface MemberService {
 	
 	
-	/**
-	 * @param inputMember
+	/** 로그인 서비스
+	 * @param inputMember (email, pw)
 	 * @return email, pw 가 일치하는 정보 또는 null
 	 */
 	Member login(Member inputMember);
