@@ -283,7 +283,7 @@ main{
 
 
 /* 게시글 오른쪽 */
-#post-R{
+.post-R{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -301,11 +301,20 @@ main{
     align-items: center;
 }
 
-.row{
+#row3{
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
+
+#arrow{
+    width: 40px;
+    height: 40px;
+
+    border-radius: 100%;
+}
+
+
 
 #haveSign{
     font-weight: bold;
@@ -321,6 +330,7 @@ main{
 #nextGoal{
     font-size: 10px;
 }
+
 #More{
     font-size: 10px;
 }
@@ -338,15 +348,27 @@ main{
     font-weight: bold;
 }
 
-
+#sign_User{
+    margin: 5px;
+}
 
 .signUserBox{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin: 5px;
 }
 
 
+.signNickname{
+    font-weight: bold;
+    margin: 5px;
+}
+
+.signTime{
+    margin: 5px;
+
+}
 
 #postContent{
     display: flex;
