@@ -5,14 +5,14 @@
 
 <link rel="stylesheet" href="/resources/css/main-style.css">
 
-<!-- fonts wesone 라이브러리 추가 + key 틍록 -->
+<!-- fonts wesone 라이브러리 추가 + key 등록 -->
 <script src="https://kit.fontawesome.com/f7459b8054.js" crossorigin="anonymous"></script>
 
 
 <header>
     <section>
         <!-- 클릭 시 메인페이지로 이동하는 로고 -->
-        <a href="#">
+        <a href="/">
 
             <img src="/resources/images/에끌레어.png" alt="로고" id="homeLogo">
         </a>
@@ -50,6 +50,36 @@
 
     </section>
     <section></section>
+
+    <!-- 우측 상단 드롭다운 메뉴 -->
+    <div class="header-top-menu">
+
+        <c:choose>
+            <c:when test="${empty loginMember}">
+                <%-- 로그인 안 했을 때 --%>
+                <a href="/">메인페이지</a> | <a href="/member/login">로그인</a> 
+            </c:when>
+        
+            <c:otherwise>
+        
+                <%-- 로그인 했을 때 --%>
+                <label for="headerMenuToggle">
+                    ${loginMember.memberNickname} <i class="fa-solid fa-caret-down"></i>
+                </label>
+
+                <input type="checkbox" id="headerMenuToggle">
+                <div class="header-menu">
+                    <a href="#">내 정보</a>
+                    <a href="/member/logout">로그아웃</a>
+                </div>
+            </div>
+            </c:otherwise>
+        </c:choose>
+
+
+
+
+
 </header>
 
 <nav>
