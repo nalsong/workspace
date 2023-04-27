@@ -30,7 +30,6 @@ public class MemberServiceImpl implements MemberService{
 		// 암호화 추가 예정
 //		System.out.println("암호화 확인 : " + bcrypt.encode(inputMember.getMemberPw()));
 		
-		
 		// bcrypt암호화는 salt가 추가되기 때문에 계속 비밀번호가 바뀌게 되어 DB에서 비교 불가능!!
 		// -> 별도로 제공해주는 matches(평문, 암호문)을 이용해 비교
 		
@@ -38,6 +37,8 @@ public class MemberServiceImpl implements MemberService{
 		// dao메서드 호출
 		Member loginMember = dao.login(inputMember); 
 		
+		
+
 		if(loginMember != null) { // 아이디가 일치하는 회원이 조회된 경우
 			
 			// 입력한 pw, 암호화된 pw같은지 확인
@@ -53,6 +54,8 @@ public class MemberServiceImpl implements MemberService{
 			}
 		}
 		
+
+
 		return loginMember;
 	}
 	

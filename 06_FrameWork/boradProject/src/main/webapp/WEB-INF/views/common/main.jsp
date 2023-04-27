@@ -77,7 +77,7 @@
 
 
                                 <%-- 간결하게 --%>
-                                <c:if test="${not emptycookie.saveId.value}" >
+                                <c:if test="${not empty cookie.saveId.value}" >
                                     <%-- 
                                         쿠키에 저장된 이메일이 있으면 save변수 선언
                                             -> page scope(페이지 내에서 사용 가능, if문 끝나도 가능)
@@ -122,7 +122,7 @@
     <%-- footer --%>
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
 
-    <!-- main.js추가-->
+    <!-- main.js추가 -->
     <script src="/resources/js/main.js"></script>
 </body>
 

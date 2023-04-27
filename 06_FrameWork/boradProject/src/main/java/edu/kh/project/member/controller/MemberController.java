@@ -1,6 +1,6 @@
 package edu.kh.project.member.controller;
 
-import java.security.Provider.Service;
+
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -224,6 +224,12 @@ public class MemberController {
 					// -> 기본적으로 request scope가짐
 					// @SessionAttributes 어노체이션과 함께 사용 시 Session scope가 됨.
 		
+		// @RequestParam(value="saveId", required=false
+		// -> name속성 값이 "saveId"인 파라미터를 전달 받아 저장
+		// -> required=false : 필수 아님(null 허용)
+		
+		// (주의) required속성 미작성 시 기본 값 true
+		// -> 파라미터가 전달되지 않는 경우 주의해야 함.
 		
 		
 		// 로그인 서비스 호출
@@ -232,7 +238,7 @@ public class MemberController {
 		//DB조회 결과 확인
 //		System.out.println(loginMember);
 		
-		// 로그인 결과에 따라 리다이렉트 결오를 다르게 지정
+		// 로그인 결과에 따라 리다이렉트 경로를 다르게 지정
 		String path = "redirect:";
 		
 		if(loginMember != null) { // 로그인 성공 시
@@ -272,7 +278,7 @@ public class MemberController {
 			Cookie cookie = new Cookie("saveId", loginMember.getMemberEmail());
 			
 			if(saveId != null) { // 체크 되었을 때
-				// 한 달(30일) 동안 유지된느 쿠키 생성
+				// 한 달(30일) 동안 유지되는 쿠키 생성
 				cookie.setMaxAge(60 * 60 * 24 * 30); // 초 단위로 지정
 				
 			}else { // 체그 안 되었을 때
@@ -327,18 +333,14 @@ public class MemberController {
 		
 		// 세션 무효화
 		// Servlet -> HttpSession.invalidate()
+		
 		// Spring
 		// 1) HttpSession을 이용한 경우 -> HttpSession.invalidate()
 		// 2) Model + @SessionAttributes 이용한 경우 -> SessionStatus.setComplete()
 		
 		
 		
-		// @RequestParam(value="saveId", required=false
-		// -> name속성 값이 "saveId"인 파라미터를 전달 받아 저장
-		// -> required=false : 필수 아님(null 허용)
-		
-		// (주의) required속성 미작성 시 기본 값 true
-		// -> 파라미터가 전달되지 않는 경우 주의해야 함.
+
 		
 		
 		// 2) 방법 -> 됨

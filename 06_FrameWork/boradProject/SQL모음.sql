@@ -11,7 +11,18 @@ ALTER USER project DEFAULT TABLESPACE SYSTEM
 QUOTA UNLIMITED ON SYSTEM;
 
 ---------------------------------------------
+alter session set "_oracle_script"=true;
 
+
+select sid, serial#, username,status from v$session where username = 'PROJECT';
+
+--alter system kill session 'sid,serial#';
+alter system kill session '373,22171';
+
+
+---계정 삭제
+DROP USER project CASCADE;
+-- 테이블삭제
 DROP TABLE "MEMBER";
 
 CREATE TABLE "MEMBER" (
@@ -66,6 +77,8 @@ CHECK("AUTHORITY" IN ('1', '2'));
 --시퉌스
 CREATE SEQUENCE SEQ_MEMBER_NO NOCACHE;
 
+--시퀀스 삭제
+DROP SEQUENCE SEQ_MEMBER_NO NOCACHE;
 
 
 --샘플 계정 추가
@@ -88,9 +101,9 @@ AND MEMBER_EMAIL = 'user01@kh.or.kr'
 AND MEMBER_PW = 'pass01!';
 
 
--- user01의 비밀번호 변경
+ -- user01의 비밀번호 변경
 UPDATE "MEMBER" SET
-MEMBER_PW = ''
+MEMBER_PW = '$2a$10$b3Q1QIGPfFASsXnXN3SWmue.9Ny8nrUpBcWIFTSzT.cUdIcnXGB3K'
 ;
 
 
@@ -98,6 +111,12 @@ COMMIT;
 
 
 
+SELECT MEMBER_NO, MEMBER_EMAIL, MEMBER_NICKNAME, MEMBER_TEL, MEMBER_ADDR, PROFILE_IMG, AUTHORITY, MEMBER_PW,
+		TO_CHAR(ENROLL_DATE, 'YYYY"년" MM"월" DD"일" HH24"시" MI"분" SS"초"') AS ENROLL_DATE
+FROM "MEMBER"
+WHERE MEMBER_DEL_FL = 'N'
+AND MEMBER_EMAIL = 'user01@kh.or.kr'
+AND MEMBER_PW = '$2a$10$b3Q1QIGPfFASsXnXN3SWmue.9Ny8nrUpBcWIFTSzT.cUdIcnXGB3K';
 
 
 
