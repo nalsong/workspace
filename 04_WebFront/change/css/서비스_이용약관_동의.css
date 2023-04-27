@@ -10,25 +10,24 @@
 
 
 /* 임시테두리 */
-main, header, section, footer{
+/* main, header, section, footer{
     border: 1px solid black;
-}
+} */
 
 main{
     width: 960px;
-    height: 925px;
+    height: auto;
     margin: auto;
     
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 
 
 /* body */
-
-
 
 section{
     margin-top: auto;
@@ -42,7 +41,33 @@ section>div{
     align-items: center;
 }
 
+.agreeTitle{
+    margin-top: 30px;
+}
 
+#bTitle{
+    font-size: 27px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+
+.agreeBox{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 10px 30px;
+}
+
+
+
+
+
+.sTitle{
+    margin: 10px;
+    font-weight: bold;
+}
 
 .textBox{
     width: 600px;
@@ -50,33 +75,53 @@ section>div{
 
     border: 1px solid black;
 
-    overflow: auto;
+    overflow-y: auto;
 
 }
 
-.agreeBox{
+.agreecheck{
     display: flex;
-    flex-direction: column;
-    align-items: start;
-    margin: 5px 10px;
+    flex-direction: row;
+    margin: 5px;
+
 }
+
+.agreecheck *{
+    margin: 5px;
+}
+
+.agreecheck *:hover{cursor: pointer;}
+
+
 
 .buttons{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+
+    
+    
 }
 
+.buttons *{
+    width: 80px;
+    height: 40px;
+    background-color: white;
+    font-size: 15px;
+    font-weight: bold;
+    color: #2DB400;
+    border: 2px solid #2DB400;
+    border-radius: 5px;
+    margin-bottom: 50px;
+    margin-top: 10px;
+}
 
-
-
+.buttons *:hover{cursor: pointer;}
 
 #searchButton{
     width: 100px;
     height: 40px;
-    color: white;
     font-size: 15px;
-    background-color: #2DB400;
     border: none;
     border-radius: 5px;
 

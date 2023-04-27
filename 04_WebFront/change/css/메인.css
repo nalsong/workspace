@@ -20,8 +20,16 @@ main{
     flex-direction: column;
     align-items: center;
 
+    position: relative;
+}
 
-    
+
+
+main::after{
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: absolute;
     background-image: url("../image/메인배경_최종.png");
     /*  https://codingbroker.tistory.com/58 
         https://youtu.be/cNfpkKUYAyo
@@ -29,7 +37,10 @@ main{
     */
     background-repeat: no-repeat;
     background-size: contain;
-
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.5;
 }
 
 
