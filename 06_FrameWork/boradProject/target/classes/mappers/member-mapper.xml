@@ -82,11 +82,30 @@
 				TO_CHAR(ENROLL_DATE, 'YYYY"년" MM"월" DD"일" HH24"시" MI"분" SS"초"') AS ENROLL_DATE
 		FROM "MEMBER"
 		WHERE MEMBER_DEL_FL = 'N'
+<<<<<<< HEAD
 		AND MEMBER_EMAIL = 'user01@kh.or.kr'
 		AND MEMBER_PW = 'pass01!'
+=======
+		AND MEMBER_EMAIL = #{memberEmail}
+>>>>>>> origin/main
 	</select>
 	
+	<!-- 
+		insert, update, delete와 같은 DML구문은 수행결과가 항상 성공한 행의 개수(int자료형)으로 고정
+		-> resultType을 작성하지 않는다!(항상 int)
+	 -->
 	
-	
+	<!-- 회원 가입 -->					<!-- mybatis-config.xml에 지정된 별칭 -->
+	<insert id="signUp" parameterType="Member">
+		INSERT INTO "MEMBER"
+		VALUES(SEQ_MEMBER_NO.NEXTVAL
+			, #{memberEmail}
+			, #{memberPw}
+			, '${memberNickname}'
+			, #{memberTel}
+			, #{memberAddress}
+			, NULL, DEFAULT, DEFAULT, DEFAULT)
+		
+	</insert>
 	
 </mapper>
