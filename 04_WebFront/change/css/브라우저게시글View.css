@@ -101,6 +101,9 @@ main{
 
 
 /* 신고하기 */
+.fa-regular fa-flag{
+
+}
 
 #reportClick{
     color: black;

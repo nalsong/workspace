@@ -69,14 +69,31 @@ section>div{
     font-weight: bold;
 }
 
+
 .textBox{
     width: 600px;
     height: 100px;
-
     border: 1px solid black;
 
-    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+    overflow-y: auto;
+    padding: 5px;
+}
+
+
+table{
+    width: auto;
+    border-collapse: collapse; 
+}
+
+
+
+th, td{
+    padding: 10px;
+    border-collapse: collapse; 
 }
 
 .agreecheck{
@@ -86,9 +103,13 @@ section>div{
 
 }
 
+
+
 .agreecheck *{
     margin: 5px;
 }
+
+
 
 .agreecheck *:hover{cursor: pointer;}
 
