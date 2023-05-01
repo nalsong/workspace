@@ -9,6 +9,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import edu.kh.project.member.model.dto.Member;
@@ -41,7 +42,7 @@ public class LoginFilter implements Filter {
 		// 필터링 코드를 작성하는 메서드
 		// 1) ServletRequest, ServletResponse 다운캐스팅
 		HttpServletRequest req = (HttpServletRequest)request;
-		ServletResponse resp = (ServletResponse)response;
+		HttpServletResponse resp = (HttpServletResponse)response;
 		
 		//2) HttpServletRequest를 이용해서 HttpSession얻어오기
 		HttpSession session = req.getSession(); 
