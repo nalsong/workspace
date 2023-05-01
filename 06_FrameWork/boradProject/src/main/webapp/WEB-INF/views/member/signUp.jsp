@@ -123,7 +123,7 @@
 
     <%-- https://postcode.map.daum.net/guide#sample --%>
     <%-- footer.jsp inlude --%>
-    <jsp:include page="/WEB-INF/views/common/header.jsp"/>
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
@@ -152,5 +152,9 @@
             }).open();
         }
     </script>
+
+    <script src="/resources/js/member/signUp.js"> 
+    </script>
+
 </body>
 </html>
