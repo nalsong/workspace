@@ -17,7 +17,7 @@ alter session set "_oracle_script"=true;
 select sid, serial#, username,status from v$session where username = 'PROJECT';
 
 --alter system kill session 'sid,serial#';
-alter system kill session '373,22171';
+alter system kill session '377,16398';
 
 
 ---계정 삭제
@@ -78,7 +78,7 @@ CHECK("AUTHORITY" IN ('1', '2'));
 CREATE SEQUENCE SEQ_MEMBER_NO NOCACHE;
 
 --시퀀스 삭제
-DROP SEQUENCE SEQ_MEMBER_NO NOCACHE;
+DROP SEQUENCE SEQ_MEMBER_NO;
 
 
 --샘플 계정 추가
