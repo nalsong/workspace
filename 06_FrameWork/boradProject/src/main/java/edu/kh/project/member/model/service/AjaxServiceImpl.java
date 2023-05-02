@@ -8,21 +8,22 @@ import edu.kh.project.member.model.dao.AjaxDAO;
 @Service // 서비스 임을 명시 +bean등록
 public class AjaxServiceImpl implements AjaxService{
 	
-	 @Autowired //DI
-	 private AjaxDAO dao;
+	@Autowired //DI
+	private AjaxDAO dao;
 	
-	 
-	 @Override
+	// 이메일로 닉네임 조회
+	@Override
 	public String selectNickname(String email) {
 		return dao.selectNickname(email);
 	}
 	 
-	 
+	// 닉네임으로 전화번호 조회
 	@Override
 	public String selectMemberTel(String nickname) {
 		return dao.selcectMemberTel(nickname);
 	} 
 
+	
 	// 이메일 중복 확인
 	@Override
 	public int checkEmail(String email) {

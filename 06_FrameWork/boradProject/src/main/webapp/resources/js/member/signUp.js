@@ -150,7 +150,6 @@ memberEmail.addEventListener("input", () => {
         }) //파싱한 데이터를 이용해서 수행할 코드 작성
         .catch(err => console.log(err)); // 예외처리
 
-
     }else{ // 유효하지 않은 경우(무효인 경우)
         emailMessage.innerText ="이메일 형식이 유효하지 않습니다.";
         emailMessage.classList.add("error"); // .error 스타일 적용

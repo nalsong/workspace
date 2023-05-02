@@ -98,7 +98,7 @@
           <version>5.7.1</version>
       </dependency>
 	
-	 <!-- JSON  -->
+	 <!-- JSON databind -->
   	 <dependency>
 	    <groupId>com.fasterxml.jackson.core</groupId>
 	    <artifactId>jackson-databind</artifactId>

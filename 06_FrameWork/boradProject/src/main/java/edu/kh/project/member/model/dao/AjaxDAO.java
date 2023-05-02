@@ -11,11 +11,13 @@ public class AjaxDAO {
 	private SqlSessionTemplate sqlSession;
 
 	
+	
 	// 이메일로 닉네임 조회
 	public String selectNickname(String email) {
 		return sqlSession.selectOne("ajaxMapper.selectNickname", email);
 	}
 
+	
 	
 	// 닉네임으로 전화번호 조회
 	public String selcectMemberTel(String nickname) {
@@ -23,6 +25,7 @@ public class AjaxDAO {
 	}
 
 
+	
 	// 이메일 중복 검사
 	public int checkEmail(String email) {
 		return sqlSession.selectOne("ajaxMapper.checkEmail", email);
