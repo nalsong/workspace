@@ -63,19 +63,6 @@ public class MyPageDAO {
 
 
 
-	/** 회원탈퇴
-	 * @param memberPw
-	 * @return
-	 */
-	public String selectOne(String memberPw) {
-		
-		
-		
-		
-		return null;
-	}
-
-
 
 
 	/** 회원 탈퇴 DAO
