@@ -247,16 +247,12 @@ public class MemberController {
 		} else { // 로그인 실패 시
 			path += referer; // HTTP Header - referer(이전 주소)
 			
-			/* redirect(재요청) 시
-			 * 기존 요청(request)이 사라지고 
-			 * 새로운 요청(request)을 만들게되어
-			 * 
+			/* redirect(재요청) 시 기존 요청(request)이 사라지고 새로운 요청(request)을 만들게되어
 			 * redirect된 페이지에서는 이전 요청이 유지 되지 않는다!!!
 			 * -> 유지하고 싶으면 어쩔 수 없이 Session을 이용
 			 * 
 			 * [Spring]
-			 * 이런 상황을 해결하기 위한 객체
-			 * RedirectAttributes를 제공
+			 * 이런 상황을 해결하기 위한 객체 RedirectAttributes를 제공
 			 * 
 			 * RedirectAttributes 
 			 * - 리다이렉트 시 데이터를 request scope로 전달할 수 있게하는 객체
@@ -320,6 +316,7 @@ public class MemberController {
 		// -> ViewResovler가 prefix, suffix를 리턴 값 앞,뒤에 붙임
 		return "member/signUp";
 	}
+	
 	
 	
 	// 회원 가입 진행

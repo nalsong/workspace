@@ -13,13 +13,12 @@ import edu.kh.project.member.model.dto.Member;
 		// + Bean 등록하는 어노테이션
 public class MemberServiceImpl implements MemberService{
 
-	// @Autowired : 작성된 필드와
-	// Bean으로 등록된 객체 중 타입이 일치하는 Bean을
-	// 해당 필드에 자동 주입(Injection)하는 어노테이션
+	// @Autowired : 작성된 필드와 Bean으로 등록된 객체 중 타입이 일치하는 Bean을 해당 필드에 자동 주입(Injection)하는 어노테이션
 	// == DI(Dependency Injection, 의존성 주입)
 	//    -> 객체를 직접 만들지 않고 Spring이 만든걸 주입함(Spring에 의존)
 	@Autowired
 	private MemberDAO dao;
+	
 	
 	
 	@Autowired // bean으로 등록된 객체 중 타입이 일치하는 객체를 DI
