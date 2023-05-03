@@ -170,3 +170,22 @@ WHERE MEMBER_EMAIL= 'user01@kh,or.kr'
 AND MEMBER_DEL_FL ='N';
 
 
+
+-- 이메일로 회원 정보 조회
+SELECT MEMBER_NO, MEMBER_EMAIL, MEMBER_NICKNAME, MEMBER_TEL
+		, NVL(MEMBER_ADDR, '미작성') MEMBER_ADDR
+		, TO_CHAR(ENROLL_DATE, 'YYYY"년" MM"월" DD"일" HH24"시" MI"분" SS"초"') 
+FROM "MEMBER"
+WHERE MEMBER_EMAIL = 'user00@naver.com'
+AND MEMBER_DEL_FL ='N'
+
+; 
+
+
+
+
+
+
+
+
+
