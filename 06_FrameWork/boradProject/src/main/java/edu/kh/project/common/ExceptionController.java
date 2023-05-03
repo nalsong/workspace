@@ -23,3 +23,4 @@ public class ExceptionController {
 		return "common/error";
 	}
 }
+

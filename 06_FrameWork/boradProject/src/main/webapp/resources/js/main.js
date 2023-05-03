@@ -89,7 +89,6 @@ btn1.addEventListener("click", () =>{
 
 // fetch() API를 이용한 POST방식 요청
 
-
 // 이메일을 입력받아 일치하는 회원의 정보를 모두 조회
 const inputEmail = document.getElementById("inputEmail");
 const btn2 = document.getElementById("btn2");
@@ -141,7 +140,6 @@ btn2.addEventListener('click', ()=>{
         console.log(err);
         result2.innerText="일치하는 회원이 없습니다.";
     });
-
 });
 
 

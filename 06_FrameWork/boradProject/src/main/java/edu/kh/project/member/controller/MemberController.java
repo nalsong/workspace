@@ -159,8 +159,7 @@ public class MemberController {
 		// Member inputMember : 커맨드 객체(필드에 파라미터 담겨있음)
 		
 		// @RequestHeader(value="referer") String referer 
-		// -> 요청 HTTP header에서 "referer"(이전주소) 값을 얻어와
-		//    매개 변수 String referer에 저장
+		// -> 요청 HTTP header에서 "referer"(이전주소) 값을 얻어와 매개 변수 String referer에 저장
 		
 		// Model : 데이터 전달용 객체
 		// -> 데이터를 K : V 형식으로 담아 전달

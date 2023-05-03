@@ -77,8 +77,6 @@ public class EmailServiceImpl implements EmailService {
                 = "<p>Board Project "+title+" 인증코드입니다.</p>"
                 + "<h3 style='color:blue'>" + authKey + "</h3>";
             
-            
-            
             // 송신자(보내는 사람) 지정
             mail.setFrom(new InternetAddress(fromEmail, fromUsername));
             mail.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
@@ -108,7 +106,6 @@ public class EmailServiceImpl implements EmailService {
         if(result == 0) {
         	result = dao.insertAuthKey(map);
         }
-        
 
         return result;
     }
