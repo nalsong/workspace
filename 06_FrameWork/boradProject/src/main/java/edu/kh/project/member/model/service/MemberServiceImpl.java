@@ -59,6 +59,8 @@ public class MemberServiceImpl implements MemberService{
 		return loginMember;
 	}
 
+	
+	
 	// @Transactional(rollbackFor = {Exception.class}) 
 	// 예외가 발생하면 rollback
 	// 발생 안하면 Service 종료 시 commit

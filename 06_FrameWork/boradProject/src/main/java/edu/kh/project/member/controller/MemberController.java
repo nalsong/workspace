@@ -179,7 +179,7 @@ public class MemberController {
 		Member loginMember = service.login(inputMember);
 		
 		// DB 조회 결과 확인
-		//System.out.println(loginMember);
+		// System.out.println(loginMember);
 		
 		// 로그인 결과에 따라 리다이렉트 경로를 다르게 지정
 		String path = "redirect:"; 
