@@ -34,7 +34,6 @@ section{
     margin: auto;
 }
 
-
 #logIn{
     font-weight: bold;
     font-size: 30px;
@@ -53,12 +52,17 @@ section{
     text-decoration: none;
 }
 
-
 .searchPw{
+    
+    margin-left: 100px;
+}
+
+
+#searchPw{
+    margin-left: 100px;
     color: red;
     font-size: 13px;
 
-    margin-left: 100px;
 }
 
 

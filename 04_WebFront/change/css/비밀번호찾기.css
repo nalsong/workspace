@@ -48,6 +48,7 @@ section>div{
 #searchPw{
     color: red;
     font-size: 13px;
+    text-decoration: underline;
 }
 
 

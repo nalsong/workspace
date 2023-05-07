@@ -96,7 +96,7 @@ th, td{
     border-collapse: collapse; 
 }
 
-.agreecheck{
+.agreeCheck, .agreeCheckAll{
     display: flex;
     flex-direction: row;
     margin: 5px;
@@ -105,13 +105,13 @@ th, td{
 
 
 
-.agreecheck *{
+.agreeCheck *, .agreeCheckAll{
     margin: 5px;
 }
 
 
 
-.agreecheck *:hover{cursor: pointer;}
+.agreeCheck *, .agreeCheckAll:hover{cursor: pointer;}
 
 
 
@@ -150,7 +150,18 @@ th, td{
     cursor: pointer;
 }
 
-
+#next{
+    width: 80px;
+    height: 40px;
+    background-color: white;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ccc;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 50px;
+    margin-top: 10px;
+}
 
 
 
