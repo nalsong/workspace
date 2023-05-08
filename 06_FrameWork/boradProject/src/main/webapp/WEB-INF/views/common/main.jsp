@@ -94,7 +94,7 @@
                         <form action="/member/login" method="POST" id="loginFrm">
                             <fieldset class="id-pw-area">
                                 <section>
-                                    <input type="text" name="memberEmail" placeholder="이메일" autocomplete="off" value="${cookie.saveId.value}">
+                                    <input type="text" name="memberEmail" placeholder="이메일" autocomplete="off" value="${cookie.saveId.value}" value="${cookie.saveId.value}">
                                     <input type="password" name="memberPw" placeholder="비밀번호">
                                 </section>
                                 <section>
@@ -104,9 +104,10 @@
 
                             <label>
                                 
-                                <%-- 쿠키 있으면 아이디 저장 체크(없으면 안 됨)
-                                <c:if test="${empty cookie.saveId.value}" >
-                                <input type="checkbox" name="saveId" >아이디 저장
+                                <%-- 쿠키 있으면 아이디 저장 체크(없으면 안 됨)--%> 
+                                <%--
+                                <c:if test="${empty cookie.saveId.value}">
+                                <input type="checkbox" name="saveId" >아이디 저장 
                                 </c:if>
 
                                 <c:if test="${not empty cookie.saveId.value}" >
