@@ -85,17 +85,16 @@
 <nav>
     <ul>
         <%-- 
-        <li><a href="#">공지사항</a></li>
-        <li><a href="#">자유게시판</a></li>
-        <li><a href="#">질문게시판</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">1:1문의</a></li> 
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">자유게시판</a></li>
+            <li><a href="#">질문게시판</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">1:1문의</a></li> 
         --%>
 
-        <%-- interceptor를 이용해서 조회된 boardTypeList를 application에서 얻어와 
+        <%-- 
+            interceptor를 이용해서 조회된 boardTypeList를 application에서 얻어와 화면에 출력
         --%>
-
-
         <c:forEach var="boardType"  items="${boardTypeList}" >
             <li>
                 <a href="/board/${boardType.BOARD_CODE}">${boardType.BOARD_NAME}</a>

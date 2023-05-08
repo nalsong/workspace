@@ -8,15 +8,16 @@ openPopup.addEventListener("click", () => {
      // 열기 이벤트
     window.open("서비스_이용약관_동의.html", "서비스_이용약관_동의", "width=500, hight=500px");
     
-    openWd.addEventListener("onveforeunload", ()=>{
     
-        if(openWd.submit){
-            openPopup.checked = true;
-        }else{
-            openPopup.checked = false;
-        }
-    });
 });  
 
 
 
+openWd.addEventListener("onveforeunload", ()=>{
+    
+    if(openWd.submit){
+        openPopup.checked = true;
+    }else{
+        openPopup.checked = false;
+    }
+});

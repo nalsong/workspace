@@ -18,10 +18,7 @@
 		<result property="profileImage" column="PROFILE_IMG"/>
 		
 		<result property="thumbnail" column="THUMBNAIL"/>
-		
 	</resultMap>
-	
-	
 	
 	<!-- 
 		resultType이 "map"인 경우 
@@ -34,7 +31,6 @@
 	<select id="selectBoardTypeList" resultType="map">
 		SELECT * FROM "BOARD_TYPE" ORDER BY 1
 	</select>
-
 	
 	<!-- 특정 게시판의 삭제되지 않은 게시글 수 조회 -->
 	<select id="getListCount" resultType="_int">
@@ -42,7 +38,6 @@
 		WHERE BOARD_DEL_FL='N'
 		AND BOARD_CODE = #{boardCode}
 	</select>
-	
 	
 	<!-- 
 		CDATA태그 : 해당 태그 내부에 작성된 것은 모두 문자로 취급 
@@ -75,6 +70,5 @@
 		AND BOARD_CODE = #{boardCode}
 		ORDER BY BOARD_NO DESC
 	</select>
-	
 
 </mapper>
