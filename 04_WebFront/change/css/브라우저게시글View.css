@@ -101,15 +101,21 @@ main{
 
 
 /* 신고하기 */
-.fa-regular fa-flag{
 
+#report1{ 
+    margin: 15px 20px;
+    padding: 2%;
+}
+
+
+i{
+    font-size: 10px;
 }
 
 #reportClick{
     color: black;
     font-size: 10px;
-    margin: 15px 25px;
-    padding: 2%;
+
 }
 
 
@@ -166,6 +172,7 @@ main{
     margin: 10px 30px;
 }
 
+
 #update{
     font-size: 25px;
     font-weight: bold;
@@ -187,10 +194,12 @@ main{
     padding: 10px;
 }
 
+
 .time{
     font-size: 12px;
     margin: 10px 10px;
 }
+
 
 #box3{
     border: #ccc;
@@ -203,6 +212,7 @@ main{
     margin: 10px 0px;
     padding: 10px;
 }
+
 
 .updateCon{
     font-size: 12px;
@@ -236,15 +246,18 @@ main{
     margin-left: 10%;
 }
 
+
 #noti *{
     font-size: 15px;
     margin: 10px 5px;
     
 }
 
+
 #comUser{
     font-weight: bold;
 }
+
 
 #commentCon{
     margin: 5px 15%;
@@ -261,15 +274,18 @@ main{
     margin-left: 10%;
 }
 
+
 #push *{
     font-size: 10px;
     margin: 10px 5px;
 }
 
+
 #comReport{
     color: black;
     text-decoration: none;
 }
+
 
 #commentMore{
     width: 400px;
@@ -304,6 +320,7 @@ main{
     align-items: center;
 }
 
+
 #row1{
     width: 300px;
 
@@ -318,6 +335,7 @@ main{
     margin: 10px;
 }
 
+
 #row3{
     width: 250px;
 
@@ -328,9 +346,11 @@ main{
     margin: 10px;
 }
 
+
 #row3-1{
     margin-left: 10px;
 }
+
 
 #row3-2{
     margin-left: 20px;
@@ -351,6 +371,7 @@ main{
     font-size: 20px;
     
 }
+
 
 #LetsGet{
 

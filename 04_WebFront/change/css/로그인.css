@@ -34,6 +34,14 @@ section{
     margin: auto;
 }
 
+#loginFrm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: auto;
+}
+
 #logIn{
     font-weight: bold;
     font-size: 30px;

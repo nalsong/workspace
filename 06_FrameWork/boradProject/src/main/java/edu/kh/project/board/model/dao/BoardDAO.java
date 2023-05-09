@@ -23,7 +23,6 @@ public class BoardDAO {
 	 * @return boardTypeList
 	 */
 	public List<Map<String, Object>> selectBoardTypeList() {
-		
 		return sqlSession.selectList("boardMapper.selectBoardTypeList");
 	}
 
@@ -33,7 +32,6 @@ public class BoardDAO {
 	 * @return listCount
 	 */
 	public int getListCount(int boardCode) {
-		
 		return sqlSession.selectOne("boardMapper.getListCount", boardCode);
 	}
 
@@ -57,6 +55,29 @@ public class BoardDAO {
 		// 3) selectList("namespace.id", 파라미터, Rowbounds) 호출
 		return sqlSession.selectList("boardMapper.selectBoardList", boardCode, rowbounds);
 	}
+
+
+	/** 게시글 상세 조회
+	 * @param map
+	 * @return board
+	 */
+	public Board selectBoardList(Map<String, Object> map) {
+		return sqlSession.selectOne("boardMapper.selectBoard", map);
+	}
+
+
+	/** 좋아요 여부 확인
+	 * @param map
+	 * @return result
+	 */
+	public int boardLikeCheck(Map<String, Object> map) {
+		
+		return sqlSession.selectOne("boardMapper.boardLikeCheck", map);
+	}
+	
+	
+	
+	
 }
 
 
