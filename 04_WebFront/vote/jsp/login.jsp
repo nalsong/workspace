@@ -16,6 +16,7 @@
 <body>
     
     <main>
+        <%-- header --%>
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
         <section>
@@ -52,9 +53,11 @@
             </div>
             </form>
         </section>
+
+        <%-- footer --%>
+        <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     </main>
 
-    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
     <script src="/resources/js/login/login.js"></script>
     

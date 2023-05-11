@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -6,16 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>브라우저 게시글 View</title>
 
-    <link rel="stylesheet" href="../css/petitionView.css">
+    <%-- petitionView.css --%>
+    <link rel="stylesheet" href="/resources/css/browse/petitionView.css">
+
+    <%-- 신고 깃발 아이콘 --%>
     <script src="https://kit.fontawesome.com/f7459b8054.js"crossorigin="flag"></script>
 </head>
 
 <body>
     
     <main>
-        <header>
-
-        </header>
+        <%-- header --%>
+        <jsp:include page="/WEB-INF/views/common/header.jsp"/>
         
         <!-- 상단메뉴 -->
         <section class="top">
@@ -231,77 +236,11 @@
                 <button type="button" id="moreView">더보기</button>
             </div>
         </section>
-        
+        <%-- footer --%>
+        <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     </main>
 
-
-    <!-- 푸터 -->
-    <!-- 메인과 합쳐야 함 -->
-    <footer>
-        <article>
-                <dl>
-                    <dt id="conpany">C O M P A N Y
-                    <dd>
-                        <a href="#">About</a>
-                    </dd>
-                    <dd>
-                        <a href="#">impact</a>
-                    </dd>
-                    <dd>
-                        <a href="#">Careers</a>
-                    </dd>
-                    <dd>
-                        <a href="#">Team</a>
-                    </dd>
-                    </dt>
-                </dl>    
-                <dl>
-                    <dt id="community">C O M M U N I T Y
-                    <dd>
-                        <a href="#">Blog</a>
-                    </dd>
-                    <dd>
-                        <a href="#">Community Guigelines</a>
-                    </dd>
-                    </dt>
-                </dl>
-                <dl>    
-                    <dt id="support">S U P P O R T
-                    <dd>
-                        <a href="#">Help</a>
-                    </dd>
-                    <dd>
-                        <a href="#">Guides</a>
-                    </dd>
-                    <dd>
-                        <a href="#">Privacy</a>
-                    </dd>
-                    <dd>
-                        <a href="#">Policies</a>
-                    </dd>
-                    <dd>
-                        <a href="#">Cookies</a>
-                    </dd>
-                    </dt>
-                </dl>
-                <dl>    
-                    <dt id="connect">C O N N E C T
-                    <dd>
-                        <a href="#">Twitter</a>
-                    </dd>
-                    <dd>
-                        <a href="#">Facebook</a>
-                    </dd>
-                    </dt>
-                </dl>
-        </article>
-        <hr>
-        <div>
-            <p>
-                Copyright &copy; KH Information Educational Institute A-Class NoJo
-            </p>
-        </div>
-    </footer>
-    <script src="../js/petitionView.js"></script>
+    <%-- petitionView.js --%>
+    <script src="/resources/js/browes/petitionView.js"></script>
 </body>
 </html>

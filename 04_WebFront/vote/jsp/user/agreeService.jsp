@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -6,16 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>약관 및 개인정보 수집·이용 동의</title>
 
-    <link rel="stylesheet" href="../css/agreeService.css">
+    <%-- agreeService.css --%>
+    <link rel="stylesheet" href="/resources/css/login/agreeService.css">
 
 </head>
 <body>
     
     <main>
-        <header>
-
-        </header>
-        
         
         <section>
             <div class="agreeTitle">
@@ -232,8 +232,7 @@
         </section>
     </main>
 
-    
-
-    <script src="../js/agreeService.js"></script>
+    <%-- agreeService.js --%>
+    <script src="/resources/js/login/agreeService.js"></script>
 </body>
 </html>

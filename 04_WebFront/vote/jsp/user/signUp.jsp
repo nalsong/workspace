@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -6,14 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>signUp</title>
 
-    <link rel="stylesheet" href="../css/signUp.css">
+    <%-- signUp.css --%>
+    <link rel="stylesheet" href="/resources/css/login/signUp.css">
+
 </head>
 <body>
     
     <main>
-        <header>
-
-        </header>
+        <%-- header --%>
+        <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
         <section>
             <form action="/../signUp" method="POST" name="signUpFrm" id="signUpFrm">
@@ -60,84 +64,22 @@
                 </div>
             </form>
         </section>
+        <%-- footer --%>
+        <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
     </main>
 
-    <footer>
-        <article>
-                <dl>
-                    <dt id="conpany">C O M P A N Y
-                    <dd>
-                        <a href="#">About</a>
-                    </dd>
-                    <dd>
-                        <a href="#">impact</a>
-                    </dd>
-                    <dd>
-                        <a href="#">Careers</a>
-                    </dd>
-                    <dd>
-                        <a href="#">Team</a>
-                    </dd>
-                    </dt>
-                </dl>    
-                <dl>
-                    <dt id="community">C O M M U N I T Y
-                    <dd>
-                        <a href="#">Blog</a>
-                    </dd>
-                    <dd>
-                        <a href="#">Community Guigelines</a>
-                    </dd>
-                    </dt>
-                </dl>
-                <dl>    
-                    <dt id="support">S U P P O R T
-                    <dd>
-                        <a href="#">Help</a>
-                    </dd>
-                    <dd>
-                        <a href="#">Guides</a>
-                    </dd>
-                    <dd>
-                        <a href="#">Privacy</a>
-                    </dd>
-                    <dd>
-                        <a href="#">Policies</a>
-                    </dd>
-                    <dd>
-                        <a href="#">Cookies</a>
-                    </dd>
-                    </dt>
-                </dl>
-                <dl>    
-                    <dt id="connect">C O N N E C T
-                    <dd>
-                        <a href="#">Twitter</a>
-                    </dd>
-                    <dd>
-                        <a href="#">Facebook</a>
-                    </dd>
-                    </dt>
-                </dl>
-        </article>
-        <hr>
-        <div>
-            <p>
-                Copyright &copy; KH Information Educational Institute A-Class NoJo
-            </p>
-        </div>
-    </footer>
 
-    <script src="../js/signUp.js"></script>
-    
-    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <%-- signUp.js --%>
+    <script src="/resources/js/login/signUp.js"></script>
+
 
 
     <!-- 
     다음 주소 api 추가
     https://postcode.map.daum.net/guide#sample 
     -->
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
         function searchAddr() {
             new daum.Postcode({
