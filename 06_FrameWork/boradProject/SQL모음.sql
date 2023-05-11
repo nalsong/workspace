@@ -707,14 +707,51 @@ AND MEMBER_NO = 17 -- 로그인 회원 번호
 
 -- 좋아요 테이블 삽입
 INSERT INTO "BOARD_LIKE" 
-VALUES (1941, 17);
+VALUES (1491, 17);
 
 
 -- 좋아요 테이블 삭제
 DELETE 
 FROM "BOARD_LIKE" 
-WHERE BOARD_NO = 1941
+WHERE BOARD_NO = 1491
 AND MEMBER_NO = 17;
+
+
+
+
+
+
+-- 한 번에 여러 개 INSERT 하기(이미지 리스트(여러 개) 삽입)
+
+
+--INSERT ALL : 여러 테이블에 동시에 INSERT 하는 구문
+--> 시퀀스 생성 구문을 작성하지 못함. (탈락)
+
+--INSERT + SUB QUERY
+INSERT INTO "BOARD_IMG" 
+SELECT SEQ_IMG_NO.NEXTVAL, A.*
+FROM (
+	SELECT '웹접근경로' IMG_PATH, '변경명' IMG_RENAME, '원본명' IMG_ORIGINAL,
+			0 IMG_ORDER, 1491 BOARD_NO
+	FROM DUAL
+	
+	UNION ALL
+	
+	SELECT '웹접근경로' IMG_PATH, '변경명' IMG_RENAME, '원본명' IMG_ORIGINAL,
+			1 IMG_ORDER, 1491 BOARD_NO
+	FROM DUAL
+	
+	UNION ALL
+	
+	SELECT '웹접근경로' IMG_PATH, '변경명' IMG_RENAME, '원본명' IMG_ORIGINAL,
+			2 IMG_ORDER, 1491 BOARD_NO
+	FROM DUAL
+)A;
+
+
+ROLLBACK;
+
+
 
 
 
