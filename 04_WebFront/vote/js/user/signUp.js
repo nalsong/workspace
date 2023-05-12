@@ -11,6 +11,12 @@ loginMember.addEventListener("click", () => {
 });  
 
 
+
+/*
+
+<%-- signUp페이지로 이동 시 agreeService팝업도 동시에 뜨는 현상 수정해야 함 --%>
+
+
 // 서비스_이용약관_동의 체크박스 클릭 시 새 창으로 이동
 openPopup.addEventListener("click", () => {
 
@@ -30,3 +36,4 @@ openPopup.addEventListener("click", () => {
 //         openPopup.checked = false;
 //     }
 // });
+*/
