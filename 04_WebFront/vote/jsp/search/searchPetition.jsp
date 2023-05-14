@@ -21,13 +21,13 @@
         
         <section>
             <div id="search">
-                Search Petitions
+                청원 검색
             </div>
             
             <div>
                 <input type="text" id="searchPetitions" >
                         
-                <button id="searchButton" class="fa-solid fa-magnifying-glass"> search</button>
+                <button id="searchButton" class="fa-solid fa-magnifying-glass"> 검색하기</button>
             </div>
             
         </section>

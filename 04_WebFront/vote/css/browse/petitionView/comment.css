@@ -35,7 +35,7 @@ main{
     flex-direction: column;
     justify-content:start;
 
-    margin-right: 50%;
+    margin-right: 60%;
 }
 
 
@@ -56,14 +56,32 @@ main{
     
 }
 
-#menu *:hover{
-    color: red;
+#Comments:hover{
+    color: #2DB400;
+    font-weight: bold;
+    text-decoration: none;
+    
+}
+
+#updates{
+    color: black;
+    text-decoration: none;
+    
+}
+
+#updates:hover{
+    color: #2DB400;
     font-weight: bold;
     text-decoration: none;
     
 }
 
 
+#details{
+    color: #2DB400;
+    text-decoration: underline;
+    font-weight: bold;
+}
 
 /* 게시글뷰 */
 
@@ -108,7 +126,7 @@ main{
 }
 
 
-i{
+main i{
     font-size: 10px;
 }
 
@@ -606,78 +624,4 @@ i{
 
 
 
-
-
-
-
-/*  footer */
-footer{
-    width: 960px;
-    height: 335px;
-    margin: auto;
-    
-    background-color: #ccc;
-    
-    
-    display: block; 
-}
-
-
-
-footer>article{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-
-}
-
-
-
-footer>article>dl{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-
-} 
-
-
-
-footer>article *{
-    margin-top: 5%;
-    margin-bottom: 5%;
-    
-    
-}
-
-
-
-footer>article>dl>dt{
-    font-size: 15px;
-    color: grey;
-    font-weight: bold;
-
-    
-}
-
-
-
-footer>div>p{
-    font-size: 12px;
-    
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-
-    margin-top: 1.5%;
-    margin-bottom: 1.5%;
-}
-
-
-
-footer>article>dl>dd>a{
-    color: black;
-    font-size: 15px;
-    text-decoration: none;
-    
-}
 

@@ -10,12 +10,12 @@
     <title>신고팝업</title>
 
     <%-- report_popUp.css --%>
-    <link rel="stylesheet" href="/resources/css/browse/report_popUp.css">
+    <link rel="stylesheet" href="/resources/css/browse/petitionView/report_popUp.css">
 
 </head>
 <body>
     <section>
-        <form action="/../report" method="POST"  id="reportFrm">
+        <form action="/browse/report_popUp" method="POST"  id="reportFrm">
             <div id="reportTitle">신고하기</div>
             <div id="reportContent1">서비스 약관 또는 커뮤니티 가이드라인을 위반할 수 있는 내용을 보고하십시오.</div>
             <div id="reportContent2">

@@ -7,28 +7,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>브라우저 게시글 조회</title>
+    <title>브라우저 게시글 조회(victories)</title>
 
-    <%-- browse_search.css --%>
-    <link rel="stylesheet" href="/resources/css/browse/browse_search.css">
+    <%-- popular.css --%>
+    <link rel="stylesheet" href="/resources/css/browse/browse_search/victories.css">
     
 </head>
 <body>
     
+    <%-- header --%>
+    <jsp:include page="/WEB-INF/views/common/header.jsp"/>
     <main>
-        <%-- header --%>
-        <jsp:include page="/WEB-INF/views/common/header.jsp"/>
         
         
         <section class="top">
             <div id="discoverP">
-                Discover petitons to sign
+                서명할 청원을 검색해주세요.
             </div>
             <div class="menu" id="menu">
-                <div id="featured"><a href="#">Featured</a></div>
-                <div id="popular"><a href="#">Popular</a></div>
-                <div id="recent"><a href="#">Recent</a></div>
-                <div id="victories"><a href="#">Victories</a></div>
+                <div><a href="/browse/browse_search/featured" id="featured">Featured</a></div>
+                <div><a href="/browse/browse_search/popular" id="popular">Popular</a></div>
+                <div><a href="/browse/browse_search/recent" id="recent">Recent</a></div>
+                <div id="victories">Victories</div>
             </div>
         </section>
 
@@ -36,7 +36,7 @@
             
             <div class="result">
                 <div class="row" id="rowPicture">
-                    <img src="../image/순덕이.png" class="picture">
+                    <img src="/resources/images/순덕이.png" class="picture">
                 </div>
                 <div class="row">
                     <div class="column" id="column-1">
@@ -45,28 +45,28 @@
                         </div>
                         <div id="content">
                             내용내용내용내용내용내용내용내용내용내용내용내용내
-                            <a href="#" id="readMore"> Read more</a>
+                            <a href="/browse/petitionView/details" id="readMore"> Read more</a>
                         </div>
                     </div>
                     <div class="column" id="column-2">
                         <progress id="progress" value="35000" min="0" max="50000" ></progress>
                         <div id="value"></div>
                         <div id="goal">
-                            of 50,000 goal
+                            <span id="count">0</span>of 50,000 goal
                         </div>
                     </div>
                 </div>
-                
             </div>
+
         </section>
         <section>
             <div>
                 <button type="button" id="moreView">더보기</button>
             </div>
         </section>
-        <%-- footer --%>
-        <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     </main>
+    <%-- footer --%>
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
     <%-- browse_search.js --%>
     <script src="/resources/js/browes/browse_search.js"></script>

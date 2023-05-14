@@ -21,7 +21,7 @@
 
         <section>
             <div id="search">
-                Search Petitions
+                청원 검색
             </div>
             
             <div>
@@ -30,11 +30,11 @@
                 <button type="button" id="searchButton" class="fa-solid fa-magnifying-glass"> search</button>
             </div>
             <div id="noResult">
-                No result found
+                찾는 결과가 없습니다.
             </div>
             <div id="start">
-                <p>Can’t find what you’re looking for? Build support for an issue you care about.</p>
-                <button type="button" id="startPatition">Start a petition</button>
+                <p>찾고 있는 것을 찾을 수 없습니까? 관심 있는 문제에 대해 지지해드립니다.</p>
+                <button type="button" id="startPatition">청원 시작하기</button>
             </div>
             
         </section>
