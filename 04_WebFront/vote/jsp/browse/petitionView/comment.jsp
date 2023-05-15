@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -7,22 +11,21 @@
     <title>브라우저 게시글 View</title>
 
     <link rel="stylesheet" href="../css/browse/petitionView/comment.css">
-    <script src="https://kit.fontawesome.com/f7459b8054.js"crossorigin="flag"></script>
+    
 </head>
 
 <body>
-    
+    <%-- header --%>
+    <jsp:include page="/WEB-INF/views/common/header.jsp"/>
     <main>
-        <header>
-
-        </header>
+        
         
         <!-- 상단메뉴 -->
         <section class="top">
             <div id="menu">
-                <div id="details">Petition details</div>
-                <div><a href="#" id="Comments">Comments</a></div>
-                <div ><a href="#" id="updates">updates</a></div>
+                <div><a href="/browse//petitionView/details" id="details">Petition details</a></div>
+                <div id="comments">Comments</div>
+                <div ><a href="#" id="Updates">updates</a></div>
             </div>
         </section>
 
@@ -66,7 +69,13 @@
         
     </main>
 
+    <script src="https://kit.fontawesome.com/f7459b8054.js"crossorigin="flag"></script>
 
-    <script src="../js/browse/petitionView/details.js"></script>
+
+    <%-- footer --%>
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+
+    <%-- comment.js --%>
+    <script src="../js/browse/petitionView/comment.js"></script>
 </body>
 </html>

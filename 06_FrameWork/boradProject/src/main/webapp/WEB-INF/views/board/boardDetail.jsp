@@ -196,5 +196,6 @@
     </script>
 
     <script src="/resources/js/board/boardDetail.js"></script>
+    <script src="/resources/js/board/comment.js"></script>
 </body>
 </html>

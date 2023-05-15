@@ -26,8 +26,8 @@
         <section class="top">
             <div id="menu">
                 <div id="details">Petition details</div>
-                <div><a href="#" id="Comments">Comments</a></div>
-                <div ><a href="#" id="updates">updates</a></div>
+                <div><a href="/browse//petitionView/comments" id="comments">Comments</a></div>
+                <div ><a href="#" id="updates">Updates</a></div>
             </div>
         </section>
 

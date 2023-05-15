@@ -29,7 +29,7 @@ main{
 /* body */
 
 
-/* top */
+/* 상단메뉴 */
 .top{
     display: flex;
     flex-direction: column;
@@ -83,7 +83,106 @@ main{
     font-weight: bold;
 }
 
-/* 게시글뷰 */
+/* comment */
+
+
+
+#comment{
+    width: 800px;
+}
+
+
+
+
+#comment1{
+    font-weight: bold;
+    font-size: 25px;
+
+    margin: 30px 0px 15px 0px;
+    
+}
+
+
+
+
+
+
+#comment3{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 30px 0px 20px 0px;
+}
+
+
+#comment3>*{
+    margin: 10px;
+}
+
+#comment3 *{
+    margin: 5px;
+}
+
+#commentFrame{
+    width: 800px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 30%;
+    
+}
+
+#profileImg{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+
+#cContent{
+    height: 30%;
+    
+}
+
+#commentLike{
+    display: flex;
+    flex-direction: row;
+    
+    height: 30%;
+}
+
+
+
+
+
+
+
+
+
+#report{
+    margin-left: 90%;
+    font-size: 12px;
+    color: black;
+}
+
+#report:hover{
+    color: red;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------- */
 
 #post{
     display: flex;
