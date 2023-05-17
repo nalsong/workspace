@@ -80,18 +80,32 @@ public class BoardController {
 	
 	// 게시글 목록 조회
 	@GetMapping("/{boardCode:[0-9]+}") // boardCode는 1자리 이상 숫자
-	public String selectBoardList(@PathVariable("boardCode") int boardCode, @RequestParam(value="cp", required=false, defaultValue="1") int cp, Model model) {
+	public String selectBoardList(@PathVariable("boardCode") int boardCode, @RequestParam(value="cp", required=false, defaultValue="1") int cp, Model model
+								, @RequestParam Map<String, Object> paramMap // 파라미터가 전부 다 담겨있음 
+								) {
 		
 		// boardCode확인
 //		System.out.println("boardCode : " + boardCode);
 		
 		
-		// 게시글 목록 조회 서비스 호출
-		Map<String, Object> map = service.selectBoardList(boardCode, cp);
 		
-		// 조회 결과를 request scope에 세팅 후 forward
-		model.addAttribute("map", map);
-		
+		if(paramMap.get("key") == null) { // 검색어가 없을 때( 검색 X)
+			// 게시글 목록 조회 서비스 호출
+			Map<String, Object> map = service.selectBoardList(boardCode, cp);
+			
+			// 조회 결과를 request scope에 세팅 후 forward
+			model.addAttribute("map", map);
+			
+			
+			
+		}else { // 검색어가 있을 때(검색 0)
+			paramMap.put("boardCode", boardCode);
+			
+			Map<String, Object> map = service.selectBoardList(paramMap, cp); //  오버로딩
+			
+			model.addAttribute("map", map);
+			
+		}
 		return "board/boardList";
 	}
 	
@@ -256,6 +270,15 @@ public class BoardController {
 		return service.like(paramMap);
 	}
 	
+	
+	
+    // 헤더 검색(자동완성)
+    @GetMapping(value="/headerSearch", produces = "application/json; charset=UTF-8")
+    @ResponseBody
+    public List<Map<String, Object>> headerSearch(String query){
+    	return service.headerSearch(query);
+    }
+
 	
 }
 

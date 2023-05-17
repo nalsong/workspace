@@ -8,6 +8,7 @@
 <!-- fonts wesone 라이브러리 추가 + key 등록 -->
 <script src="https://kit.fontawesome.com/f7459b8054.js" crossorigin="anonymous"></script>
 
+<script src="/resources/js/header.js"></script>
 
 <header>
     <section>
@@ -29,7 +30,7 @@
                         -> HTTP Body에 담아서 제출
             -->
 
-            <form action="#" method="GET">
+            <form action="/board/2" method="GET">
                 <fieldset> <!-- form태그 내 영역 구분 -->
 
                     <!-- 
@@ -38,14 +39,17 @@
 
                         autocomplete="off" 브라우저 제공 자동완성 끔
                     -->
-                    <input type="search" name="query" id="query" placeholder="검색어를 입력해주세요." autocomplete="off">
+                    <input type="search" name="query" id="query" placeholder="검색어를 입력해주세요." autocomplete="off" value="${param.query}">
 
+                    <%-- 제목 검색 --%>
+                    <input type="hidden" name="key" value="t">
                     <!-- 검색 버튼 -->
                     <!-- button type="submit" 이면 기본값 -->
                     <button id="searchBtn" class="fa-solid fa-magnifying-glass"></button>
                 </fieldset>
             </form>
 
+            <ul id="searchResult" class="close"></ul>
         </article>
 
     </section>
