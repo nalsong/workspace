@@ -152,6 +152,14 @@ public class BoardDAO {
 		return sqlSession.selectList("boardMapper.headerSearch", query);
 
 	}
+
+
+	/** 
+	 * @return list
+	 */
+	public List<String> selectImageList() {
+		return sqlSession.selectList("boardMapper.selectImageListAll");
+	}
 	
 	
 	
