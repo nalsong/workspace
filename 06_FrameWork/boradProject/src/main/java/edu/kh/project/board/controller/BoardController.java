@@ -71,7 +71,7 @@ public class BoardController {
 	
 	
 	
-	// ***** @PathVariable사용 시 문제점고 해결 방법 *****
+	// ***** @PathVariable사용 시 문제점과 해결 방법 *****
 	// 문제점 : 요청 주소와 @PathVariable로 가져다 쓸 주소의 레벨이 같다면 구분하지않고 모두 매핑되는 문제가 발생
 	//			-> 요청을 했는데 원하는 메서드가 실행 안 됨
 	// 해결방법 : @PathVariable 지정 시 정규 표현식 사용
