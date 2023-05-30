@@ -24,7 +24,7 @@ alter system kill session '377,16398';
 DROP USER project CASCADE;
 -- 테이블삭제
 DROP TABLE "MEMBER";
-z
+
 
 
 
