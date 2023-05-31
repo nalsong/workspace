@@ -54,17 +54,17 @@ public class Child extends Parent{
 	private String name;
 
 	public void childMethod(){
-		return name;
+		...
 	}
 	protected void print(){
-		return name;
+		...
 	}
 }
 
 
 4. 
 
-public class Shape{
+public abstract class Shape{
 	public void draw(){}
 	public void erase(){}
 	public int getLength(){}
@@ -72,7 +72,7 @@ public class Shape{
 }
 
 public interface Resizable{
-	void resize();
+	public abstract void resize();
 }
 
 
@@ -101,8 +101,8 @@ public class Student{
 public class ClassRoom{
 	private Student student;
 
-	public ClassRoom(Student student){
-		this.student = student;
+	public ClassRoom(Student std){
+		this.std = std;
 	}
 }
 
@@ -141,7 +141,7 @@ public class Shop{
 	private Employee emp;
 
 	public Shop(Product p){
-		this.p = p;
+		this.Product = p;
 		this.emp = new Employee();
 	}
 }
@@ -161,20 +161,17 @@ public class Option{
 }
 
 
-public class extends CafeLatte{
+public class CafeLatte extends Coffee{
 	private String temperature;
 	private int price;
 
 	public void drink{
 		Option option = new Option();
-		option.shot;
-		option.ice;
-		option.syrup;
 	}
 }
 
 
-bublic class Cafe{
+public class Cafe{
 	private String name;
 	private String address;
 	private CafeLatte latte;
