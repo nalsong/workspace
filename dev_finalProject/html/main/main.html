@@ -9,49 +9,75 @@
     <link rel="stylesheet" href="/css/common/footer.css">
     
     <title>JustGo-main</title>
-
+<!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <!-- fontAwesome -->
     <script src="https://kit.fontawesome.com/ae1a88d4e2.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
 <!-- 로그인 nav 시작 -->
-    <nav class="common--headerLoginNav">
-        <form action="#" method="get">
-            <button>로그인</button>
-        </form>
-        <form action="#" method="get">
-            <button>회원가입</button>
-        </form>
-    </nav>
+<nav class="common--headerLoginNav">
+    <form action="#" method="get">
+        <button>로그인</button>
+    </form>
+    <form action="#" method="get">
+        <button>회원가입</button>
+    </form>
+</nav>
 <!-- 로그인 nav 끝 -->
 
 
 
 <!-- header 시작 -->
-    <header class="common--header">
+<header class="common--header">
+    <a href="#">
         <img src="/images/JustGoLogo.png" alt="저스트고로고" class="common--headerLogo">
-        <form action="#" method="get">
-            <div class="common--headerSearch">
-                <input type="text" placeholder="검색어를 입력해주세요.">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-        </form>
-        <form action="#" method="get">
-            <div class="common--headerAccount">
-                <img src="/images/shinchanProfile.jpg" alt="프로필이미지">
-                폭탄배달부키키
-            </div>
-        </form>
-    </header>
+    </a>
+    <form action="#" method="get">
+        <div class="common--headerSearch">
+            <input type="text" placeholder="검색어를 입력해주세요."  maxlength="27">
+            <i class="fa-solid fa-magnifying-glass" id="common--headerSearchIcon"></i>
+            <button id="common--headerSearchBtn" style="display: none;">검색</button>
+        </div>
+    </form>
+    <form action="#" method="get">
+        <div class="common--headerAccount">
+            <a href="#">
+                <img src="/images/2019060900883_0.jpg" alt="프로필이미지">
+                <div>폭탄배달부키키</div>
+            </a>
+        </div>
+    </form>
+</header>
 <!-- header 끝 -->
 
 
 
 <!-- nav 시작 -->
-    <nav class="common--headerNav">
+<nav class="common--headerNav">
 
-    </nav>
+</nav>
+<!-- nav 끝 -->
+
+
+
+<!-- nav 시작 -->
+<!-- <nav class="common--headerNav">
+    <ul>
+        <li><a href="#">여행게시판</a></li>
+        <li><a href="#">자유게시판</a></li>
+        <li><a href="#">질문게시판</a></li>
+    </ul>
+</nav> -->
+
+    <!-- <%-- 인터셉터를 이용해서 조회된 boardTypeList를 applicationScope에서 얻어와 화면에 출력 --%> -->
+    <!-- <c:forEach var="boardType" items="${boardTypeList}">
+        <li>
+            <a href="/board/${boardType.BOARD_CODE}">${boardType.BOARD_NAME}</a>
+        </li>
+    </c:forEach> -->
+
 <!-- nav 끝 -->
 
 
@@ -60,18 +86,383 @@
 
 
 
-<!-- 사진 시작 -->
-    <div class="main--banner">
-        <img src="/images/banner1.jpg" alt="배너">
-        <h1>즐거운 여행 커뮤니티 JustGo에 어서오세요.</h1>
+<!-- main 시작 -->
+<main>
+
+
+
+<!-- 배너 시작 -->
+    <div class="main--bannerBox">
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <div class="carousel-caption main--bannerText">
+                        <h1>KYOTO</h1>
+                    </div>
+                    <a href="https://www.kyototourism.org/ko/" target="_blank">
+                        <img src="/images/JustGoLogo.png" class="d-block w-100 main--bannerImage" alt="배너1">
+                    </a>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="carousel-caption main--bannerText">
+                        <h1>TOKYO</h1>
+                    </div>
+                    <a href="https://www.gotokyo.org/kr/index.html" target="_blank">
+                        <img src="/images/JustGoLogo.png" class="d-block w-100 main--bannerImage" alt="배너2">
+                    </a>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="carousel-caption main--bannerText">
+                        <h1>BANGKOK</h1>
+                    </div>
+                    <a href="http://www.visitthailand.or.kr/thai/" target="_blank">
+                        <img src="/images/JustGoLogo.png" class="d-block w-100 main--bannerImage" alt="배너3">
+                    </a>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="carousel-caption main--bannerText">
+                        <h1>BEIJING</h1>
+                    </div>
+                    <a href="https://www.visitbeijing.or.kr/" target="_blank">
+                        <img src="/images/JustGoLogo.png" class="d-block w-100 main--bannerImage" alt="배너3">
+                    </a>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="carousel-caption main--bannerText">
+                        <h1>HANOI</h1>
+                    </div>
+                    <a href="http://vietnamtourism.or.kr/" target="_blank">
+                        <img src="/images/JustGoLogo.png" class="d-block w-100 main--bannerImage" alt="배너3">
+                    </a>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="carousel-caption main--bannerText">
+                        <h1>SYDNEY</h1>
+                    </div>
+                    <a href="https://www.australia.com/ko-kr" target="_blank">
+                        <img src="/images/JustGoLogo.png" class="d-block w-100 main--bannerImage" alt="배너3">
+                    </a>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     </div>
-<!-- 사진 끝 -->
+<!-- 배너 끝 -->
 
 
 
 <!-- 인기게시글 시작 -->
-
+<h4 class="main--postBoxTitle">전체 인기게시글</h4>
+    <div class="main--postBox">
+        <div class="main--postBoxBlocks">
+            <div class="main--postBoxBlock">
+                <a href="#">
+                    <img src="/images/JustGoLogo.png alt="게시글사진1">
+                </a>
+                <div class="d-inline-block text-truncate" id="main--text-truncate">
+                    사이판 스쿠버다이빙
+                </div>
+                <nav class="main--LikeBox">
+                    <i class="fa-solid fa-eye right-align">&nbsp123</i>
+                    <i class="fa-solid fa-heart right-align">&nbsp321</i>
+                </nav>
+            </div>
+            <div class="main--postBoxBlock">
+                <a href="#">
+                    <img src="/images/JustGoLogo.png" alt="게시글사진1">
+                </a>
+                <div class="d-inline-block text-truncate" id="main--text-truncate">
+                    태국 맛집 정보 공유글입니다.태국 맛집 정보 공유글입니다.태국 맛집 정보 공유글입니다.
+                </div>
+                <nav class="main--LikeBox">
+                    <i class="fa-solid fa-eye right-align">&nbsp123</i>
+                    <i class="fa-solid fa-heart right-align">&nbsp321</i>
+                </nav>
+            </div>
+            <div class="main--postBoxBlock">
+                <a href="#">
+                    <img src="/images/JustGoLogo.png" alt="게시글사진1">
+                </a>
+                <div class="d-inline-block text-truncate" id="main--text-truncate">
+                    중국에서 먹은 한상 테이블
+                </div>
+                <nav class="main--LikeBox">
+                    <i class="fa-solid fa-eye right-align">&nbsp123</i>
+                    <i class="fa-solid fa-heart right-align">&nbsp321</i>
+                </nav>
+            </div>
+            <div class="main--postBoxBlock">
+                <a href="#">
+                    <img src="/images/JustGoLogo.png" alt="게시글사진1">
+                </a>
+                <div class="d-inline-block text-truncate" id="main--text-truncate">
+                    보라카이에서 있었던 일입니다.
+                </div>
+                <nav class="main--LikeBox">
+                    <i class="fa-solid fa-eye right-align">&nbsp123</i>
+                    <i class="fa-solid fa-heart right-align">&nbsp321</i>
+                </nav>
+            </div>
+            <div class="main--postBoxBlock">
+                <a href="#">
+                    <img src="/images/JustGoLogo.png" alt="게시글사진1">
+                </a>
+                <div class="d-inline-block text-truncate" id="main--text-truncate">
+                    베트남 오토바이 여행하려고 하는데 얼마나 들까요?
+                </div>
+                <nav class="main--LikeBox">
+                    <i class="fa-solid fa-eye right-align">&nbsp123</i>
+                    <i class="fa-solid fa-heart right-align">&nbsp321</i>
+                </nav>
+            </div>
+        </div>
+    </div>
 <!-- 인기게시글 끝 -->
+
+
+
+<!-- 인기게시글 시작 -->
+<h4 class="main--postBoxTitle">맛집 태그 인기게시글</h4>
+    <div class="main--postBox">
+        <div class="main--postBoxBlocks">
+            <div class="main--postBoxBlock">
+                <a href="#">
+                    <img src="/images/1.-DEMA-1.jpg" alt="게시글사진1">
+                </a>
+                <div class="d-inline-block text-truncate" id="main--text-truncate">
+                    사이판 스쿠버다이빙
+                </div>
+                <nav class="main--LikeBox">
+                    <i class="fa-solid fa-eye right-align">&nbsp123</i>
+                    <i class="fa-solid fa-heart right-align">&nbsp321</i>
+                </nav>
+            </div>
+            <div class="main--postBoxBlock">
+                <a href="#">
+                    <img src="/images/TH_L.png" alt="게시글사진1">
+                </a>
+                <div class="d-inline-block text-truncate" id="main--text-truncate">
+                    태국 맛집 정보 공유글입니다.태국 맛집 정보 공유글입니다.태국 맛집 정보 공유글입니다.
+                </div>
+                <nav class="main--LikeBox">
+                    <i class="fa-solid fa-eye right-align">&nbsp123</i>
+                    <i class="fa-solid fa-heart right-align">&nbsp321</i>
+                </nav>
+            </div>
+            <div class="main--postBoxBlock">
+                <a href="#">
+                    <img src="/images/2555-5-1b.jpg" alt="게시글사진1">
+                </a>
+                <div class="d-inline-block text-truncate" id="main--text-truncate">
+                    중국에서 먹은 한상 테이블
+                </div>
+                <nav class="main--LikeBox">
+                    <i class="fa-solid fa-eye right-align">&nbsp123</i>
+                    <i class="fa-solid fa-heart right-align">&nbsp321</i>
+                </nav>
+            </div>
+            <div class="main--postBoxBlock">
+                <a href="#">
+                    <img src="/images/402078_22936_1418.jpg" alt="게시글사진1">
+                </a>
+                <div class="d-inline-block text-truncate" id="main--text-truncate">
+                    보라카이에서 있었던 일입니다.
+                </div>
+                <nav class="main--LikeBox">
+                    <i class="fa-solid fa-eye right-align">&nbsp123</i>
+                    <i class="fa-solid fa-heart right-align">&nbsp321</i>
+                </nav>
+            </div>
+            <div class="main--postBoxBlock">
+                <a href="#">
+                    <img src="/images/AKR20191004051500805_01_i_P2.jpg" alt="게시글사진1">
+                </a>
+                <div class="d-inline-block text-truncate" id="main--text-truncate">
+                    베트남 오토바이 여행하려고 하는데 얼마나 들까요?
+                </div>
+                <nav class="main--LikeBox">
+                    <i class="fa-solid fa-eye right-align">&nbsp123</i>
+                    <i class="fa-solid fa-heart right-align">&nbsp321</i>
+                </nav>
+            </div>
+        </div>
+    </div>
+<!-- 인기게시글 끝 -->
+
+
+
+<!-- 인기게시글 시작 -->
+<h4 class="main--postBoxTitle">꿀팁 태그 인기게시글</h4>
+    <div class="main--postBox">
+        <div class="main--postBoxBlocks">
+            <div class="main--postBoxBlock">
+                <a href="#">
+                    <img src="/images/1.-DEMA-1.jpg" alt="게시글사진1">
+                </a>
+                <div class="d-inline-block text-truncate" id="main--text-truncate">
+                    사이판 스쿠버다이빙
+                </div>
+                <nav class="main--LikeBox">
+                    <i class="fa-solid fa-eye right-align">&nbsp123</i>
+                    <i class="fa-solid fa-heart right-align">&nbsp321</i>
+                </nav>
+            </div>
+            <div class="main--postBoxBlock">
+                <a href="#">
+                    <img src="/images/TH_L.png" alt="게시글사진1">
+                </a>
+                <div class="d-inline-block text-truncate" id="main--text-truncate">
+                    태국 맛집 정보 공유글입니다.태국 맛집 정보 공유글입니다.태국 맛집 정보 공유글입니다.
+                </div>
+                <nav class="main--LikeBox">
+                    <i class="fa-solid fa-eye right-align">&nbsp123</i>
+                    <i class="fa-solid fa-heart right-align">&nbsp321</i>
+                </nav>
+            </div>
+            <div class="main--postBoxBlock">
+                <a href="#">
+                    <img src="/images/2555-5-1b.jpg" alt="게시글사진1">
+                </a>
+                <div class="d-inline-block text-truncate" id="main--text-truncate">
+                    중국에서 먹은 한상 테이블
+                </div>
+                <nav class="main--LikeBox">
+                    <i class="fa-solid fa-eye right-align">&nbsp123</i>
+                    <i class="fa-solid fa-heart right-align">&nbsp321</i>
+                </nav>
+            </div>
+            <div class="main--postBoxBlock">
+                <a href="#">
+                    <img src="/images/402078_22936_1418.jpg" alt="게시글사진1">
+                </a>
+                <div class="d-inline-block text-truncate" id="main--text-truncate">
+                    보라카이에서 있었던 일입니다.
+                </div>
+                <nav class="main--LikeBox">
+                    <i class="fa-solid fa-eye right-align">&nbsp123</i>
+                    <i class="fa-solid fa-heart right-align">&nbsp321</i>
+                </nav>
+            </div>
+            <div class="main--postBoxBlock">
+                <a href="#">
+                    <img src="/images/AKR20191004051500805_01_i_P2.jpg" alt="게시글사진1">
+                </a>
+                <div class="d-inline-block text-truncate" id="main--text-truncate">
+                    베트남 오토바이 여행하려고 하는데 얼마나 들까요?
+                </div>
+                <nav class="main--LikeBox">
+                    <i class="fa-solid fa-eye right-align">&nbsp123</i>
+                    <i class="fa-solid fa-heart right-align">&nbsp321</i>
+                </nav>
+            </div>
+        </div>
+    </div>
+<!-- 인기게시글 끝 -->
+
+
+
+<!-- 인기게시글 시작 -->
+<h4 class="main--postBoxTitle">힐링 태그 인기게시글</h4>
+    <div class="main--postBox">
+        <div class="main--postBoxBlocks">
+            <div class="main--postBoxBlock">
+                <a href="#">
+                    <img src="/images/1.-DEMA-1.jpg" alt="게시글사진1">
+                </a>
+                <div class="d-inline-block text-truncate" id="main--text-truncate">
+                    사이판 스쿠버다이빙
+                </div>
+                <nav class="main--LikeBox">
+                    <i class="fa-solid fa-eye right-align">&nbsp123</i>
+                    <i class="fa-solid fa-heart right-align">&nbsp321</i>
+                </nav>
+            </div>
+            <div class="main--postBoxBlock">
+                <a href="#">
+                    <img src="/images/TH_L.png" alt="게시글사진1">
+                </a>
+                <div class="d-inline-block text-truncate" id="main--text-truncate">
+                    태국 맛집 정보 공유글입니다.태국 맛집 정보 공유글입니다.태국 맛집 정보 공유글입니다.
+                </div>
+                <nav class="main--LikeBox">
+                    <i class="fa-solid fa-eye right-align">&nbsp123</i>
+                    <i class="fa-solid fa-heart right-align">&nbsp321</i>
+                </nav>
+            </div>
+            <div class="main--postBoxBlock">
+                <a href="#">
+                    <img src="/images/2555-5-1b.jpg" alt="게시글사진1">
+                </a>
+                <div class="d-inline-block text-truncate" id="main--text-truncate">
+                    중국에서 먹은 한상 테이블
+                </div>
+                <nav class="main--LikeBox">
+                    <i class="fa-solid fa-eye right-align">&nbsp123</i>
+                    <i class="fa-solid fa-heart right-align">&nbsp321</i>
+                </nav>
+            </div>
+            <div class="main--postBoxBlock">
+                <a href="#">
+                    <img src="/images/402078_22936_1418.jpg" alt="게시글사진1">
+                </a>
+                <div class="d-inline-block text-truncate" id="main--text-truncate">
+                    보라카이에서 있었던 일입니다.
+                </div>
+                <nav class="main--LikeBox">
+                    <i class="fa-solid fa-eye right-align">&nbsp123</i>
+                    <i class="fa-solid fa-heart right-align">&nbsp321</i>
+                </nav>
+            </div>
+            <div class="main--postBoxBlock">
+                <a href="#">
+                    <img src="/images/AKR20191004051500805_01_i_P2.jpg" alt="게시글사진1">
+                </a>
+                <div class="d-inline-block text-truncate" id="main--text-truncate">
+                    베트남 오토바이 여행하려고 하는데 얼마나 들까요?
+                </div>
+                <nav class="main--LikeBox">
+                    <i class="fa-solid fa-eye right-align">&nbsp123</i>
+                    <i class="fa-solid fa-heart right-align">&nbsp321</i>
+                </nav>
+            </div>
+        </div>
+    </div>
+<!-- 인기게시글 끝 -->
+
+
+
+<!-- 예비 추가 기능 1 -->
+<h4 class="main--postBoxTitle">추가 기능 1</h4>
+    <div class="main--postBox">
+        추가 기능 1
+    </div>
+</main>
+<!-- main 끝 -->
+
+
+
+<!-- 예비 추가 기능 2 -->
+<h4 class="main--postBoxTitle">추가 기능 2</h4>
+    <div class="main--postBox">
+        추가 기능 2
+    </div>
+</main>
+<!-- main 끝 -->
 
 
 
@@ -95,5 +486,9 @@
     </footer>
 <!-- footer 끝 -->
 
+
+    <script src="/js/main/main.js"></script>
+<!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 </html>

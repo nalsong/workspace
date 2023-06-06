@@ -1,56 +1,75 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/common/header.css">
-    
-    <title>JustGo-header</title>
+<!-- -------------------------------------------------------------- -->
 
-<!-- fontAwesome -->
-    <script src="https://kit.fontawesome.com/ae1a88d4e2.js" crossorigin="anonymous"></script>
-</head>
-<body>
+
 
 <!-- 로그인 nav 시작 -->
-    <nav class="common--headerLoginNav">
-        <form action="#" method="get">
-            <button>로그인</button>
-        </form>
-        <form action="#" method="get">
-            <button>회원가입</button>
-        </form>
-    </nav>
+<nav class="common--headerLoginNav">
+    <form action="https://www.naver.com" method="get">
+        <button type="button" class="btn btn-secondary btn-sm">로그인</button>
+    </form>
+    <form action="https://www.naver.com" method="get">
+        <button type="button" class="btn btn-secondary btn-sm">회원가입</button>
+    </form>
+</nav>
 <!-- 로그인 nav 끝 -->
 
 
 
 <!-- header 시작 -->
-    <header class="common--header">
-        <img src="/images/JustGoLogo.png" alt="저스트고로고" class="common--headerLogo">
-        <form action="#" method="get">
-            <div class="common--headerSearch">
-                <input type="text" placeholder="검색어를 입력해주세요.">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-        </form>
-        <form action="#" method="get">
-            <div class="common--headerAccount">
-                <img src="/images/shinchanProfile.jpg" alt="프로필이미지">
-                폭탄배달부키키
-            </div>
-        </form>
-    </header>
+<header class="common--header">
+    <a href="https://www.naver.com">
+        <img src="/images/OfficialCommonImages/JUSTGO_OFFICIAL_LOGO.png" alt="저스트고로고" class="common--headerLogo">
+    </a>
+    <form action="https://www.naver.com" method="get">
+        <div class="common--headerSearch">
+            <input type="text" placeholder="검색어를 입력해주세요." maxlength="27">
+            <button type="button" class="btn btn-secondary">
+                <i class="fa-solid fa-magnifying-glass" id="common--headerSearchIcon"></i>
+            </button>
+        </div>
+    </form>
+    <form action="#" method="get">
+        <div class="common--headerAccount">
+            <a href="https://www.naver.com">
+                <img src="/images/2019060900883_0.jpg" alt="프로필이미지">
+                <div>폭탄배달부키키</div>
+            </a>
+        </div>
+    </form>
+</header>
 <!-- header 끝 -->
 
 
 
 <!-- nav 시작 -->
-    <nav class="common--headerNav">
-
-    </nav>
+<nav class="common--navBox sticky-top">
+    <ul class="nav justify-content-around" id="common--boardList">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">여행게시판</a>
+            <ul class="dropdown-menu common--tripBoard" aria-labelledby="moreDropdown">
+                <li><a class="dropdown-item" href="https://www.google.com"><img src="/images/OfficialFlagImages/CHINAFLAG.png" alt="중국국기">중국게시판</a></li>
+                <li><a class="dropdown-item" href="https://www.google.com"><img src="/images/OfficialFlagImages/JAPANFLAG.png" alt="일본국기">일본게시판</a></li>
+                <li><a class="dropdown-item" href="https://www.google.com"><img src="/images/OfficialFlagImages/VIETNAMFLAG.png" alt="베트남국기">베트남게시판</a></li>
+                <li><a class="dropdown-item" href="https://www.google.com"><img src="/images/OfficialFlagImages/THAIFLAG.png" alt="태국국기">태국게시판</a></li>
+                <li><a class="dropdown-item" href="https://www.google.com"><img src="/images/OfficialFlagImages/AUSTRALIAFLAG.png" alt="호주국기">호주게시판</a></li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.naver.com">자유게시판</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.naver.com">질문게시판</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.naver.com" style="color:grey;">예비게시판실험</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.naver.com" style="color:grey;">예비게시판실험</a>
+        </li>
+    </ul>
+</nav>
 <!-- nav 끝 -->
 
-</body>
-</html>
+
+
+<!-- -------------------------------------------------------------- -->

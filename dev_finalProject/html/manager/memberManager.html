@@ -13,41 +13,94 @@
 
 </head>
 <body>
-    <!-- 로그인 nav 시작 -->
-    <nav class="common--headerLoginNav">
-        <form action="#" method="get">
-            <button>로그인</button>
-        </form>
-        <form action="#" method="get">
-            <button>회원가입</button>
-        </form>
-    </nav>
-    <!-- 로그인 nav 끝 -->
+<!-- -------------------------------------------------------------- -->
 
 
 
-    <!-- header 시작 -->
-        <header class="common--header">
-            <img src="/images/JustGoLogo.png" alt="저스트고로고" class="common--headerLogo">
-            <form action="#" method="get">
-                <div class="common--headerSearch">
-                    <input type="text" placeholder="검색어를 입력해주세요.">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-            </form>
-            <form action="#" method="get">
-                <div class="common--headerAccount">
-                    <img src="/images/shinchanProfile.jpg" alt="프로필이미지">
-                    폭탄배달부키키
-                </div>
-            </form>
-        </header>
-    <!-- header 끝 -->
+<!-- 로그인 nav 시작 -->
+<nav class="common--headerLoginNav">
+    <form action="https://www.naver.com" method="get">
+        <button type="button" class="btn btn-secondary btn-sm">로그인</button>
+    </form>
+    <form action="https://www.naver.com" method="get">
+        <button type="button" class="btn btn-secondary btn-sm">회원가입</button>
+    </form>
+</nav>
+<!-- 로그인 nav 끝 -->
+
+
+
+<!-- header 시작 -->
+<header class="common--header">
+    <a href="https://www.naver.com">
+        <img src="/images/OfficialCommonImages/JUSTGO_OFFICIAL_LOGO.png" alt="저스트고로고" class="common--headerLogo">
+    </a>
+    <form action="https://www.naver.com" method="get">
+        <div class="common--headerSearch">
+            <input type="text" placeholder="검색어를 입력해주세요." maxlength="27">
+            <button type="button" class="btn btn-secondary">
+                <i class="fa-solid fa-magnifying-glass" id="common--headerSearchIcon"></i>
+            </button>
+        </div>
+    </form>
+    <form action="#" method="get">
+        <div class="common--headerAccount">
+            <a href="https://www.naver.com">
+                <img src="/images/2019060900883_0.jpg" alt="프로필이미지">
+                <div>폭탄배달부키키</div>
+            </a>
+        </div>
+    </form>
+</header>
+<!-- header 끝 -->
+
+
+
+<!-- nav 시작 -->
+<nav class="common--navBox sticky-top">
+    <ul class="nav justify-content-around" id="common--boardList">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">여행게시판</a>
+            <ul class="dropdown-menu common--tripBoard" aria-labelledby="moreDropdown">
+                <li><a class="dropdown-item" href="https://www.google.com"><img src="/images/OfficialFlagImages/CHINAFLAG.png" alt="중국국기">중국게시판</a></li>
+                <li><a class="dropdown-item" href="https://www.google.com"><img src="/images/OfficialFlagImages/JAPANFLAG.png" alt="일본국기">일본게시판</a></li>
+                <li><a class="dropdown-item" href="https://www.google.com"><img src="/images/OfficialFlagImages/VIETNAMFLAG.png" alt="베트남국기">베트남게시판</a></li>
+                <li><a class="dropdown-item" href="https://www.google.com"><img src="/images/OfficialFlagImages/THAIFLAG.png" alt="태국국기">태국게시판</a></li>
+                <li><a class="dropdown-item" href="https://www.google.com"><img src="/images/OfficialFlagImages/AUSTRALIAFLAG.png" alt="호주국기">호주게시판</a></li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.naver.com">자유게시판</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.naver.com">질문게시판</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.naver.com" style="color:grey;">예비게시판실험</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.naver.com" style="color:grey;">예비게시판실험</a>
+        </li>
+    </ul>
+</nav>
+<!-- nav 끝 -->
+
+
+
+<!-- -------------------------------------------------------------- -->
 
     <main>
-        <section>
-            <img src="../../images/gbg.jpg" alt="">
+        <section class="manage--bannerArea">
+            <div class="manage--imgArea">
+                <img src="../../images/3.png" alt="관리자페이지배너" class="manage--bannerImg">
+            </div>
+            <div class="manage--textArea">
+                <p>관리자 페이지</p>
+            </div>
         </section>
+
+
+
         <section>
             <div class="manager--content">
             
@@ -67,15 +120,25 @@
                                     <th scope="col">닉네임</th>
                                     <th scope="col">이메일</th>
                                     <th scope="col">가입일</th>
+                                    <th scope="col">계정상태</th>
                                     <th scope="col">작성글목록</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th scope="row">1</th>
+                                    <th scope="row">3</th>
                                     <td>키키</td>
                                     <td>Otto23@naver.com</td>
                                     <td>2023.06.01</td>
+                                    <td>일반</td>
+                                    <td>#</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>키키</td>
+                                    <td>Otto23@naver.com</td>
+                                    <td>2023.06.01</td>
+                                    <td>탈퇴</td>
                                     <td>#</td>
                                 </tr>
                                 <tr>
@@ -83,13 +146,7 @@
                                     <td>키키</td>
                                     <td>Otto23@naver.com</td>
                                     <td>2023.06.01</td>
-                                    <td>#</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>키키</td>
-                                    <td>Otto23@naver.com</td>
-                                    <td>2023.06.01</td>
+                                    <td>비활성</td>
                                     <td>#</td>
                                 </tr>
                             </tbody>
@@ -110,8 +167,8 @@
                             </ul>
                         </nav>
                         <div class="manager--search">
-                            <input type="text">
-                            <button>검색</button>
+                            <input type="text" class="inputArea">
+                            <button class="searchBtn" placeholder="전체 게시판 대상 모든 글을 검색합니다.">검색</button>
                         </div>
                     </div>
                 </div>
@@ -122,21 +179,31 @@
 
 
 
-    <!-- footer 시작 -->
-    <footer class="common--footer">
-        <img src="/images/justGoLogoBlack.png" alt="저스트고로고" class="common--footerLogo">
-        <div>
-            <b>주식회사 저스트고</b>
-            <hr>
-            서울특별시 중구 남대문로 120 그레이츠 청계(구 대일빌딩) 2F<br>
-            사업자등록번호 : 899-89-00001<br>
-            Copyright © 1998-2023 JustGo All Right Reserved<br>
-        </div>
-        <div>
-            <i class="fa-solid fa-arrow-up"></i>
-        </div>
-    </footer>
-    <!-- footer 끝 -->
+<!-- -------------------------------------------------------------- -->
+
+
+
+<!-- footer 시작 -->
+<footer class="common--footer">
+    <img src="/images/OfficialCommonImages/JUSTGO_OFFICIAL_LOGO_BLACK.png" alt="저스트고로고" class="common--footerLogo">
+    <div>
+        <b>주식회사 저스트고</b>
+        <hr>
+        서울특별시 중구 남대문로 120 그레이츠 청계(구 대일빌딩) 2F<br>
+        사업자등록번호 : 899-89-00001<br>
+        Copyright © 1998-2023 JustGo All Right Reserved<br>
+    </div>
+    <div class="common--footerRight">
+        <a href="https://www.naver.com/">공지사항</a>
+        <a href="https://www.naver.com/">1:1문의</a>
+        <!-- <i class="fa-solid fa-arrow-up"></i> -->
+    </div>
+</footer>
+<!-- footer 끝 -->
+
+
+
+<!-- -------------------------------------------------------------- -->
 
 
 

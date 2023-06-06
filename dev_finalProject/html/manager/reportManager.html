@@ -4,9 +4,159 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>신고글</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/common/header.css">
+    <link rel="stylesheet" href="/css/common/footer.css">
+    <link rel="stylesheet" href="/css/manager/reportManager.css">
+
 </head>
 <body>
-    
+    <!-- 로그인 nav 시작 -->
+    <nav class="common--headerLoginNav">
+        <form action="#" method="get">
+            <button>로그인</button>
+        </form>
+        <form action="#" method="get">
+            <button>회원가입</button>
+        </form>
+    </nav>
+    <!-- 로그인 nav 끝 -->
+
+
+
+    <!-- header 시작 -->
+        <header class="common--header">
+            <img src="/images/JustGoLogo.png" alt="저스트고로고" class="common--headerLogo">
+            <form action="#" method="get">
+                <div class="common--headerSearch">
+                    <input type="text" placeholder="검색어를 입력해주세요.">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </form>
+            <form action="#" method="get">
+                <div class="common--headerAccount">
+                    <img src="/images/shinchanProfile.jpg" alt="프로필이미지">
+                    폭탄배달부키키
+                </div>
+            </form>
+        </header>
+    <!-- header 끝 -->
+
+    <main>
+        <section class="manage--bannerArea">
+            <div class="manage--imgArea">
+                <img src="../../images/3.png" alt="관리자페이지배너" class="manage--bannerImg">
+            </div>
+            <div class="manage--textArea">
+                <p>관리자 페이지</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="manager--content">
+            
+                <div class="manager--ca">
+                    <a href="#">회원정보</a>
+                    <a href="#">신고글</a>
+                    <a href="#">1:1문의</a>
+                </div>
+
+                <div class="manage--li">
+                    <div>
+                        <div class="manger--title">신고글</div>
+                        <table class="table table-hover" id="manage--table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">번호</th>
+                                    <th scope="col">신고사유</th>
+                                    <th scope="col">신고자</th>
+                                    <th scope="col">글제목</th>
+                                    <th scope="col">글작성자</th>
+                                    <th scope="col">신고일</th>
+                                    <th scope="col">처리상태</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>욕설/차별적표현</td>
+                                    <td>키키</td>
+                                    <td>나쁜말나쁜말나쁜말</td>
+                                    <td>나쁜놈</td>
+                                    <td>2023.06.01</td>
+                                    <td>처리완료</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>광고성/도배글</td>
+                                    <td>키키</td>
+                                    <td>나쁜말나쁜말나쁜말</td>
+                                    <td>나쁜놈</td>
+                                    <td>2023.06.01</td>
+                                    <td>처리중</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>사칭</td>
+                                    <td>키키</td>
+                                    <td>나쁜말나쁜말나쁜말</td>
+                                    <td>나쁜놈</td>
+                                    <td>2023.06.01</td>
+                                    <td>반려</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="manager--searchF">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link">이전</a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">다음</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="manager--search">
+                            <input type="text" class="inputArea">
+                            <button class="searchBtn" placeholder="전체 게시판 대상 모든 글을 검색합니다.">검색</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+    <!-- footer 시작 -->
+    <footer class="common--footer">
+        <img src="/images/justGoLogoBlack.png" alt="저스트고로고" class="common--footerLogo">
+        <div>
+            <b>주식회사 저스트고</b>
+            <hr>
+            서울특별시 중구 남대문로 120 그레이츠 청계(구 대일빌딩) 2F<br>
+            사업자등록번호 : 899-89-00001<br>
+            Copyright © 1998-2023 JustGo All Right Reserved<br>
+        </div>
+        <div>
+            <i class="fa-solid fa-arrow-up"></i>
+        </div>
+    </footer>
+    <!-- footer 끝 -->
+
+
+
+
+
+
+
 </body>
 </html>

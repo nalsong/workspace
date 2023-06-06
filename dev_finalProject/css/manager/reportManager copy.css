@@ -19,9 +19,9 @@
 } */
 
 main{
-    width: 960px;
+    width: 1303px;
     height: 925px;
-    margin-left: 500px;
+    margin-left: 340px;
     
     display: flex;
     flex-direction: column;
@@ -56,27 +56,39 @@ main{
 
 
 
+.manage--contentArea{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
-
-
-
-
+.manager--content{
+    width: 1303px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px 5px 5px 10px;
+    
+}
 
 /* 관리자 메뉴목록 */
 .manager--ca{
     width: 150px;
-    height: 200px;
+    /* height: 100%; */
 
-    border: 1px solid black;
-    border-radius: 5px;
+    /* border: 1px solid black; */
+    /* border-radius: 5px; */
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content:center;
     /* background-color: #D9D9D9; */
 
-    margin: 5px 10px 5px 0;
+    padding: 10px;
+    margin: 5px 10% 20px 0;
+    /* background-image: url("/images/포돌이2.png");
+    background-size: cover; */
 }
 
 .manager--ca *{
@@ -86,23 +98,85 @@ main{
 }
 
 
-/* 회원정보 페이지 */
+/* 관리자 통계목록 */
+
+
+
+.manager--content2{
+    margin: 0 20% 0 0;
+}
+
+
+
+.manage--stats{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    margin: 50px 0 0 0;
+}
+
+.manage--stats1{
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 200px;
+    height: 80px;
+    
+    /* background-color: #D9D9D9; */
+    padding-left: 8%;
+    padding-top: 10px;
+}
+.manage--stats2{
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 200px;
+    height: 80px;
+    
+    /* background-color: #D9D9D9; */
+    padding-left: 8%;
+    padding-top: 10px;
+}
+.manage--stats3{
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 200px;
+    height: 80px;
+    
+    /* background-color: #D9D9D9; */
+    padding-left: 8%;
+    padding-top: 10px;
+}
+
+.count{
+    font-size: 1.5rem;
+    margin: 0 0 0 5px;
+}
+
+.manager--FA{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 5px;
+}
+
+main .fa-solid{
+    font-size: 1.5rem;
+    /* color: black; */
+}
+
+/*  관리자 신고글목록 */
 .manger--title{
     font-size: 25px;
     font-weight: bold;
     margin: 20px 10px 20px 30px;
+    color: black;
     
 }
 
-.manager--content{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 100px 5px 5px 10px;
-    
-}
 
-.manager--content *{
+
+.manage--li *{
     font-family: 'Noto Sans KR', sans-serif;
     
 }
@@ -110,10 +184,10 @@ main{
 .manage--li{
     /* border: 1px solid black; */
     width: 800px;
-    margin: 5px 0 5px 10px;
+    margin: 50px 0 5px 10px;
 
     border-radius: 5px;
-    /* background-color: #D9D9D9; */
+    
     
 }
 
@@ -126,8 +200,8 @@ main{
 
 th, td{
     text-align : center;
+    vertical-align : middle;
 }
-
 
 
 /* 페이지 이동 */

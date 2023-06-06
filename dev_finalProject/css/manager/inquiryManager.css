@@ -56,12 +56,6 @@ main{
 
 
 
-
-
-
-
-
-
 /* 관리자 메뉴목록 */
 .manager--ca{
     width: 150px;
@@ -126,8 +120,8 @@ main{
 
 th, td{
     text-align : center;
+    vertical-align : middle;
 }
-
 
 
 /* 페이지 이동 */
