@@ -104,7 +104,7 @@
                         <form th:action="@{/member/login}" method="POST" id="loginFrm">
                             <fieldset class="id-pw-area">
                                 <section>
-                                    <input type="text" name="memberEmail" placeholder="이메일" autocomplete="off" value="${cookie.saveId.value}">
+                                    <input type="text" name="memberEmail" placeholder="이메일" autocomplete="off" value="">
                                     <input type="password" name="memberPw" placeholder="비밀번호">
                                 </section>
                                 <section>
@@ -154,7 +154,7 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script> -->
 
     <!-- main.js추가 -->
-    <script th:src="@{/resources/js/main.js}"></script>
+    <script th:src="@{/js/main.js}"></script>
 </body>
 
 </html>
