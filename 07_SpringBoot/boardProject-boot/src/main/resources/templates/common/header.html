@@ -40,7 +40,7 @@
 
                         autocomplete="off" 브라우저 제공 자동완성 끔
                     -->
-                    <input type="search" name="query" id="query" placeholder="검색어를 입력해주세요." autocomplete="off" value="${param.query}">
+                    <input type="search" name="query" id="query" placeholder="검색어를 입력해주세요." autocomplete="off" th:value="${param.query}">
 
                     <!-- 제목검색 -->
                     <input type="hidden" name="key" value="t">
@@ -95,16 +95,17 @@
 </header>
 
 <nav>
+    <!-- interceptor를 이용해서 조회된 boardTypeList를 application에서 얻어와 화면에 출력 -->
     <ul>
-        <li><a href="#">공지사항</a></li>
-        <li><a href="#">자유게시판</a></li>
-        <li><a href="#">질문게시판</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">1:1문의</a></li> 
+        <li th:each="boardType : ${application.boardTypeList}">
 
-        <!-- interceptor를 이용해서 조회된 boardTypeList를 application에서 얻어와 화면에 출력 -->
-        <li>
-            <a href="/board/${boardType.BOARD_CODE}">${boardType.BOARD_NAME}</a>
+            <!-- 정석 -->
+            <!-- <a ht:href="@{/board/{boardCode}(boardCode=#{boardType.BOARD_CODE})}" 
+                th:text="${boardType.BOARD_NAME}">게시판 이름</a> -->
+
+            <!-- 이런 방법도 있다 -->
+            <a th:href="|/board/${boardType.BOARD_CODE}|" 
+                th:text="${boardType.BOARD_NAME}">게시판 이름</a>
         </li>
 
         <!-- 로그인 했을 때 채팅이 보여짐 -->
