@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="edu.kh.project.board.model.dao.BoardMapper">
+<mapper namespace="edu.kh.project.board.model.dao.BoardMapper2">
 
 	<!-- Board DTO에 대한 resultMap -->
 	<resultMap type="Board" id="board_rm">
@@ -150,40 +150,6 @@
 		CONNECT BY PRIOR COMMENT_NO = PARENT_NO
 		ORDER SIBLINGS BY COMMENT_NO
 	</select>
-	
-	<!-- 좋아요 여부 확인 -->
-	<select id="boardLikeCheck" resultType="_int">
-		SELECT COUNT(*) FROM "BOARD_LIKE"
-		WHERE BOARD_NO = #{boardNo}
-		AND MEMBER_NO = #{memberNo}
-	</select>
-	
-	<!-- 좋아요 테이블 삽입 -->
-	<insert id="insertBoardLike">
-		INSERT INTO "BOARD_LIKE"
-		VALUES(#{boardNo}, #{memberNo})
-	</insert>
-	
-	<!-- 좋아요 테이블 삭제 -->
-	<delete id="deleteBoardLike">
-		DELETE FROM "BOARD_LIKE"
-		WHERE BOARD_NO = #{boardNo}
-		AND MEMBER_NO = #{memberNo}
-	</delete>
-	
-	<!-- 좋아요 개수 조회 -->
-	<select id="countBoardLike" resultType="int">
-		SELECT COUNT(*)
-		FROM "BOARD_LIKE"
-		WHERE BOARD_NO = #{boardNo}
-	</select>
-	
-	<!-- 조회수 증가 -->
-	<update id="updateReadCount">
-		UPDATE "BOARD"
-		SET READ_COUNT = READ_COUNT + 1
-		WHERE BOARD_NO = #{boardNo} 
-	</update>
 	
 	<!-- 게시글 삽입 -->
 	<!-- 
