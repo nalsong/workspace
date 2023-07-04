@@ -1,3 +1,7 @@
 h1{
   color:skyblue;
 }
+
+.completed{
+  text-decoration: line-through; /*가운데 선*/
+}
