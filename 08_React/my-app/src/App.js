@@ -12,6 +12,8 @@ import State3 from './components/R04_state3';
 
 import TodoList1 from './components/R05_todolist1';
 
+import ContextApi from './components/R06_context_api';
+
 
 
 function App() {
@@ -44,7 +46,10 @@ function App() {
     {/* <State3/> */}
     
     {/* R05_todolist1 */}
-    <TodoList1/>
+    {/* <TodoList1/> */}
+
+    {/* R06_context_api */}
+    <ContextApi/>
 
     </>
   );
