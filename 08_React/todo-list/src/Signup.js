@@ -8,7 +8,6 @@ const SignupContainer = () => {
     const[name, setName] = useState('');
     const[result, setResult] = useState('');
 
-
     // 아이디 중복검사
     const [idValidation, setIdValidation] = useState(false);
     // false -> 사용 불가
@@ -35,17 +34,9 @@ const SignupContainer = () => {
             }else{ // 중복 O -> 사용 불가
                 setIdValidation(false);
             }
-
         })
         .catch(e => console.log(e));
-
     }
-
-
-
-
-
-
 
 
     // 회원가입 함수
@@ -64,7 +55,6 @@ const SignupContainer = () => {
             alert("비밀번호가 일치하지 않습니다.");
             return;
         }
-
 
         /// *** 회원가입 요청 (비동기, POST) ***
         fetch("/signup",  {
@@ -94,22 +84,11 @@ const SignupContainer = () => {
         })
         .catch(e => console.log(e));
 
-
-
-
-
-
-
         // 2. id === 'user01', pw === 'pass01'
         // 맞으면 result에 '회원 가입 성공' 출력
         // + 모든 입력칸(input) 내용 삭제
-
-        
-
         // 아니면 result에 '아이디 또는 비밀번호가 일치하지 않습니다.' 출력
-
     }
-
 
     return(
         <div className='signup-container'>
@@ -139,7 +118,5 @@ const SignupContainer = () => {
             <h3>{result}</h3>
         </div>
     );
-
 };
-
 export default SignupContainer;
