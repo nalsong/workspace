@@ -1,0 +1,27 @@
+#root{ text-align: center;
+border: none;}
+
+/* .minus{
+  background-color: cyan;
+  border-radius: 5px;
+}
+
+.plus{
+  background-color: magenta;
+  border-radius: 5px;
+}
+
+div{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+} */
+
+
+
+div{
+  width: 80%;
+  border: solid 1px black;
+  margin: 0  0 0 150px ; 
+}
